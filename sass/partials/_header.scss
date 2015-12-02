@@ -1,0 +1,65 @@
+nav#site-navigation {
+    margin-left: auto;
+    margin-right: auto;
+    display: table !important;
+}
+#main-nav.fixed {
+    background-color: $bg-black;
+}
+.navbar-inverse .navbar-nav>li>a{
+@extend .font-2;
+padding-top: 4px;
+text-transform: uppercase;
+}
+
+.fixed-mark-openlab {
+  position: fixed;
+  &.top-right{
+    right: 30px;
+    top: 80px;
+  }
+  &.top-left{
+    left: 30px;
+    top: 80px;
+  }
+  &.bottom-left{
+    left: 30px;
+    bottom: 30px;
+  }
+  &.bottom-right{
+    right: 30px;
+    bottom: 30px;
+  }
+    img{
+      width:30px;
+      height:30px;
+    }
+    svg{
+      width:30px;
+      height:30px;
+      @include transform( rotate(270deg) );
+      @include transition( all 0.5s ease);
+      polygon{
+        @include transition( all 0.5s ease);
+        fill:$bg-black;
+      }
+    }
+}
+
+.bottom-right.to-top svg{
+  @include transform( rotate(45deg) );
+  cursor: pointer;
+  polygon{
+    fill:$bg-yellow;
+  }
+}
+
+img.openlab-logo{
+  width:147px;
+}
+img.bottom-left{
+  transform: rotate(180deg);
+}
+svg.bottom-right{
+  transform: rotate(270deg);
+}

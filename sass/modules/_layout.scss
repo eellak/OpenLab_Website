@@ -1,0 +1,17 @@
+@mixin list-unstyled{
+
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin table-align{
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+@mixin bg-cover{
+	background-size: cover;
+	background-position: center center;
+}

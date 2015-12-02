@@ -1,0 +1,38 @@
+@include font-face("Verdana", "../fonts/Verdana/Verdana", normal);
+@include font-face("Verdana", "../fonts/Verdana-Bold/Verdana-Bold", bold);
+//@include font-face("Verdana", "../fonts/Verdana-Italic/Verdana-Italic", italic);
+//@include font-face("Verdana", "../fonts/Verdana-Bold-Italic/Verdana-Bold-Italic", bold, italic);
+
+html, button, input, select, textarea{
+	font-family: 'Verdana';
+  font-style: normal;
+}
+
+body{
+    font-family: 'Verdana';
+    font-style: normal;
+}
+
+h1{
+	font-family: 'Verdana';
+	font-size: 24px;
+	font-weight: bold;
+}
+
+h2{
+  font-family: 'Verdana';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h3, h4, h5, h6{
+  font-family: 'Verdana';
+	font-size: 14px;
+	font-weight: bold;
+}
+p, span{
+  font-family: 'Verdana';
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: normal;
+}

@@ -1,0 +1,52 @@
+<wpml-config>
+    <admin-texts>
+		<key name='theme_mods_openlab-lite'>
+			<key name='openlab_copyright' />
+			<key name='openlab_socials_facebook' />
+			<key name='openlab_socials_twitter' />
+			<key name='openlab_socials_linkedin' />
+			<key name='openlab_socials_behance' />
+			<key name='openlab_socials_dribbble' />
+			<key name='openlab_email' />
+			<key name='openlab_phone' />
+			<key name='openlab_address' />
+			<key name='openlab_bigtitle_title' />
+			<key name='openlab_bigtitle_redbutton_label' />
+			<key name='openlab_bigtitle_redbutton_url' />
+			<key name='openlab_bigtitle_greenbutton_label' />
+			<key name='openlab_bigtitle_greenbutton_url' />
+			<key name='openlab_ourfocus_title' />
+			<key name='openlab_ourfocus_subtitle' />
+			<key name='openlab_aboutus_title' />
+			<key name='openlab_aboutus_subtitle' />
+			<key name='openlab_aboutus_biglefttitle' />
+			<key name='openlab_aboutus_text' />
+			<key name='openlab_aboutus_feature1_title' />
+			<key name='openlab_aboutus_feature1_text' />
+			<key name='openlab_aboutus_feature2_title' />
+			<key name='openlab_aboutus_feature2_text' />
+			<key name='openlab_aboutus_feature3_title' />
+			<key name='openlab_aboutus_feature3_text' />
+			<key name='openlab_aboutus_feature4_title' />
+			<key name='openlab_aboutus_feature4_text' />	
+			<key name='openlab_ourteam_title' />
+			<key name='openlab_ourteam_subtitle' />
+			<key name='openlab_testimonials_title' />
+			<key name='openlab_testimonials_subtitle' />
+			<key name='openlab_latestnews_title' />
+			<key name='openlab_latestnews_subtitle' />
+			<key name='openlab_bottomribbon_text' />
+			<key name='openlab_bottomribbon_buttonlabel' />
+			<key name='openlab_bottomribbon_buttonlink' />
+			<key name='openlab_ribbonright_text' />
+			<key name='openlab_ribbonright_buttonlabel' />
+			<key name='openlab_ribbonright_buttonlink' />
+			<key name='openlab_contactus_title' />
+			<key name='openlab_contactus_subtitle' />
+			<key name='openlab_contactus_email' />
+			<key name='openlab_contactus_button_label' />
+			<key name='openlab_contactus_sitekey' />
+			<key name='openlab_contactus_secretkey' />
+		</key>
+    </admin-texts>
+</wpml-config>

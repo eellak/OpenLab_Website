@@ -1,0 +1,16 @@
+@function tile-size($base: 10, $num: 1){
+	
+	$size: $num * (1 / $base);
+
+	@if $size > 1{
+		
+		$size: 1;
+
+	}
+
+	@return percentage($size);
+}
+
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}

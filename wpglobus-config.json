@@ -1,0 +1,146 @@
+{
+  "version": "2",
+  "customize_texts": {
+    "openlab_general_section": {
+      "openlab_copyright": {
+        "type": "text"
+      }
+    },
+    "openlab_general_footer_section": {
+      "openlab_email": {
+        "type": "textarea"
+      },
+      "openlab_phone": {
+        "type": "textarea"
+      },
+      "openlab_address": {
+        "type": "textarea"
+      }
+    },
+    "openlab_bigtitle_section": {
+      "openlab_bigtitle_title": {
+        "type": "text"
+      },
+      "openlab_bigtitle_redbutton_label": {
+        "type": "text"
+      },
+	  "openlab_bigtitle_redbutton_url": {
+        "type": "url"
+      },	  
+      "openlab_bigtitle_greenbutton_label": {
+        "type": "text"
+      },
+	  "openlab_bigtitle_greenbutton_url": {
+        "type": "url"
+      }	  
+    },
+    "openlab_ourfocus_section": {
+      "openlab_ourfocus_title": {
+        "type": "text"
+      },
+      "openlab_ourfocus_subtitle": {
+        "type": "text"
+      }
+    },
+    "openlab_aboutus_main_section": {
+      "openlab_aboutus_title": {
+        "type": "text"
+      },
+      "openlab_aboutus_subtitle": {
+        "type": "text"
+      },
+      "openlab_aboutus_text": {
+        "type": "text"
+      },
+      "openlab_aboutus_biglefttitle": {
+        "type": "text"
+      }
+    },
+    "openlab_aboutus_feat1_section": {
+      "openlab_aboutus_feature1_title": {
+        "type": "text"
+      },
+      "openlab_aboutus_feature1_text": {
+        "type": "text"
+      }
+    },
+    "openlab_aboutus_feat2_section": {
+      "openlab_aboutus_feature2_title": {
+        "type": "text"
+      },
+      "openlab_aboutus_feature2_text": {
+        "type": "text"
+      }
+    },
+    "openlab_aboutus_feat3_section": {
+      "openlab_aboutus_feature3_title": {
+        "type": "text"
+      },
+      "openlab_aboutus_feature3_text": {
+        "type": "text"
+      }
+    },
+    "openlab_aboutus_feat4_section": {
+      "openlab_aboutus_feature4_title": {
+        "type": "text"
+      },
+      "openlab_aboutus_feature4_text": {
+        "type": "text"
+      }
+    },
+    "openlab_ourteam_section": {
+      "openlab_ourteam_title": {
+        "type": "text"
+      },
+      "openlab_ourteam_subtitle": {
+        "type": "text"
+      }
+    },
+    "openlab_testimonials_section": {
+      "openlab_testimonials_title": {
+        "type": "text"
+      },
+      "openlab_testimonials_subtitle": {
+        "type": "text"
+      }
+    },
+    "openlab_bottomribbon_section": {
+      "openlab_bottomribbon_text": {
+        "type": "text"
+      },
+      "openlab_bottomribbon_buttonlabel": {
+        "type": "text"
+      }
+    },
+    "openlab_rightribbon_section": {
+      "openlab_ribbonright_text": {
+        "type": "text"
+      },
+      "openlab_ribbonright_buttonlabel": {
+        "type": "text"
+      }
+    },
+    "openlab_latestnews_section": {
+      "openlab_latestnews_title": {
+        "type": "text"
+      },
+      "openlab_latestnews_subtitle": {
+        "type": "text"
+      }
+    },
+    "openlab_contactus_section": {
+      "openlab_contactus_title": {
+        "type": "text"
+      },
+      "openlab_contactus_subtitle": {
+        "type": "text"
+      },
+      "openlab_contactus_email": {
+        "type": "text"
+      },
+      "openlab_contactus_button_label": {
+        "type": "text"
+      }
+    }
+  }
+}

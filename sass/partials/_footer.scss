@@ -1,0 +1,155 @@
+#footer{
+  background: $bg-black;
+  .col-md-4{
+    height:210px;
+  }
+  /*Custom fb feed*/
+  span.cff-text{
+    font-size: 12px;
+    line-height: 12px;
+    color:#fff;
+  }
+  .custom-fb-feed a{
+    font-size: 13px;
+    line-height: 13px;
+    color:#5695C6;
+  }
+  .custom-fb-feed span{
+    font-size: 12px;
+    line-height: 12px;
+    color:#fff;
+  }
+
+  .company-details-footer{
+    position:relative;
+    .details-wrap{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width:100%;
+      @include transition(all 0.5s ease-in);
+      &:hover {
+        .details-text p{
+          color:$font-blue;
+        }
+        #footer-map-icon path{
+          fill:$font-blue;
+        }
+      }
+        #footer-map-icon {
+            width: 50px;
+            width: 50px;
+            path{
+              fill:#ffffff;
+            }
+        }
+        .details-text{
+          padding-top: 25px;
+          p {
+            margin-bottom: 0px;
+            color:$font-white;
+            @extend .font-1;
+        }
+      }
+    }
+  }
+  .copyright{
+    position:relative;
+    .social{
+      margin:0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width:100%;
+      li{
+        span.footer-social{
+
+          svg{
+            width:50px;
+            height:50px;
+            path, polygon, rect{
+              fill:$font-white;
+            }
+            polyline{
+              fill:$font-blue;
+            }
+          }
+        }
+        @include transition(all 0.5s ease-in);
+        &:hover span.footer-social svg>polyline{
+          fill:$bg-dark-gray;
+        }
+      }
+    }
+  }
+
+  #gmap-embed{
+    .map-container{
+      margin:100px;
+    }
+      .button-wrap{
+        position:relative;
+      .openlab-close-modal{
+        position:absolute;
+        padding:5px 10px;
+        margin:0;
+        border-radius:0px;
+        background-color: rgba(255, 0, 0, 0);
+        right:10px;
+        top:30px;
+        font-size:50px;
+        color:#fff;
+        opacity:1;
+        @include transition(all 0.5s ease);
+        &:hover{
+          opacity:0.8;
+        }
+      }
+    }
+  }
+  img.footer-social {
+      width: 50px;
+      height: 50px;
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#gmap-embed{
+  .map-container{
+    margin:100px;
+  }
+    .button-wrap{
+      position:relative;
+    .openlab-close-modal{
+      position:absolute;
+      padding:5px 10px;
+      margin:0;
+      border-radius:0px;
+      background-color: rgba(255, 0, 0, 0);
+      right:10px;
+      top:30px;
+      font-size:50px;
+      color:#fff;
+      opacity:1;
+      @include transition(all 0.5s ease);
+      &:hover{
+        opacity:0.8;
+      }
+    }
+  }
+}
+img.footer-social {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,157 @@
+/* Typography */
+
+$clear-sans: 'clear-sans', "Helvetica Neue", Helvetica,Arial,sans-serif;
+$neou-greek: 'neou-greek', "Helvetica Neue", Helvetica,Arial,sans-serif;
+
+$base-font-size: 13px;
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 700;
+
+/* Colors */
+
+$base-text-color: #212125;
+$menu-color: #96969a;
+$menu-active-color: #212125;
+$base-sibedar-color: #212125;
+$reverse-sibedar-color: #fff;
+$filter-active-color: #edeeee;
+
+
+/* Screen */
+
+$screen-sm-max: 1280px;
+$screen-tablet-land-max: 1024px;
+$screen-tablet-max: 768px;
+$screen-tablet-mobile-max: 767px;
+$screen-mobile-max: 480px;
+
+/* flexslider */
+
+$flex-viewport-max-height:            2000px;
+$flex-viewport-loading-max-height:    300px;
+$flex-control-thumbs:                 5px 0 0;
+$flexslider-margin:                   0;
+$flexslider-bg:                       transparent;
+$flexslider-border:                   none;
+$flex-direction-nav-color:            rgba(0,0,0,0.8);
+$flex-control-nav-color:              #999999;
+$flex-control-nav-color-active:       #999999;
+$flex-control-nav-gif-color:          #989898;
+
+/* Layout */
+
+$sidebar-borders: 1px solid $base-sibedar-color;
+$sidebar-reverse-borders: 1px solid $reverse-sibedar-color;
+$sidebar-width: 50px;
+$footer-height: 50px;
+$article-borders: 2px solid $base-sibedar-color;
+$isotope-padding: 10px;
+$breadcump-padding: $sidebar-width + $isotope-padding + 10px;
+$breadcrumb-height: 50px;
+$default-prefixes: webkit moz ms o spec;
+$left-sidebar-width: 330px;
+$responsive-padding: 20px;
+
+/* Loader */
+
+$loaderItend: 8px;
+$loaderStartSize: 0;
+$loaderEndSize: 50px;
+
+/* Tiles */
+
+$home-tile-base: 14;
+$news-tile-base: 14;
+$product-tile-base: 14;
+
+/* Flexslider */
+
+$font-path:                           "fonts";
+$font-name:                           "flexslider-icon";
+$font-file-name:                      "flexslider-icon";
+$default-duration:                    1s;
+$default-easing:                      ease;
+$default-border-radius:               5px;
+$default-box-shadow-x-axis:           0;
+$default-box-shadow-y-axis:           1px;
+$default-box-shadow-blur:             2px;
+$default-box-shadow-color:            rgba( 0, 0, 0, 0.2 );
+$default-box-shadow-inset:            '';
+$flexslider-margin:                   0;
+$flexslider-bg:                       #fff;
+$flexslider-border:                   none;
+$flexslider-border-radius:            4px;
+$flexslider-box-shadow-x-axis:        0;
+$flexslider-box-shadow-y-axis:        1px;
+$flexslider-box-shadow-blur:          4px;
+$flexslider-box-shadow-color:         rgba( 0, 0, 0, 0.2 );
+$flexslider-box-shadow-inset:         '';
+$flex-viewport-max-height:            2000px;
+$flex-viewport-loading-max-height:    300px;
+$flex-control-thumbs:                 0;
+$flex-direction-nav-color:            rgba(0,0,0,0.8);
+$flex-direction-nav-text-shadow:      1px 1px 0 rgba( 255, 255, 255, 0.3 );
+$flex-direction-nav-icon-color:       rgba(0,0,0,0.8);
+$flex-direction-nav-icon-text-shadow: 1px 1px 0 rgba( 255, 255, 255, 0.3 );
+$flex-direction-nav-icon-prev:        '\f001';
+$flex-direction-nav-icon-next:        '\f002';
+$flex-pauseplay-icon-play:            '\f003';
+$flex-pauseplay-icon-pause:           '\f004';
+
+/* buttons*/
+$button-border-color: #212125;
+$button-background-color: #fff;
+
+/* Checkout */
+/* $header-border-color: #96969A; */
+$header-border-color: #E6E6E9;
+$text-unfocused: #96969A;
+$active-payment-color: #f6f7f7;
+$shadow-color: #888888;
+$error-color: #C83729;
+
+
+/*magnific popup*/
+// overlay
+$mfp-overlay-color:                   #0b0b0b !default;                    // Color of overlay screen
+$mfp-overlay-opacity:                 0.8 !default;                        // Opacity of overlay screen
+$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6) !default; // Shadow on image or iframe
+
+// spacing
+$mfp-popup-padding-left:              8px!default ;                        // Padding from left and from right side
+$mfp-popup-padding-left-mobile:       6px !default;                        // Same as above, but is applied when width of window is less than 800px
+
+$mfp-z-index-base:                    3040 !default;                       // Base z-index of popup
+
+// controls
+$mfp-include-arrows:                  false !default;                       // Include styles for nav arrows
+$mfp-controls-opacity:                0.65 !default;                       // Opacity of controls
+$mfp-controls-color:                  #FFF !default;                       // Color of controls
+$mfp-controls-border-color:           #3F3F3F !default; 	                 // Border color of controls
+$mfp-inner-close-icon-color:          #333 !default;                       // Color of close button when inside
+$mfp-controls-text-color:             #CCC !default;                       // Color of preloader and "1 of X" indicator
+$mfp-controls-text-color-hover:       #FFF !default;                       // Hover color of preloader and "1 of X" indicator
+$mfp-IE7support:                      true !default;                       // Very basic IE7 support
+
+// Iframe-type options
+$mfp-include-iframe-type:             true !default;                       // Enable Iframe-type popups
+$mfp-iframe-padding-top:              40px !default;                       // Iframe padding top
+$mfp-iframe-background:               #000 !default;                       // Background color of iframes
+$mfp-iframe-max-width:                900px !default;                      // Maximum width of iframes
+$mfp-iframe-ratio:                    9/16 !default;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+// Image-type options
+$mfp-include-image-type:              true !default;                       // Enable Image-type popups
+$mfp-image-background:                #444 !default;
+$mfp-image-padding-top:               40px !default;                       // Image padding top
+$mfp-image-padding-bottom:            40px !default;                       // Image padding bottom
+$mfp-include-mobile-layout-for-image: true !default;                       // Removes paddings from top and bottom
+
+// Image caption options
+$mfp-caption-title-color:             #F3F3F3 !default;                    // Caption title color
+$mfp-caption-subtitle-color:          #BDBDBD !default;                    // Caption subtitle color
+
+// A11y
+$mfp-use-visuallyhidden:              false !default;                      // Hide content from browsers, but make it available for screen readers
