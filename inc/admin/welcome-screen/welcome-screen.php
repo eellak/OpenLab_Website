@@ -41,7 +41,7 @@ class Openlab_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function openlab_lite_welcome_register_menu() {
-		add_theme_page( 'About Openlab Lite', 'About Openlab Lite', 'activate_plugins', 'openlab-lite-welcome', array( $this, 'openlab_lite_welcome_screen' ) );
+		add_theme_page( 'About Openlab Lite', 'About Openlab Lite', 'activate_plugins', 'openlab-txtd-welcome', array( $this, 'openlab_lite_welcome_screen' ) );
 	}
 
 	/**
@@ -63,8 +63,8 @@ class Openlab_Welcome {
 	public function openlab_lite_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome to Openlab theme!', 'openlab-lite' ), '<a href="' . esc_url( admin_url( 'themes.php?page=openlab-lite-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=openlab-lite-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Openlab Lite', 'openlab-lite' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome to Openlab theme!', 'openlab-txtd' ), '<a href="' . esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Openlab Lite', 'openlab-txtd' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -75,9 +75,9 @@ class Openlab_Welcome {
 	 */
 	public function openlab_lite_welcome_style_and_scripts( $hook_suffix ) {
 
-		if ( 'appearance_page_openlab-lite-welcome' == $hook_suffix ) {
-			wp_enqueue_style( 'openlab-lite-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
-			wp_enqueue_script( 'openlab-lite-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
+		if ( 'appearance_page_openlab-txtd-welcome' == $hook_suffix ) {
+			wp_enqueue_style( 'openlab-txtd-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
+			wp_enqueue_script( 'openlab-txtd-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
 
 			global $openlab_required_actions;
 
@@ -98,11 +98,11 @@ class Openlab_Welcome {
 				endforeach;
 			endif;
 
-			wp_localize_script( 'openlab-lite-welcome-screen-js', 'openlabLiteWelcomeScreenObject', array(
+			wp_localize_script( 'openlab-txtd-welcome-screen-js', 'openlabLiteWelcomeScreenObject', array(
 				'nr_actions_required' => $nr_actions_required,
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
-				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.','openlab-lite' )
+				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.','openlab-txtd' )
 			) );
 		}
 	}
@@ -113,8 +113,8 @@ class Openlab_Welcome {
 	 */
 	public function openlab_lite_welcome_scripts_for_customizer() {
 
-		wp_enqueue_style( 'openlab-lite-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
-		wp_enqueue_script( 'openlab-lite-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
+		wp_enqueue_style( 'openlab-txtd-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
+		wp_enqueue_script( 'openlab-txtd-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
 
 		global $openlab_required_actions;
 
@@ -135,11 +135,11 @@ class Openlab_Welcome {
 			endforeach;
 		endif;
 
-		wp_localize_script( 'openlab-lite-welcome-screen-customizer-js', 'openlabLiteWelcomeScreenCustomizerObject', array(
+		wp_localize_script( 'openlab-txtd-welcome-screen-customizer-js', 'openlabLiteWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=openlab-lite-welcome#actions_required' ) ),
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome#actions_required' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
-			'themeinfo' => __('View Theme Info','openlab-lite'),
+			'themeinfo' => __('View Theme Info','openlab-txtd'),
 		) );
 	}
 
@@ -206,13 +206,13 @@ class Openlab_Welcome {
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 		?>
 
-		<ul class="openlab-lite-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','openlab-lite'); ?></a></li>
-			<li role="presentation" class="openlab-lite-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','openlab-lite'); ?></a></li>
-			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child themes','openlab-lite'); ?></a></li>
+		<ul class="openlab-txtd-nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','openlab-txtd'); ?></a></li>
+			<li role="presentation" class="openlab-txtd-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','openlab-txtd'); ?></a></li>
+			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child themes','openlab-txtd'); ?></a></li>
 		</ul>
 
-		<div class="openlab-lite-tab-content">
+		<div class="openlab-txtd-tab-content">
 
 			<?php
 			/**

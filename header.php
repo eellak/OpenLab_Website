@@ -77,7 +77,7 @@ wp_head(); ?>
 
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 
-				<span class="sr-only"><?php _e('Toggle navigation','openlab-lite'); ?></span>
+				<span class="sr-only"><?php _e('Toggle navigation','openlab-txtd'); ?></span>
 
 				<span class="icon-bar"></span>
 
@@ -147,7 +147,6 @@ wp_head(); ?>
 			</div>
 
 			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation"   id="site-navigation">
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'openlab-lite' ); ?></a>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav responsive-nav main-nav-list', 'fallback_cb'     => 'openlab_wp_page_menu')); ?>
 			</nav>
 

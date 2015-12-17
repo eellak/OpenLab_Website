@@ -1,34 +1,34 @@
-.openlab-lite-nav-tabs {
+.openlab-txtd-nav-tabs {
     margin-bottom: 0;
 }
-.openlab-lite-nav-tabs:after {
+.openlab-txtd-nav-tabs:after {
     clear: both;
     display: table;
     content: " ";
 }
-.openlab-lite-nav-tabs > li {
+.openlab-txtd-nav-tabs > li {
     float: left;
     margin-bottom: -1px;
     display: block;
 }
-.openlab-lite-nav-tabs > li > a {
+.openlab-txtd-nav-tabs > li > a {
     border: 1px solid transparent;
     border-radius: 4px 4px 0 0;
     display: block;
     padding: 10px 15px;
 	text-decoration: none;
 }
-.openlab-lite-nav-tabs > li.active > a, .openlab-lite-nav-tabs > li.active > a:focus, .openlab-lite-nav-tabs > li.active > a:hover {
+.openlab-txtd-nav-tabs > li.active > a, .openlab-txtd-nav-tabs > li.active > a:focus, .openlab-txtd-nav-tabs > li.active > a:hover {
     color: #555;
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
 }
-.openlab-lite-nav-tabs > li.openlab-lite-w-red-tab > a {
+.openlab-txtd-nav-tabs > li.openlab-txtd-w-red-tab > a {
     color: red;
     font-weight: bold;
 }
-.openlab-lite-tab-content {
+.openlab-txtd-tab-content {
 	background-color: #fff;
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
@@ -36,33 +36,33 @@
     width: 960px;
     float: left;
 }
-.openlab-lite-tab-content > .tab-pane {
+.openlab-txtd-tab-content > .tab-pane {
     display: none;
 }
-.openlab-lite-tab-content > .active {
+.openlab-txtd-tab-content > .active {
     display: block;
 }
 
-.openlab-lite-tab-pane {
+.openlab-txtd-tab-pane {
 	padding: 30px;
 }
-.openlab-lite-tab-pane {
+.openlab-txtd-tab-pane {
     display: none;
 }
-.openlab-lite-tab-pane.active {
+.openlab-txtd-tab-pane.active {
     display: block;
 }
 
-#openlab-lite-theme-version {
+#openlab-txtd-theme-version {
     font-size: 50%;
     padding: 10px;
     background: #ccc;
 }
-#openlab-lite-w-screenshot {
+#openlab-txtd-w-screenshot {
     border: 1px solid #ccc;
     margin-top: 30px;
 }
-.openlab-lite-w-activated {
+.openlab-txtd-w-activated {
     cursor:not-allowed !important;
 }
 .openlab-tab-pane-half {
@@ -74,7 +74,7 @@
     padding-right: 20px;
     margin-bottom: 15px;
 }
-.openlab-lite-tab-content img {
+.openlab-txtd-tab-content img {
     max-width: 100%;
 }
 .openlab-tab-pane-first-half {
@@ -85,16 +85,16 @@
     margin-bottom: 30px;
     margin-top: 30px;
 }
-.openlab-lite-welcome-title {
+.openlab-txtd-welcome-title {
     font-size: 32px;
 }
-.openlab-lite-clear {
+.openlab-txtd-clear {
     clear: both;
 }
-.openlab-lite-child-theme-container {
+.openlab-txtd-child-theme-container {
     position: relative;
 }
-.openlab-lite-child-theme-description {
+.openlab-txtd-child-theme-description {
     position: absolute;
     top: 100%;
     left: 0;
@@ -116,64 +116,64 @@
     -o-transition-delay: 500ms;
     transition-delay: 500ms;
 }
-.openlab-lite-child-theme-image-container:hover .openlab-lite-child-theme-description {
+.openlab-txtd-child-theme-image-container:hover .openlab-txtd-child-theme-description {
     top: 0;
     display: block;
     padding: 0 15px;
     opacity: 0.8;
 }
-.openlab-lite-child-theme-image-container {
+.openlab-txtd-child-theme-image-container {
     position: relative;
     overflow: hidden;
 }
-.openlab-lite-child-theme-image-container img {
+.openlab-txtd-child-theme-image-container img {
     max-width: 100%;
 }
-.openlab-lite-child-theme-details .theme-details {
+.openlab-txtd-child-theme-details .theme-details {
     padding: 10px;
     background: none repeat scroll 0 0 #F1F1F1;
     font-size: 18px;
 }
 
-.openlab-lite-child-theme-details .theme-details.active {
+.openlab-txtd-child-theme-details .theme-details.active {
     background: none repeat scroll 0 0 #2B5F87;
     color: #fff;
 }
 
-.openlab-lite-child-theme-details .theme-details .theme-name {
+.openlab-txtd-child-theme-details .theme-details .theme-name {
     float:left;
 }
-.openlab-lite-child-theme-details .theme-details .preview {
+.openlab-txtd-child-theme-details .theme-details .preview {
     margin-right: 2px;
 }
-.openlab-lite-fre-pro table {
+.openlab-txtd-fre-pro table {
     border-collapse: collapse;
     width: 100%;
 }
-.openlab-lite-fre-pro table tr {
+.openlab-txtd-fre-pro table tr {
     border-bottom: 1px solid #ddd;
 }
-.openlab-lite-fre-pro table td {
+.openlab-txtd-fre-pro table td {
     padding: 30px;
 }
-.openlab-lite-fre-pro table th {
+.openlab-txtd-fre-pro table th {
     padding-bottom: 30px;
 }
-.openlab-lite-fre-pro table td span.dashicons-before:before {
+.openlab-txtd-fre-pro table td span.dashicons-before:before {
     font-size: 50px;
     width: auto;
     height: auto;
 }
-.openlab-lite-fre-pro table td span.dashicons-yes:before {
+.openlab-txtd-fre-pro table td span.dashicons-yes:before {
     color:green;
 }
-.openlab-lite-fre-pro table td span.dashicons-no-alt:before {
+.openlab-txtd-fre-pro table td span.dashicons-no-alt:before {
     color:red;
 }
-.openlab-lite-fre-pro table tr.openlab-lite-text-center {
+.openlab-txtd-fre-pro table tr.openlab-txtd-text-center {
     text-align: center;
 }
-.openlab-lite-actions-count {
+.openlab-txtd-actions-count {
     padding: 0 6px;
     display: inline-block;
     background-color: #d54e21;

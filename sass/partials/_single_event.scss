@@ -1,0 +1,211 @@
+.single-event{
+
+  h1.entry-title{
+    @extend .font-7;
+    font-weight: bold;
+    padding: 0 0 20px 0;
+    color:$font-post-header;
+  }
+  div.entry-content{
+    margin:0;
+    p, span, a{
+      @extend .font-14;
+      text-align:left;
+    }
+  }
+
+
+
+  .event-meta-wrap{
+    .grid-2.clearfix {
+      padding-top: 15px;
+    }
+    div.event-date {
+      padding-left:20px;
+      padding-bottom:20px;
+      padding-top:20px;
+      @extend .font-6;
+      letter-spacing: 0;
+      font-weight: bold;
+      text-align: left;
+      color:$font-breadcrumb;
+    }
+    div.event-time {
+      padding-left:20px;
+      @extend .font-18;
+      text-align: left;
+    }
+    div.event-price {
+      padding-left:20px;
+      @extend .font-18;
+      text-align: left;
+    }
+
+    p.address-desc{
+      @extend .font-12;
+      color:$font-white;
+    }
+
+    .buttons{
+      margin:5px;
+      height:50px;
+      @include transition(all 0.2s ease-in);
+      &:hover{
+        background-color: $bg-dark-hover;
+      }
+      a.open-form{
+        padding-top:12px;
+        @extend .font-11;
+        font-weight: bold;
+        color:$font-white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+	.event-location{
+    .square-content span{
+      &:hover{
+        background-color: $bg-dark-hover;
+      }
+    }
+	}
+
+	.seminar{
+		.event-location, .event-share{
+			.square-content{
+				background-color: $bg-seminar;
+			}
+		}
+    .buttons{
+      background-color: $bg-seminar;
+    }
+	}
+
+	.speech{
+		.event-location, .event-share{
+			.square-content{
+				background-color: $bg-speech;
+			}
+		}
+    .buttons{
+      background-color: $bg-speech;
+    }
+	}
+
+	.workshop{
+		.event-location, .event-share{
+			.square-content{
+				background-color: $bg-workshop;
+			}
+		}
+    .buttons{
+      background-color: $bg-workshop;
+    }
+	}
+
+}
+
+
+
+
+/* Bg Colors*/
+.single-event .speech{
+  .featured-img-container.no-feat-img{
+    background-color: $bg-speech;
+  }
+}
+
+.single-event .seminar{
+  .featured-img-container.no-feat-img{
+    background-color: $bg-seminar;
+  }
+}
+
+.single-event  .workshop{
+  .featured-img-container.no-feat-img{
+    background-color: $bg-workshop;
+  }
+}
+
+.event-meta-wrap{
+  .featured-img-container{
+    span.featured-img{
+      width: 100%;
+      height:100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      display:block;
+      font-size: 0;
+    }
+    span.empty-featured-img{
+      font-size: 0;
+      position:relative;
+      svg{
+        margin: 35px;
+      }
+    }
+  }
+}
+
+.featured-img-container.has-feat-img{
+  width: 100%;
+  height:100%;
+}
+
+.square-box{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .meta-icon{
+      width: 40%;
+      display: inline-block;
+      margin-bottom:0;
+    }
+    .address-desc{
+      margin-bottom:0;
+      margin-top: 5px;
+      padding:0 5px;
+    }
+
+}
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.square-content {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+.square-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.grid-1.clearfix{
+  width:100%;
+}
+.grid-2.clearfix{
+  width:100%;
+  .event-date, .event-location, .event-price, .event-share{
+    width: 50%;
+    display: inline-block;
+    float: left;
+  }
+}
+
+/* SIDEBAR RIGHT */
+.widget-events-calendar{
+  background-color: $bg-dark-gray;
+}

@@ -12,10 +12,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<article>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'openlab-lite' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'openlab-txtd' ); ?></h1>
 				</header><!-- .entry-header -->
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'openlab-lite' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'openlab-txtd' ); ?></p>
 				</div><!-- .entry-content -->
 			</article><!-- #post-## -->
 		</main><!-- #main -->

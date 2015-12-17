@@ -1,10 +1,12 @@
 .navbar-brand {
 padding:0;
 }
-
+.home.blog section{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 .section-header{
   h2{
-    padding-top: 50px;
     @extend .font-7;
     text-transform: uppercase;
     padding-bottom: 15px;
@@ -14,10 +16,8 @@ padding:0;
 .no-background{
   .home-header-wrap{
     .header-content-wrap{
-      /*padding: 130px 0 10px;*/
       background: #fff;
       .container{
-        /*height: 70vh;*/
         height: 100vh;
         width: 100%;
         margin:0;
@@ -40,26 +40,20 @@ padding:0;
         }
       }
     }
-    div.intro-text {
-      display: table;
+    .slide-caption-wrap{
+      position: absolute;
+      bottom: 15%;
+      left: 0;
       width: 100%;
-      position: relative;
-        div.intro-wrap{
-          display: table-cell;
-          position: absolute;
-          width: 100%;
-          margin-top: -125px;
-          span{
-            @extend .font-6;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 15px;
-            color:$font-dark;
-            text-transform: none;
-            font-weight: bold;
-        }
-
-        }
+      .inner-caption{
+        @extend .font-6;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px 15px;
+        color:$font-dark;
+        text-transform: none;
+        font-weight: bold;
       }
+    }
   }
 }
 #main-nav{
@@ -68,26 +62,7 @@ padding:0;
 
 #focus{
   margin-top:-8px;
-  .container{
-    /*width:75%;*/
-  }
-  .next-event-content, .latest-post-content, .details-text{
-    text-align: left;
-  }
-  .latest-post-title, .next-event-title, .map-details-title{
-    text-align: left;
-  }
-  svg.widget-icon path{
-    fill:$font-dark2;
-  }
-  .col-sm-3.focus-box.next-event, .col-sm-3.focus-box.latest-post, .col-sm-3.focus-box.map-details{
-    /*@include transition(all 0.5s ease-in);*/
-    &:hover *{
-      @include transition(all 0.2s ease-in);
-      color:$font-white;
-      fill:$font-white;
-    }
-  }
+  padding-top: 0px;
   p,span{
     @extend .font-1;
     color:$font-dark2;
@@ -99,103 +74,150 @@ padding:0;
       color:$font-dark2;
     }
   }
-
-  .col-lg-3.col-sm-3{
-    /*height:300px;*/
-    height:275px;
-    overflow: hidden;
-
-    &.next-event{
-      background-color: #e5c02f;
-    }
-    &.latest-post{
-      background-color: #B9B4B0;
-    }
-    &.events-calendar{
-      background-color: #3f4245;
-    }
-    &.map-details{
-      background: url('../images/map-widget-bg.jpg');
-      background-size: cover;
-      .map-icon{
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-  }
-  .widget-events-calendar{
-    caption{
-      font-size: 18px;
-      line-height: 21.6px;
-      font-weight: bold;
-      color:#e5c02f;
-      text-align: center;
-      text-transform: uppercase;
-      padding-top: 10px;
-    }
-    th{
-      color:#fff;
-      font-weight: bold;
-      border:0px !important;
-      padding: 0;
-      text-align: center;
-    }
-    td{
-      border:0px !important;
-      color:#fff;
-      padding: 0;
-      text-align: center;
-      a{
-        color:#5695C6;
-      }
-    }
+  .col-md-3{
+    padding-left: 3.5px;
+    padding-right: 3.5px;
   }
 
-  .map-details-wrap p{
-    padding-top: 8px;
-  }
-
-}
-
-
-
-/*NEXT EVENT*/
-.col-lg-3.col-sm-3 {
-
-    .next-event-image-wrap{
-      position:relative;
-      img{
-        width: 100px;
-        height: 100px;
-      }
-
-        span.event-date{
-          width:60px;
-          position: absolute;
-          top: 42%;
-          left: 38%;
-          font-size: 14px !important;
-          line-height: 17px !important;
-          font-weight: bold;
-          text-transform: uppercase;
+  .col-md-3{
+    &.active.seminar{
+      .square-content-wrap{
+        background-color: $bg-seminar;
+        .event-img{
+          background-image: url("../images/seminar-gray.svg");
         }
+
+      }
     }
-}
-
-/*LATEST POST WIDGET*/
-.col-lg-3.col-sm-3.latest-post {
-
-    .latest-post-image-wrap img {
-      width: 100px;
-      height: 100px;
+    &.active.speech{
+      .square-content-wrap{
+        background-color: $bg-speech;
+        .event-img{
+          background-image: url("../images/speech-gray.svg");
+        }
+      }
     }
-}
+    &.active.workshop{
+      .square-content-wrap{
+        background-color: $bg-workshop;
+        .event-img{
+          background-image: url("../images/workshop-gray.svg");
+        }
+      }
+    }
+    &.passed.seminar{
+      .square-content-wrap{
+        background-color: $bg-passed;
+        .event-img{
+          background-image: url("../images/seminar-past.svg");
+        }
+      }
+    }
+    &.passed.speech{
+      .square-content-wrap{
+        background-color: $bg-passed;
+        .event-img{
+          background-image: url("../images/speech-past.svg");
+        }
+      }
+    }
+    &.passed.workshop{
+      .square-content-wrap{
+        background-color: $bg-passed;
+        .event-img{
+          background-image: url("../images/workshop-past.svg");
+        }
+      }
+    }
 
+  }
+  div.event-img{
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    background-size: 70% 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .active .event-date{
+    @extend .font-22;
+    color:$font-breadcrumb;
+    padding-top:20px;
+  }
+  .active .event-title{
+    @extend .font-23;
+    color:$font-breadcrumb;
+  }
+  .passed .event-date{
+    @extend .font-22;
+    color:$font-white;
+    padding-top:20px;
+  }
+  .passed .event-title{
+    @extend .font-23;
+    color:$font-white;
+  }
+
+  .col-md-3.calendar{
+    .square-content-wrap{
+      background-color: $bg-dark-hover;
+      h3{
+        font-size: 13px;
+        line-height: 15.6px;
+        font-weight: bold;
+        color:$bg-yellow;
+        padding-top: 20px;
+        text-transform: uppercase;
+      }
+    }
+    #wp-events-calendar{
+      margin:15px 0;
+      th{
+        border:0;
+        color:$font-white;
+        text-align: center;
+        padding:0;
+      }
+      tr{
+        border:0;
+      }
+      td{
+        padding:0;
+        border:0;
+        text-align: center;
+        color:$font-white;
+        a{
+          color: $bg-yellow;
+        }
+      }
+    }
+  }
+
+
+
+}
+.widget-events-calendar{
+
+  th{
+    color:#fff;
+    font-weight: bold;
+    border:0px !important;
+    padding: 0;
+    text-align: center;
+  }
+  td{
+    border:0px !important;
+    color:#fff;
+    padding: 0;
+    text-align: center;
+    a{
+      color:#5695C6;
+    }
+  }
+}
 
 /* Focus SubSection */
 #focus-join-us{
-
     .row{
     background-image: url('../images/home-bg.jpg');
     background-size: cover;
@@ -212,6 +234,8 @@ padding:0;
       opacity: 0.5;
     }
     .container{
+      padding-top: 25px;
+      padding-bottom:25px;
     .col-md-6.focus-join-us-content{
       padding-bottom: 25px;
       padding-top: 25px;
@@ -224,6 +248,7 @@ padding:0;
         div.section-legend{
           text-align: left;
           width:70%;
+          padding-top: 10px;
         }
         span.light-text{
           color: $font-white;
@@ -235,8 +260,8 @@ padding:0;
     .focus-join-us-button{
       padding:0px;
       .buttons{
-        margin:0;
-        padding-top: 30px;
+        margin: 43px 0 30px 0;
+        /*padding-top: 30px;*/
         a.join-us-btn{
           @extend .font-4;
           display: inline-block !important;
@@ -261,32 +286,32 @@ padding:0;
   }
   /* About US*/
   #aboutus{
+    clear:both;
     background: $bg-dark-gray;
-    .section-header{
-      margin-top: 30px;
-    }
     .big-intro{
       @extend .font-9;
+      color:$bg-article;
+      line-height: 1.4em;
     }
     .openlab_about_us_center{
-      @extend .font-3;
-      color:$font-white;
-      padding-top: 7px;
+      /*padding-top: 7px;*/
+      span,p{
+        @extend .font-3;
+        color:$font-white;
+        line-height: 1.4em;
+      }
+
     }
     .openlab-rtl-skills{
-      padding-top: 15px;
+      /*padding-top: 15px;*/
       .about-img-right{
         max-height: 250px;
       }
     }
   }
 
-
-
   #team{
     background-color: $bg-extra-light-gray;
-    padding-bottom: 50px;
-
     .section-header{
       padding-bottom: 35px;
       h2{
@@ -307,6 +332,13 @@ padding:0;
     margin: auto;
     overflow: hidden;
     margin-bottom: 0;
+    }
+    .profile-pic-empty{
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      overflow: hidden;
+      margin-bottom: 0;
     }
     .member-title{
       @extend .font-10;
@@ -397,15 +429,80 @@ padding:0;
 
 span.widget-social{
   margin-right:3px;
-  svg{
-    width:20px;
-    height:20px;
-    polyline{
-      fill:#3F4245;
-    }
-    path{
-      fill:#272425;
+  .fa{
+    font-size: 15px;
+    padding: 0 3px;
+    color:$font-post-header;
+    &:hover{
+      color:$font-breadcrumb-hover;
     }
   }
 
+}
+
+#latestnews{
+  .item{
+    margin-bottom: 0px;
+  }
+.latestnews-box{
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 20px;
+  h3.latestnews-title{
+    padding: 15px 15px;
+    a{
+     @extend .font-10;
+     color:$font-breadcrumb;
+     text-transform: none;
+     font-weight: bold;
+   }
+  }
+  p.latestnews-excerpt{
+    @extend .font-1;
+    text-align: left;
+    padding: 0 15px;
+  }
+  .square-box{
+    &:hover{
+      .square-content-wrap.has-img{
+        opacity:0.7;
+      }
+      span.post-icon{
+        opacity:0.5 !important;
+      }
+    }
+
+  }
+  .square-content-wrap.no-img{
+    background-color: $bg-article;
+    span.post-icon{
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-size: 70% 70%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("../images/post.svg");
+    }
+  }
+  .square-content-wrap.has-img{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @include transition(all ease-in 0.6s);
+      span.post-icon{
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-size: 70% 70%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("../images/post.svg");
+        opacity:0;
+        @include transition(all ease-in 0.2s);
+      }
+  }
+}
 }

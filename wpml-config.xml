@@ -1,6 +1,6 @@
 <wpml-config>
     <admin-texts>
-		<key name='theme_mods_openlab-lite'>
+		<key name='theme_mods_openlab-txtd'>
 			<key name='openlab_copyright' />
 			<key name='openlab_socials_facebook' />
 			<key name='openlab_socials_twitter' />

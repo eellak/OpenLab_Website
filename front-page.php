@@ -93,7 +93,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['myname']) === ''):
 
-				$nameError = __('* Please enter your name.','openlab-lite');
+				$nameError = __('* Please enter your name.','openlab-txtd');
 
 				$hasError = true;
 
@@ -107,13 +107,13 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['myemail']) === ''):
 
-				$emailError = __('* Please enter your email address.','openlab-lite');
+				$emailError = __('* Please enter your email address.','openlab-txtd');
 
 				$hasError = true;
 
 			elseif (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['myemail']))) :
 
-				$emailError = __('* You entered an invalid email address.','openlab-lite');
+				$emailError = __('* You entered an invalid email address.','openlab-txtd');
 
 				$hasError = true;
 
@@ -127,7 +127,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['mysubject']) === ''):
 
-				$subjectError = __('* Please enter a subject.','openlab-lite');
+				$subjectError = __('* Please enter a subject.','openlab-txtd');
 
 				$hasError = true;
 
@@ -141,7 +141,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 			if(trim($_POST['mymessage']) === ''):
 
-				$messageError = __('* Please enter a message.','openlab-lite');
+				$messageError = __('* Please enter a message.','openlab-txtd');
 
 				$hasError = true;
 
@@ -298,7 +298,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 						<?php
 
-							$openlab_contactus_title = get_theme_mod('openlab_contactus_title',__('Get in touch','openlab-lite'));
+							$openlab_contactus_title = get_theme_mod('openlab_contactus_title',__('Get in touch','openlab-txtd'));
 							if ( !empty($openlab_contactus_title) ):
 								echo '<h2 class="white-text">'.$openlab_contactus_title.'</h2>';
 							endif;
@@ -327,11 +327,11 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 							if(isset($emailSent) && $emailSent == true) :
 
-								echo '<div class="notification success"><p>'.__('Thanks, your email was sent successfully!','openlab-lite').'</p></div>';
+								echo '<div class="notification success"><p>'.__('Thanks, your email was sent successfully!','openlab-txtd').'</p></div>';
 
 							elseif(isset($_POST['submitted'])):
 
-								echo '<div class="notification error"><p>'.__('Sorry, an error occured.','openlab-lite').'</p></div>';
+								echo '<div class="notification error"><p>'.__('Sorry, an error occured.','openlab-txtd').'</p></div>';
 
 							endif;
 
@@ -368,27 +368,27 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 								<input type="hidden" name="submitted" id="submitted" value="true" />
 
 								<div class="col-lg-4 col-sm-4 openlab-rtl-contact-name" data-scrollreveal="enter left after 0s over 1s">
-									<label for="myname" class="screen-reader-text"><?php _e( 'Your Name', 'openlab-lite' ); ?></label>
-									<input required="required" type="text" name="myname" id="myname" placeholder="<?php _e('Your Name','openlab-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
+									<label for="myname" class="screen-reader-text"><?php _e( 'Your Name', 'openlab-txtd' ); ?></label>
+									<input required="required" type="text" name="myname" id="myname" placeholder="<?php _e('Your Name','openlab-txtd'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 								</div>
 
 								<div class="col-lg-4 col-sm-4 openlab-rtl-contact-email" data-scrollreveal="enter left after 0s over 1s">
-									<label for="myemail" class="screen-reader-text"><?php _e( 'Your Email', 'openlab-lite' ); ?></label>
-									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your Email','openlab-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+									<label for="myemail" class="screen-reader-text"><?php _e( 'Your Email', 'openlab-txtd' ); ?></label>
+									<input required="required" type="email" name="myemail" id="myemail" placeholder="<?php _e('Your Email','openlab-txtd'); ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 								</div>
 
 								<div class="col-lg-4 col-sm-4 openlab-rtl-contact-subject" data-scrollreveal="enter left after 0s over 1s">
-									<label for="mysubject" class="screen-reader-text"><?php _e( 'Subject', 'openlab-lite' ); ?></label>
-									<input required="required" type="text" name="mysubject" id="mysubject" placeholder="<?php _e('Subject','openlab-lite'); ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
+									<label for="mysubject" class="screen-reader-text"><?php _e( 'Subject', 'openlab-txtd' ); ?></label>
+									<input required="required" type="text" name="mysubject" id="mysubject" placeholder="<?php _e('Subject','openlab-txtd'); ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
 								</div>
 
 								<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
-									<label for="mymessage" class="screen-reader-text"><?php _e( 'Your Message', 'openlab-lite' ); ?></label>
-									<textarea name="mymessage" id="mymessage" class="form-control textarea-box" placeholder="<?php _e('Your Message','openlab-lite'); ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
+									<label for="mymessage" class="screen-reader-text"><?php _e( 'Your Message', 'openlab-txtd' ); ?></label>
+									<textarea name="mymessage" id="mymessage" class="form-control textarea-box" placeholder="<?php _e('Your Message','openlab-txtd'); ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
 								</div>
 
 								<?php
-								$openlab_contactus_button_label = get_theme_mod('openlab_contactus_button_label',__('Send Message','openlab-lite'));
+								$openlab_contactus_button_label = get_theme_mod('openlab_contactus_button_label',__('Send Message','openlab-txtd'));
 								if( !empty($openlab_contactus_button_label) ):
 									echo '<button class="btn btn-primary custom-button red-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$openlab_contactus_button_label.'</button>';
 								endif;

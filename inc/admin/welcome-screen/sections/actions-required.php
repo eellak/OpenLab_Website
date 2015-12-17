@@ -4,9 +4,9 @@
  */
 ?>
 
-<div id="actions_required" class="openlab-lite-tab-pane">
+<div id="actions_required" class="openlab-txtd-tab-pane">
 
-    <h1><?php esc_html_e( 'OpenLab Actions' ,'openlab-lite' ); ?></h1>
+    <h1><?php esc_html_e( 'OpenLab Actions' ,'openlab-txtd' ); ?></h1>
 
     <!-- NEWS -->
     <hr />
@@ -57,7 +57,7 @@
 	endif;
 
 	if( $nr_actions_required == 0 ):
-		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','openlab-lite' ).'</p>';
+		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','openlab-txtd' ).'</p>';
 	endif;
 	?>
 

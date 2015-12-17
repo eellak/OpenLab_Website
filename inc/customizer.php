@@ -61,7 +61,7 @@ function openlab_customize_register( $wp_customize ) {
 	{
 		public function render_content()
 		{
-			
+
 		}
 	}
 
@@ -80,18 +80,19 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 30,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'General options', 'openlab-lite' )
+			'title' => __( 'General options', 'openlab-txtd' )
 		) );
 
 		$wp_customize->add_section( 'openlab_general_section' , array(
-				'title'       => __( 'General', 'openlab-lite' ),
+				'title'       => __( 'General', 'openlab-txtd' ),
 				'priority'    => 30,
 				'panel' => 'panel_general'
 		));
+
 		/* LOGO	*/
 		$wp_customize->add_setting( 'openlab_logo', array('sanitize_callback' => 'esc_url_raw'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-				'label'    => __( 'Logo', 'openlab-lite' ),
+				'label'    => __( 'Logo', 'openlab-txtd' ),
 				'section'  => 'title_tagline',
 				'settings' => 'openlab_logo',
 				'priority'    => 1,
@@ -103,7 +104,7 @@ function openlab_customize_register( $wp_customize ) {
 				'openlab_disable_preloader',
 				array(
 					'type' => 'checkbox',
-					'label' => __('Disable preloader?','openlab-lite'),
+					'label' => __('Disable preloader?','openlab-txtd'),
 					'section' => 'openlab_general_section',
 					'priority'    => 2,
 				)
@@ -115,35 +116,34 @@ function openlab_customize_register( $wp_customize ) {
 				'openlab_disable_smooth_scroll',
 				array(
 					'type' 		=> 'checkbox',
-					'label' 	=> __('Disable smooth scroll?','openlab-lite'),
+					'label' 	=> __('Disable smooth scroll?','openlab-txtd'),
 					'section' 	=> 'openlab_general_section',
 					'priority'	=> 3,
 				)
 		);
 
-		/* Enable accessibility */
-		$wp_customize->add_setting( 'openlab_accessibility', array('sanitize_callback' => 'openlab_sanitize_text'));
-		$wp_customize->add_control(
-				'openlab_accessibility',
-				array(
-					'type' 		=> 'checkbox',
-					'label' 	=> __('Enable accessibility?','openlab-lite'),
-					'section' 	=> 'openlab_general_section',
-					'priority'	=> 3,
-				)
-		);
-
-		/* COPYRIGHT */
-		$wp_customize->add_setting( 'openlab_copyright', array('sanitize_callback' => 'openlab_sanitize_text'));
-		$wp_customize->add_control( 'openlab_copyright', array(
-				'label'    => __( 'Copyright', 'openlab-lite' ),
+		/* News Page Select */
+		$wp_customize->add_setting( 'openlab_news_page_id', array('sanitize_callback' => 'absint','default' => ''));
+		$wp_customize->add_control( 'openlab_news_page_id', array(
+				'label'    => __( 'Select the News Page', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
-				'settings' => 'openlab_copyright',
-				'priority'    => 3,
+				'settings' => 'openlab_news_page_id',
+				'type'     => 'dropdown-pages',
+				'priority' => 4,
+		));
+
+		/* Events Page Select */
+		$wp_customize->add_setting( 'openlab_events_page_id', array('sanitize_callback' => 'absint','default' => ''));
+		$wp_customize->add_control( 'openlab_events_page_id', array(
+				'label'    => __( 'Select the Events Page', 'openlab-txtd' ),
+				'section'  => 'openlab_general_section',
+				'settings' => 'openlab_events_page_id',
+				'type'     => 'dropdown-pages',
+				'priority' => 5,
 		));
 
 		$wp_customize->add_section( 'openlab_general_socials_section' , array(
-				'title'       => __( 'Socials', 'openlab-lite' ),
+				'title'       => __( 'Socials', 'openlab-txtd' ),
 				'priority'    => 31,
 				'panel' => 'panel_general'
 		));
@@ -151,7 +151,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* facebook */
 		$wp_customize->add_setting( 'openlab_socials_facebook', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_facebook', array(
-				'label'    => __( 'Facebook link', 'openlab-lite' ),
+				'label'    => __( 'Facebook link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_socials_section',
 				'settings' => 'openlab_socials_facebook',
 				'priority'    => 4,
@@ -159,7 +159,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* twitter */
 		$wp_customize->add_setting( 'openlab_socials_twitter', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_twitter', array(
-				'label'    => __( 'Twitter link', 'openlab-lite' ),
+				'label'    => __( 'Twitter link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_socials_section',
 				'settings' => 'openlab_socials_twitter',
 				'priority'    => 5,
@@ -167,22 +167,22 @@ function openlab_customize_register( $wp_customize ) {
 		/* linkedin */
 		$wp_customize->add_setting( 'openlab_socials_linkedin', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_linkedin', array(
-				'label'    => __( 'Linkedin link', 'openlab-lite' ),
+				'label'    => __( 'Linkedin link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_socials_section',
 				'settings' => 'openlab_socials_linkedin',
 				'priority'    => 6,
 		));
 		/* email */
-		$wp_customize->add_setting( 'openlab_socials_email', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
-		$wp_customize->add_control( 'openlab_socials_email', array(
-				'label'    => __( 'Email link', 'openlab-lite' ),
+		$wp_customize->add_setting( 'openlab_socials_gplus', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
+		$wp_customize->add_control( 'openlab_socials_gplus', array(
+				'label'    => __( 'Google+ link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_socials_section',
-				'settings' => 'openlab_socials_email',
+				'settings' => 'openlab_socials_gplus',
 				'priority'    => 7,
 		));
 
 		$wp_customize->add_section( 'openlab_general_footer_section' , array(
-				'title'       => __( 'Footer', 'openlab-lite' ),
+				'title'       => __( 'Footer', 'openlab-txtd' ),
 				'priority'    => 32,
 				'panel' => 'panel_general'
 		));
@@ -190,7 +190,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* map - ICON */
 		$wp_customize->add_setting( 'openlab_contact_map_icon', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/images/location-white.svg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'openlab_contact_map_icon', array(
-					'label'    => __( 'Map section - icon', 'openlab-lite' ),
+					'label'    => __( 'Map section - icon', 'openlab-txtd' ),
 					'section'  => 'openlab_general_footer_section',
 					'settings' => 'openlab_contact_map_icon',
 					'priority'    => 9,
@@ -199,7 +199,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* text */
 		$wp_customize->add_setting( 'openlab_contact_details_text', array( 'sanitize_callback' => 'openlab_sanitize_text','default' => '<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>') );
 		$wp_customize->add_control( new Openlab_Customize_Textarea_Control( $wp_customize, 'openlab_contact_details_text', array(
-				'label'   => __( 'Contact Details', 'openlab-lite' ),
+				'label'   => __( 'Contact Details', 'openlab-txtd' ),
 				'section' => 'openlab_general_footer_section',
 				'settings'   => 'openlab_contact_details_text',
 				'priority' => 10
@@ -208,14 +208,14 @@ function openlab_customize_register( $wp_customize ) {
 	else: /* Old versions of WordPress */
 
 		$wp_customize->add_section( 'openlab_general_section' , array(
-				'title'       => __( 'General options', 'openlab-lite' ),
+				'title'       => __( 'General options', 'openlab-txtd' ),
 				'priority'    => 30,
-				'description' => __('Openlab theme general options','openlab-lite'),
+				'description' => __('Openlab theme general options','openlab-txtd'),
 		));
 		/* LOGO	*/
 		$wp_customize->add_setting( 'openlab_logo', array('sanitize_callback' => 'esc_url_raw'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-				'label'    => __( 'Logo', 'openlab-lite' ),
+				'label'    => __( 'Logo', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_logo',
 				'priority'    => 1,
@@ -227,7 +227,7 @@ function openlab_customize_register( $wp_customize ) {
 				'openlab_disable_preloader',
 				array(
 					'type' => 'checkbox',
-					'label' => __('Disable preloader?','openlab-lite'),
+					'label' => __('Disable preloader?','openlab-txtd'),
 					'section' => 'openlab_general_section',
 					'priority'    => 2,
 				)
@@ -239,44 +239,44 @@ function openlab_customize_register( $wp_customize ) {
 				'openlab_disable_smooth_scroll',
 				array(
 					'type' 		=> 'checkbox',
-					'label' 	=> __('Disable smooth scroll?','openlab-lite'),
+					'label' 	=> __('Disable smooth scroll?','openlab-txtd'),
 					'section' 	=> 'openlab_general_section',
 					'priority'	=> 3,
 				)
 		);
 
-		/* Enable accessibility */
-		$wp_customize->add_setting( 'openlab_accessibility', array('sanitize_callback' => 'openlab_sanitize_text'));
-		$wp_customize->add_control(
-				'openlab_accessibility',
-				array(
-					'type' 		=> 'checkbox',
-					'label' 	=> __('Enable accessibility?','openlab-lite'),
-					'section' 	=> 'openlab_general_section',
-					'priority'	=> 3,
-				)
-		);
-
-		/* COPYRIGHT */
-		$wp_customize->add_setting( 'openlab_copyright', array('sanitize_callback' => 'openlab_sanitize_text'));
-		$wp_customize->add_control( 'openlab_copyright', array(
-				'label'    => __( 'Copyright', 'openlab-lite' ),
+		/* News Page Select */
+		$wp_customize->add_setting( 'openlab_news_page_id', array('sanitize_callback' => 'absint','default' => ''));
+		$wp_customize->add_control( 'openlab_news_page_id', array(
+				'label'    => __( 'Select the News Page', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
-				'settings' => 'openlab_copyright',
-				'priority'    => 3,
+				'settings' => 'openlab_news_page_id',
+				'type'     => 'dropdown-pages',
+				'priority' => 4,
 		));
+
+		/* Events Page Select */
+		$wp_customize->add_setting( 'openlab_events_page_id', array('sanitize_callback' => 'absint','default' => ''));
+		$wp_customize->add_control( 'openlab_events_page_id', array(
+				'label'    => __( 'Select the Events Page', 'openlab-txtd' ),
+				'section'  => 'openlab_general_section',
+				'settings' => 'openlab_events_page_id',
+				'type'     => 'dropdown-pages',
+				'priority' => 5,
+		));
+
 		/* facebook */
 		$wp_customize->add_setting( 'openlab_socials_facebook', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_facebook', array(
-				'label'    => __( 'Facebook link', 'openlab-lite' ),
+				'label'    => __( 'Facebook link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_socials_facebook',
-				'priority'    => 4,
+				'priority' => 3,
 		));
 		/* twitter */
 		$wp_customize->add_setting( 'openlab_socials_twitter', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_twitter', array(
-				'label'    => __( 'Twitter link', 'openlab-lite' ),
+				'label'    => __( 'Twitter link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_socials_twitter',
 				'priority'    => 5,
@@ -284,7 +284,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* linkedin */
 		$wp_customize->add_setting( 'openlab_socials_linkedin', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_linkedin', array(
-				'label'    => __( 'Linkedin link', 'openlab-lite' ),
+				'label'    => __( 'Linkedin link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_socials_linkedin',
 				'priority'    => 6,
@@ -292,7 +292,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* behance */
 		$wp_customize->add_setting( 'openlab_socials_behance', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_behance', array(
-				'label'    => __( 'Behance link', 'openlab-lite' ),
+				'label'    => __( 'Behance link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_socials_behance',
 				'priority'    => 7,
@@ -300,7 +300,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* dribbble */
 		$wp_customize->add_setting( 'openlab_socials_dribbble', array('sanitize_callback' => 'esc_url_raw','default' => '#'));
 		$wp_customize->add_control( 'openlab_socials_dribbble', array(
-				'label'    => __( 'Dribbble link', 'openlab-lite' ),
+				'label'    => __( 'Dribbble link', 'openlab-txtd' ),
 				'section'  => 'openlab_general_section',
 				'settings' => 'openlab_socials_dribbble',
 				'priority'    => 8,
@@ -308,16 +308,16 @@ function openlab_customize_register( $wp_customize ) {
 		/* Map - ICON */
 		$wp_customize->add_setting( 'openlab_contact_map_icon', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/images/location-white.svg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'openlab_contact_map_icon', array(
-					'label'    => __( 'Footer Map icon', 'openlab-lite' ),
+					'label'    => __( 'Footer Map icon', 'openlab-txtd' ),
 					'section'  => 'openlab_general_section',
 					'settings' => 'openlab_contact_map_icon',
 					'priority'    => 9,
 		)));
 
 		/* Contact details Text */
-		$wp_customize->add_setting( 'openlab_contact_details_text', array( 'sanitize_callback' => 'openlab_sanitize_text','default' => __('<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>','openlab-lite')) );
+		$wp_customize->add_setting( 'openlab_contact_details_text', array( 'sanitize_callback' => 'openlab_sanitize_text','default' => __('<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>','openlab-txtd')) );
 		$wp_customize->add_control( new Openlab_Customize_Textarea_Control( $wp_customize, 'openlab_contact_details_text', array(
-				'label'   => __( 'Contact Details', 'openlab-lite' ),
+				'label'   => __( 'Contact Details', 'openlab-txtd' ),
 				'section' => 'openlab_general_section',
 				'settings'   => 'openlab_contact_details_text',
 				'priority' => 10
@@ -334,11 +334,11 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 31,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Big title section', 'openlab-lite' )
+			'title' => __( 'Big title section', 'openlab-txtd' )
 		) );
 
 		$wp_customize->add_section( 'openlab_bigtitle_section' , array(
-			'title'       => __( 'Main content', 'openlab-lite' ),
+			'title'       => __( 'Main content', 'openlab-txtd' ),
 			'priority'    => 1,
 			'panel'       => 'panel_big_title'
 		));
@@ -349,15 +349,15 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_bigtitle_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide big title section?','openlab-lite'),
+				'label' => __('Hide big title section?','openlab-txtd'),
 				'section' => 'openlab_bigtitle_section',
 				'priority'    => 1,
 			)
 		);
 		/* title */
-		$wp_customize->add_setting( 'openlab_bigtitle_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('ONE OF THE TOP 10 MOST POPULAR THEMES ON WORDPRESS.ORG','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_bigtitle_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('ONE OF THE TOP 10 MOST POPULAR THEMES ON WORDPRESS.ORG','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_bigtitle_title', array(
-			'label'    => __( 'Title', 'openlab-lite' ),
+			'label'    => __( 'Title', 'openlab-txtd' ),
 			'section'  => 'openlab_bigtitle_section',
 			'settings' => 'openlab_bigtitle_title',
 			'priority'    => 2,
@@ -367,7 +367,7 @@ function openlab_customize_register( $wp_customize ) {
 		/************	Slider IMAGES *********************/
 		/****************************************************/
 		$wp_customize->add_section( 'openlab_slider_section' , array(
-			'title'       => __( 'Slider Images', 'openlab-lite' ),
+			'title'       => __( 'Slider Images', 'openlab-txtd' ),
 			'priority'    => 2,
 			'panel'       => 'panel_big_title'
 		));
@@ -375,56 +375,109 @@ function openlab_customize_register( $wp_customize ) {
 		/* IMAGE 1*/
 		$wp_customize->add_setting( 'openlab_slider_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img1', array(
-			'label'    	=> __( 'Image 1', 'openlab-lite' ),
+			'label'    	=> __( 'Image 1', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img1',
 			'priority'	=> 1,
 		)));
+
+		/* Slide1 Caption */
+		$wp_customize->add_setting( 'openlab_slide1_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide1_caption', array(
+			'label'    => __( 'Slide 1 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide1_caption',
+			'priority'    => 2,
+		));
+
 		/* IMAGE 2 */
 		$wp_customize->add_setting( 'openlab_slider_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide2.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img2', array(
-			'label'    	=> __( 'Image 2', 'openlab-lite' ),
+			'label'    	=> __( 'Image 2', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img2',
-			'priority'	=> 2,
+			'priority'	=> 3,
 		)));
+		/* Slide2 Caption */
+		$wp_customize->add_setting( 'openlab_slide2_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide2_caption', array(
+			'label'    => __( 'Slide 2 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide2_caption',
+			'priority'    => 4,
+		));
+
 		/* IMAGE 3 */
 		$wp_customize->add_setting( 'openlab_slider_img3', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide3.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img3', array(
-			'label'    	=> __( 'Image 3', 'openlab-lite' ),
+			'label'    	=> __( 'Image 3', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img3',
-			'priority'	=> 3,
+			'priority'	=> 5,
 		)));
+		/* Slide3 Caption */
+		$wp_customize->add_setting( 'openlab_slide3_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide3_caption', array(
+			'label'    => __( 'Slide 3 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide3_caption',
+			'priority'    => 6,
+		));
+
 		/* IMAGE 4 */
 		$wp_customize->add_setting( 'openlab_slider_img4', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide4.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img4', array(
-			'label'    	=> __( 'Image 4', 'openlab-lite' ),
+			'label'    	=> __( 'Image 4', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img4',
-			'priority'	=> 4,
+			'priority'	=> 7,
 		)));
+		/* Slide4 Caption */
+		$wp_customize->add_setting( 'openlab_slide4_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide4_caption', array(
+			'label'    => __( 'Slide 4 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide4_caption',
+			'priority'    => 8,
+		));
+
 		/* IMAGE 5 */
 		$wp_customize->add_setting( 'openlab_slider_img5', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide5.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img5', array(
-			'label'    	=> __( 'Image 5', 'openlab-lite' ),
+			'label'    	=> __( 'Image 5', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img5',
-			'priority'	=> 5,
+			'priority'	=> 9,
 		)));
+		/* Slide5 Caption */
+		$wp_customize->add_setting( 'openlab_slide5_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide5_caption', array(
+			'label'    => __( 'Slide 5 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide5_caption',
+			'priority'    => 10,
+		));
 		/* IMAGE 6 */
 		$wp_customize->add_setting( 'openlab_slider_img6', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide6.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img6', array(
-			'label'    	=> __( 'Image 6', 'openlab-lite' ),
+			'label'    	=> __( 'Image 6', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img6',
-			'priority'	=> 6,
+			'priority'	=> 11,
 		)));
+		/* Slide6 Caption */
+		$wp_customize->add_setting( 'openlab_slide6_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide6_caption', array(
+			'label'    => __( 'Slide 6 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide6_caption',
+			'priority' => 12,
+		));
 
 	else:
 		/* OLD WORDPRESS */
 		$wp_customize->add_section( 'openlab_bigtitle_section' , array(
-			'title'       => __( 'Big title section', 'openlab-lite' ),
+			'title'       => __( 'Big title section', 'openlab-txtd' ),
 			'priority'    => 31
 		));
 		/* show/hide */
@@ -433,15 +486,15 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_bigtitle_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide big title section?','openlab-lite'),
+				'label' => __('Hide big title section?','openlab-txtd'),
 				'section' => 'openlab_bigtitle_section',
 				'priority'    => 1,
 			)
 		);
 		/* title */
-		$wp_customize->add_setting( 'openlab_bigtitle_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('ONE OF THE TOP 10 MOST POPULAR THEMES ON WORDPRESS.ORG','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_bigtitle_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('ONE OF THE TOP 10 MOST POPULAR THEMES ON WORDPRESS.ORG','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_bigtitle_title', array(
-			'label'    => __( 'Title', 'openlab-lite' ),
+			'label'    => __( 'Title', 'openlab-txtd' ),
 			'section'  => 'openlab_bigtitle_section',
 			'settings' => 'openlab_bigtitle_title',
 			'priority'    => 2,
@@ -451,57 +504,109 @@ function openlab_customize_register( $wp_customize ) {
 		/************	slider IMAGES *********************/
 		/****************************************************/
 		$wp_customize->add_section( 'openlab_slider_section' , array(
-			'title'       => __( 'Slider Images', 'openlab-lite' ),
+			'title'       => __( 'Slider Images', 'openlab-txtd' ),
 			'priority'    => 60
 		));
 		/* IMAGE 1*/
 		$wp_customize->add_setting( 'openlab_slider_img1', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img1', array(
-			'label'    	=> __( 'Image 1', 'openlab-lite' ),
+			'label'    	=> __( 'Image 1', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img1',
 			'priority'	=> 1,
 		)));
+		/* Slide1 Caption */
+		$wp_customize->add_setting( 'openlab_slide1_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide1_caption', array(
+			'label'    => __( 'Slide 1 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide1_caption',
+			'priority'    => 2,
+		));
 		/* IMAGE 2 */
 		$wp_customize->add_setting( 'openlab_slider_img2', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide2.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img2', array(
-			'label'    	=> __( 'Image 2', 'openlab-lite' ),
+			'label'    	=> __( 'Image 2', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img2',
-			'priority'	=> 2,
+			'priority'	=> 3,
 		)));
+		/* Slide2 Caption */
+		$wp_customize->add_setting( 'openlab_slide2_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide2_caption', array(
+			'label'    => __( 'Slide 2 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide2_caption',
+			'priority'    => 4,
+		));
+
 		/* IMAGE 3 */
 		$wp_customize->add_setting( 'openlab_slider_img3', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide3.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img3', array(
-			'label'    	=> __( 'Image 3', 'openlab-lite' ),
+			'label'    	=> __( 'Image 3', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img3',
-			'priority'	=> 3,
+			'priority'	=> 5,
 		)));
+		/* Slide3 Caption */
+		$wp_customize->add_setting( 'openlab_slide3_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide3_caption', array(
+			'label'    => __( 'Slide 3 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide3_caption',
+			'priority'    => 6,
+		));
+
 		/* IMAGE 4 */
 		$wp_customize->add_setting( 'openlab_slider_img4', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide4.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img4', array(
-			'label'    	=> __( 'Image 4', 'openlab-lite' ),
+			'label'    	=> __( 'Image 4', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img4',
-			'priority'	=> 4,
+			'priority'	=> 7,
 		)));
+		/* Slide4 Caption */
+		$wp_customize->add_setting( 'openlab_slide4_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide4_caption', array(
+			'label'    => __( 'Slide 4 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide4_caption',
+			'priority'    => 8,
+		));
+
 		/* IMAGE 5 */
 		$wp_customize->add_setting( 'openlab_slider_img5', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide5.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img5', array(
-			'label'    	=> __( 'Image 5', 'openlab-lite' ),
+			'label'    	=> __( 'Image 5', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img5',
-			'priority'	=> 5,
+			'priority'	=> 9,
 		)));
+		/* Slide5 Caption */
+		$wp_customize->add_setting( 'openlab_slide5_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide5_caption', array(
+			'label'    => __( 'Slide 5 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide5_caption',
+			'priority'    => 10,
+		));
+
 		/* IMAGE 6 */
 		$wp_customize->add_setting( 'openlab_slider_img6', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide6.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slider_img6', array(
-			'label'    	=> __( 'Image 6', 'openlab-lite' ),
+			'label'    	=> __( 'Image 6', 'openlab-txtd' ),
 			'section'  	=> 'openlab_slider_section',
 			'settings' 	=> 'openlab_slider_img6',
-			'priority'	=> 6,
+			'priority'	=> 11,
 		)));
+		/* Slide6 Caption */
+		$wp_customize->add_setting( 'openlab_slide6_caption', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Slider Title Text','openlab-txtd')));
+		$wp_customize->add_control( 'openlab_slide6_caption', array(
+			'label'    => __( 'Slide 6 Caption', 'openlab-txtd' ),
+			'section'  => 'openlab_slider_section',
+			'settings' => 'openlab_slide6_caption',
+			'priority'    => 12,
+		));
 
 	endif;
 
@@ -514,10 +619,10 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 32,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Our focus section', 'openlab-lite' )
+			'title' => __( 'Our focus section', 'openlab-txtd' )
 		) );
 		$wp_customize->add_section( 'openlab_ourfocus_section' , array(
-				'title'       => __( 'Content', 'openlab-lite' ),
+				'title'       => __( 'Content', 'openlab-txtd' ),
 				'priority'    => 1,
 				'panel'       => 'panel_ourfocus'
 		));
@@ -527,48 +632,64 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_ourfocus_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide our focus section?','openlab-lite'),
+				'label' => __('Hide our focus section?','openlab-txtd'),
 				'section' => 'openlab_ourfocus_section',
 				'priority'    => 1,
 			)
 		);
 		/* our focus title */
-		$wp_customize->add_setting( 'openlab_ourfocus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('FEATURES','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('FEATURES','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_ourfocus_section',
 					'settings' => 'openlab_ourfocus_title',
 					'priority'    => 2,
 		));
 		/* our focus subtitle */
-		$wp_customize->add_setting( 'openlab_ourfocus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('What makes this single-page WordPress theme unique.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('What makes this single-page WordPress theme unique.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_subtitle', array(
-				'label'    => __( 'Our focus subtitle', 'openlab-lite' ),
+				'label'    => __( 'Our focus subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_ourfocus_section',
 				'settings' => 'openlab_ourfocus_subtitle',
 				'priority'    => 3,
 		));
 
 		/* Call to action Button */
-		$wp_customize->add_setting( 'openlab_ourfocus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Join Us','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Join Us','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_button_label', array(
-			'label'    => __( 'Join Us label', 'openlab-lite' ),
+			'label'    => __( 'Join Us label', 'openlab-txtd' ),
 			'section'  => 'openlab_ourfocus_section',
 			'settings' => 'openlab_ourfocus_button_label',
 			'priority' => 4,
 		));
 
-	  $wp_customize->add_setting( 'openlab_ourfocus_button_url', array('sanitize_callback' => 'esc_url_raw','default' => esc_url( home_url( '/' ) ).'#joinUs'));
+	  /*
+		$wp_customize->add_setting( 'openlab_ourfocus_button_url', array('sanitize_callback' => 'esc_url_raw','default' => esc_url( home_url( '/' ) ).'#joinUs'));
 		$wp_customize->add_control( 'openlab_ourfocus_button_url', array(
-			'label'    => __( 'Join Us link', 'openlab-lite' ),
+			'label'    => __( 'Join Us link', 'openlab-txtd' ),
 			'section'  => 'openlab_ourfocus_section',
 			'settings' => 'openlab_ourfocus_button_url',
 			'priority'    => 5,
 		));
+		*/
+		$available_forms = get_available_nf_forms();
+		$available_forms[0] = __( '-- Disabled --', 'openlab-txtd' );
+
+		$wp_customize->add_setting( 'openlab_ourfocus_button_nf_form', array('sanitize_callback' => 'openlab_sanitize_text','default' => '0'));
+		$wp_customize->add_control( 'openlab_ourfocus_button_nf_form', array(
+		'label'   => __( 'Select a form...', 'openlab-txtd' ),
+		'section' => 'openlab_ourfocus_section',
+		'type'    => 'select',
+		'settings' => 'openlab_ourfocus_button_nf_form',
+		'priority' => 5,
+		'choices'  => $available_forms,
+		));
+
+
 		/* Call to action slide image*/
 		$wp_customize->add_setting( 'openlab_ourfocus_bg_img', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/slide1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_ourfocus_bg_img', array(
-			'label'    	=> __( 'Join Us Background Image', 'openlab-lite' ),
+			'label'    	=> __( 'Join Us Background Image', 'openlab-txtd' ),
 			'section'  	=> 'openlab_ourfocus_section',
 			'settings' 	=> 'openlab_ourfocus_bg_img',
 			'priority'	=> 6,
@@ -578,9 +699,9 @@ function openlab_customize_register( $wp_customize ) {
 	else:
 
 		$wp_customize->add_section( 'openlab_ourfocus_section' , array(
-				'title'       => __( 'Our focus section', 'openlab-lite' ),
+				'title'       => __( 'Our focus section', 'openlab-txtd' ),
 				'priority'    => 32,
-				'description' => __( 'The main content of this section is customizable in: Customize -> Widgets -> Our focus section. There you must add the "Openlab - Our focus widget"', 'openlab-lite' )
+				'description' => __( 'The main content of this section is customizable in: Customize -> Widgets -> Our focus section. There you must add the "Openlab - Our focus widget"', 'openlab-txtd' )
 		));
 		/* show/hide */
 		$wp_customize->add_setting( 'openlab_ourfocus_show', array('sanitize_callback' => 'openlab_sanitize_text'));
@@ -588,47 +709,53 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_ourfocus_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide our focus section?','openlab-lite'),
+				'label' => __('Hide our focus section?','openlab-txtd'),
 				'section' => 'openlab_ourfocus_section',
 				'priority'    => 1,
 			)
 		);
 		/* our focus title */
-		$wp_customize->add_setting( 'openlab_ourfocus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('FEATURES','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('FEATURES','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_ourfocus_section',
 					'settings' => 'openlab_ourfocus_title',
 					'priority'    => 2,
 		));
 		/* our focus subtitle */
-		$wp_customize->add_setting( 'openlab_ourfocus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('What makes this single-page WordPress theme unique.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('What makes this single-page WordPress theme unique.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_subtitle', array(
-				'label'    => __( 'Our focus subtitle', 'openlab-lite' ),
+				'label'    => __( 'Our focus subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_ourfocus_section',
 				'settings' => 'openlab_ourfocus_subtitle',
 				'priority' => 3,
 		));
 		/* Call to action Button */
-		$wp_customize->add_setting( 'openlab_ourfocus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Join Us','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourfocus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Join Us','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourfocus_button_label', array(
-			'label'    => __( 'Join Us label', 'openlab-lite' ),
+			'label'    => __( 'Join Us label', 'openlab-txtd' ),
 			'section'  => 'openlab_ourfocus_section',
 			'settings' => 'openlab_ourfocus_button_label',
 			'priority' => 4,
 		));
 
-		$wp_customize->add_setting( 'openlab_ourfocus_button_url', array('sanitize_callback' => 'esc_url_raw','default' => esc_url( home_url( '/' ) ).'#joinUs'));
-		$wp_customize->add_control( 'openlab_ourfocus_button_url', array(
-			'label'    => __( 'Join Us link', 'openlab-lite' ),
-			'section'  => 'openlab_ourfocus_section',
-			'settings' => 'openlab_ourfocus_button_url',
-			'priority'    => 5,
+		$available_forms = get_available_nf_forms();
+		$available_forms[0] = __( '-- Disabled --', 'openlab-txtd' );
+
+		$wp_customize->add_setting( 'openlab_ourfocus_button_nf_form', array('sanitize_callback' => 'openlab_sanitize_text','default' => '0'));
+		$wp_customize->add_control( 'openlab_ourfocus_button_nf_form', array(
+		'label'   => __( 'Select a form...', 'openlab-txtd' ),
+		'section' => 'openlab_ourfocus_section',
+		'type'    => 'select',
+		'settings' => 'openlab_ourfocus_button_nf_form',
+		'priority' => 5,
+		'choices'  => $available_forms,
 		));
+
 		/* Call to action background image*/
 		$wp_customize->add_setting( 'openlab_ourfocus_bg_img', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background2.png'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_ourfocus_bg_img', array(
-			'label'    	=> __( 'Join Us Background Image', 'openlab-lite' ),
+			'label'    	=> __( 'Join Us Background Image', 'openlab-txtd' ),
 			'section'  	=> 'openlab_ourfocus_section',
 			'settings' 	=> 'openlab_ourfocus_bg_img',
 			'priority'	=> 6,
@@ -644,11 +771,11 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 34,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'About us section', 'openlab-lite' )
+			'title' => __( 'About us section', 'openlab-txtd' )
 		) );
 
 		$wp_customize->add_section( 'openlab_aboutus_settings_section' , array(
-				'title'       => __( 'Settings', 'openlab-lite' ),
+				'title'       => __( 'Settings', 'openlab-txtd' ),
 				'priority'    => 1,
 				'panel' => 'panel_about'
 		));
@@ -658,46 +785,46 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_aboutus_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide about us section?','openlab-lite'),
+				'label' => __('Hide about us section?','openlab-txtd'),
 				'section' => 'openlab_aboutus_settings_section',
 				'priority'    => 1,
 			)
 		);
 
 		$wp_customize->add_section( 'openlab_aboutus_main_section' , array(
-				'title'       => __( 'Main content', 'openlab-lite' ),
+				'title'       => __( 'Main content', 'openlab-txtd' ),
 				'priority'    => 2,
 				'panel' => 'panel_about'
 		));
 
 		/* title */
-		$wp_customize->add_setting( 'openlab_aboutus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('About','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('About','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_aboutus_main_section',
 					'settings' => 'openlab_aboutus_title',
 					'priority'    => 2,
 		));
 		/* subtitle */
-		$wp_customize->add_setting( 'openlab_aboutus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Use this section to showcase important details about your business.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Use this section to showcase important details about your business.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_subtitle', array(
-				'label'    => __( 'Subtitle', 'openlab-lite' ),
+				'label'    => __( 'Subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_main_section',
 				'settings' => 'openlab_aboutus_subtitle',
 				'priority'    => 3,
 		));
 		/* big left title */
-		$wp_customize->add_setting( 'openlab_aboutus_biglefttitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Everything you see here is responsive and mobile-friendly.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_biglefttitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Everything you see here is responsive and mobile-friendly.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_biglefttitle', array(
-				'label'    => __( 'Big left side title', 'openlab-lite' ),
+				'label'    => __( 'Big left side title', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_main_section',
 				'settings' => 'openlab_aboutus_biglefttitle',
 				'priority'    => 4,
 		));
 		/* text */
-		$wp_customize->add_setting( 'openlab_aboutus_text', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_text', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_text', array(
-				'label'    => __( 'Text', 'openlab-lite' ),
+				'label'    => __( 'Text', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_main_section',
 				'settings' => 'openlab_aboutus_text',
 				'priority'    => 5,
@@ -706,7 +833,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* image right */
 		$wp_customize->add_setting( 'openlab_aboutus_img', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/our-focus-right.svg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_aboutus_img', array(
-			'label'    	=> __( 'Right side Image', 'openlab-lite' ),
+			'label'    	=> __( 'Right side Image', 'openlab-txtd' ),
 			'section'  	=> 'openlab_aboutus_main_section',
 			'settings' 	=> 'openlab_aboutus_img',
 			'priority'	=> 6,
@@ -717,7 +844,7 @@ function openlab_customize_register( $wp_customize ) {
 
 	/* Old versions of WordPress */
 		$wp_customize->add_section( 'openlab_aboutus_section' , array(
-				'title'       => __( 'About us section', 'openlab-lite' ),
+				'title'       => __( 'About us section', 'openlab-txtd' ),
 				'priority'    => 34
 		));
 		/* about us show/hide */
@@ -726,39 +853,39 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_aboutus_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide about us section?','openlab-lite'),
+				'label' => __('Hide about us section?','openlab-txtd'),
 				'section' => 'openlab_aboutus_section',
 				'priority'    => 1,
 			)
 		);
 		/* title */
-		$wp_customize->add_setting( 'openlab_aboutus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('About','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('About','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_aboutus_section',
 					'settings' => 'openlab_aboutus_title',
 					'priority'    => 2,
 		));
 		/* subtitle */
-		$wp_customize->add_setting( 'openlab_aboutus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Use this section to showcase important details about your business.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Use this section to showcase important details about your business.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_subtitle', array(
-				'label'    => __( 'Subtitle', 'openlab-lite' ),
+				'label'    => __( 'Subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_section',
 				'settings' => 'openlab_aboutus_subtitle',
 				'priority'    => 3,
 		));
 		/* big left title */
-		$wp_customize->add_setting( 'openlab_aboutus_biglefttitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Everything you see here is responsive and mobile-friendly.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_biglefttitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Everything you see here is responsive and mobile-friendly.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_biglefttitle', array(
-				'label'    => __( 'Big left side title', 'openlab-lite' ),
+				'label'    => __( 'Big left side title', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_section',
 				'settings' => 'openlab_aboutus_biglefttitle',
 				'priority'    => 4,
 		));
 		/* text */
-		$wp_customize->add_setting( 'openlab_aboutus_text', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_aboutus_text', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_aboutus_text', array(
-				'label'    => __( 'Text', 'openlab-lite' ),
+				'label'    => __( 'Text', 'openlab-txtd' ),
 				'section'  => 'openlab_aboutus_section',
 				'settings' => 'openlab_aboutus_text',
 				'priority'    => 5,
@@ -766,7 +893,7 @@ function openlab_customize_register( $wp_customize ) {
 		/* image right side */
 		$wp_customize->add_setting( 'openlab_aboutus_img', array('sanitize_callback' => 'esc_url_raw', 'default' => get_template_directory_uri() . '/images/background1.jpg'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_aboutus_img', array(
-			'label'    	=> __( 'Image 1', 'openlab-lite' ),
+			'label'    	=> __( 'Image 1', 'openlab-txtd' ),
 			'section'  	=> 'openlab_aboutus_section',
 			'settings' 	=> 'openlab_aboutus_img',
 			'priority'	=> 6,
@@ -783,11 +910,11 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 35,
 			'capability' => 'edit_theme_options',
 			'theme_supports' => '',
-			'title' => __( 'Our team section', 'openlab-lite' )
+			'title' => __( 'Our team section', 'openlab-txtd' )
 		) );
 
 		$wp_customize->add_section( 'openlab_ourteam_section' , array(
-				'title'       => __( 'Content', 'openlab-lite' ),
+				'title'       => __( 'Content', 'openlab-txtd' ),
 				'priority'    => 1,
 				'panel'       => 'panel_ourteam'
 		));
@@ -797,39 +924,39 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_ourteam_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide our team section?','openlab-lite'),
+				'label' => __('Hide our team section?','openlab-txtd'),
 				'section' => 'openlab_ourteam_section',
 				'priority'    => 1,
 			)
 		);
 		/* our team title */
-		$wp_customize->add_setting( 'openlab_ourteam_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('YOUR TEAM','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('YOUR TEAM','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_ourteam_section',
 					'settings' => 'openlab_ourteam_title',
 					'priority'    => 2,
 		));
 		/* our team subtitle */
-		$wp_customize->add_setting( 'openlab_ourteam_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Prove that you have real people working for you, with some nice looking profile pictures and links to social media.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Prove that you have real people working for you, with some nice looking profile pictures and links to social media.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subtitle', array(
-				'label'    => __( 'Our team subtitle', 'openlab-lite' ),
+				'label'    => __( 'Our team subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subtitle',
 				'priority'    => 3,
 		));
 
-		$wp_customize->add_setting( 'openlab_ourteam_subsection_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Subsection small title','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subsection_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Subsection small title','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subsection_title', array(
-				'label'    => __( 'Our team subsection title', 'openlab-lite' ),
+				'label'    => __( 'Our team subsection title', 'openlab-txtd' ),
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subsection_title',
 				'priority'    => 4,
 		));
 
-		$wp_customize->add_setting( 'openlab_ourteam_subsection_content', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Text used as content','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subsection_content', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Text used as content','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subsection_content', array(
-				'label'    => __( 'Our team subsection content', 'openlab-lite' ),
+				'label'    => __( 'Our team subsection content', 'openlab-txtd' ),
 				'type' => 'textarea',
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subsection_content',
@@ -839,10 +966,10 @@ function openlab_customize_register( $wp_customize ) {
 	else:
 
 		$wp_customize->add_section( 'openlab_ourteam_section' , array(
-				'title'       => __( 'Our team section', 'openlab-lite' ),
+				'title'       => __( 'Our team section', 'openlab-txtd' ),
 				'priority'    => 35,
 
-				'description' => __( 'The main content of this section is customizable in: Customize -> Widgets -> Our team section. There you must add the "Openlab - Team member widget"', 'openlab-lite' )
+				'description' => __( 'The main content of this section is customizable in: Customize -> Widgets -> Our team section. There you must add the "Openlab - Team member widget"', 'openlab-txtd' )
 		));
 		/* our team show/hide */
 		$wp_customize->add_setting( 'openlab_ourteam_show', array('sanitize_callback' => 'openlab_sanitize_text'));
@@ -850,39 +977,39 @@ function openlab_customize_register( $wp_customize ) {
 			'openlab_ourteam_show',
 			array(
 				'type' => 'checkbox',
-				'label' => __('Hide our team section?','openlab-lite'),
+				'label' => __('Hide our team section?','openlab-txtd'),
 				'section' => 'openlab_ourteam_section',
 				'priority'    => 1,
 			)
 		);
 		/* our team title */
-		$wp_customize->add_setting( 'openlab_ourteam_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('YOUR TEAM','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('YOUR TEAM','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_title', array(
-					'label'    => __( 'Title', 'openlab-lite' ),
+					'label'    => __( 'Title', 'openlab-txtd' ),
 					'section'  => 'openlab_ourteam_section',
 					'settings' => 'openlab_ourteam_title',
 					'priority'    => 2,
 		));
 		/* our team subtitle */
-		$wp_customize->add_setting( 'openlab_ourteam_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Prove that you have real people working for you, with some nice looking profile pictures and links to social media.','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subtitle', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Prove that you have real people working for you, with some nice looking profile pictures and links to social media.','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subtitle', array(
-				'label'    => __( 'Our team subtitle', 'openlab-lite' ),
+				'label'    => __( 'Our team subtitle', 'openlab-txtd' ),
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subtitle',
 				'priority'    => 3,
 		));
 
-		$wp_customize->add_setting( 'openlab_ourteam_subsection_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Subsection small title','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subsection_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Subsection small title','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subsection_title', array(
-				'label'    => __( 'Our team subsection title', 'openlab-lite' ),
+				'label'    => __( 'Our team subsection title', 'openlab-txtd' ),
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subsection_title',
 				'priority'    => 4,
 		));
 
-		$wp_customize->add_setting( 'openlab_ourteam_subsection_content', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Text used as content','openlab-lite')));
+		$wp_customize->add_setting( 'openlab_ourteam_subsection_content', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Text used as content','openlab-txtd')));
 		$wp_customize->add_control( 'openlab_ourteam_subsection_content', array(
-				'label'    => __( 'Our team subsection content', 'openlab-lite' ),
+				'label'    => __( 'Our team subsection content', 'openlab-txtd' ),
 				'section'  => 'openlab_ourteam_section',
 				'settings' => 'openlab_ourteam_subsection_content',
 				'priority'    => 5,
@@ -894,7 +1021,7 @@ function openlab_customize_register( $wp_customize ) {
     /**********	LATEST NEWS SECTION **************/
 	/**********************************************/
 	$wp_customize->add_section( 'openlab_latestnews_section' , array(
-			'title'       => __( 'Latest News section', 'openlab-lite' ),
+			'title'       => __( 'Latest News section', 'openlab-txtd' ),
     	  	'priority'    => 37
 	));
 	/* latest news show/hide */
@@ -903,7 +1030,7 @@ function openlab_customize_register( $wp_customize ) {
 		'openlab_latestnews_show',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide latest news section?','openlab-lite'),
+			'label' => __('Hide latest news section?','openlab-txtd'),
 			'section' => 'openlab_latestnews_section',
 			'priority'    => 1,
 		)
@@ -911,18 +1038,10 @@ function openlab_customize_register( $wp_customize ) {
 	/* latest news subtitle */
 	$wp_customize->add_setting( 'openlab_latestnews_title', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_latestnews_title', array(
-			'label'    		=> __( 'Latest News title', 'openlab-lite' ),
+			'label'    		=> __( 'Latest News title', 'openlab-txtd' ),
 	      	'section'  		=> 'openlab_latestnews_section',
 	      	'settings' 		=> 'openlab_latestnews_title',
 			'priority'    	=> 2,
-	));
-	/* latest news subtitle */
-	$wp_customize->add_setting( 'openlab_latestnews_subtitle', array('sanitize_callback' => 'openlab_sanitize_text'));
-	$wp_customize->add_control( 'openlab_latestnews_subtitle', array(
-			'label'    		=> __( 'Latest News subtitle', 'openlab-lite' ),
-	      	'section'  		=> 'openlab_latestnews_section',
-	      	'settings' 		=> 'openlab_latestnews_subtitle',
-			'priority'   	=> 3,
 	));
 
 	/*******************************************************/
@@ -933,11 +1052,11 @@ function openlab_customize_register( $wp_customize ) {
 
 	/* if Pirate Forms is installed */
 	if( defined("PIRATE_FORMS_VERSION") ):
-		$openlab_contact_us_section_description = __( 'For more advanced settings please go to Settings -> Pirate Forms','openlab-lite' );
+		$openlab_contact_us_section_description = __( 'For more advanced settings please go to Settings -> Pirate Forms','openlab-txtd' );
 	endif;
 
 	$wp_customize->add_section( 'openlab_contactus_section' , array(
-			'title'       => __( 'Contact us section', 'openlab-lite' ),
+			'title'       => __( 'Contact us section', 'openlab-txtd' ),
 			'description' => $openlab_contact_us_section_description,
     	  	'priority'    => 38
 	));
@@ -947,15 +1066,15 @@ function openlab_customize_register( $wp_customize ) {
 		'openlab_contactus_show',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide contact us section?','openlab-lite'),
+			'label' => __('Hide contact us section?','openlab-txtd'),
 			'section' => 'openlab_contactus_section',
 			'priority'    => 1,
 		)
 	);
 	/* contactus title */
-	$wp_customize->add_setting( 'openlab_contactus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Get in touch','openlab-lite')));
+	$wp_customize->add_setting( 'openlab_contactus_title', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Get in touch','openlab-txtd')));
 	$wp_customize->add_control( 'openlab_contactus_title', array(
-				'label'    => __( 'Contact us section title', 'openlab-lite' ),
+				'label'    => __( 'Contact us section title', 'openlab-txtd' ),
 				'section'  => 'openlab_contactus_section',
 				'settings' => 'openlab_contactus_title',
 				'priority'    => 2,
@@ -963,7 +1082,7 @@ function openlab_customize_register( $wp_customize ) {
 	/* contactus subtitle */
 	$wp_customize->add_setting( 'openlab_contactus_subtitle', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_contactus_subtitle', array(
-			'label'    => __( 'Contact us section subtitle', 'openlab-lite' ),
+			'label'    => __( 'Contact us section subtitle', 'openlab-txtd' ),
 	      	'section'  => 'openlab_contactus_section',
 	      	'settings' => 'openlab_contactus_subtitle',
 			'priority'    => 3,
@@ -973,17 +1092,17 @@ function openlab_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'openlab_contactus_email', array('sanitize_callback' => 'openlab_sanitize_text'));
 
 	$wp_customize->add_control( 'openlab_contactus_email', array(
-				'label'    => __( 'Email address', 'openlab-lite' ),
+				'label'    => __( 'Email address', 'openlab-txtd' ),
 				'section'  => 'openlab_contactus_section',
 				'settings' => 'openlab_contactus_email',
 				'priority'    => 4,
 	));
 
 	/* contactus button label */
-	$wp_customize->add_setting( 'openlab_contactus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Send Message','openlab-lite')));
+	$wp_customize->add_setting( 'openlab_contactus_button_label', array('sanitize_callback' => 'openlab_sanitize_text','default' => __('Send Message','openlab-txtd')));
 
 	$wp_customize->add_control( 'openlab_contactus_button_label', array(
-				'label'    => __( 'Button label', 'openlab-lite' ),
+				'label'    => __( 'Button label', 'openlab-txtd' ),
 				'section'  => 'openlab_contactus_section',
 				'settings' => 'openlab_contactus_button_label',
 				'priority'    => 5,
@@ -994,7 +1113,7 @@ function openlab_customize_register( $wp_customize ) {
 		'openlab_contactus_recaptcha_show',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide reCaptcha?','openlab-lite'),
+			'label' => __('Hide reCaptcha?','openlab-txtd'),
 			'section' => 'openlab_contactus_section',
 			'priority'    => 6,
 		)
@@ -1004,8 +1123,8 @@ function openlab_customize_register( $wp_customize ) {
 	$attribut_new_tab = (isset($openlab_accessibility) && ($openlab_accessibility != 1) ? ' target="_blank"' : '' );
 	$wp_customize->add_setting( 'openlab_contactus_sitekey', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_contactus_sitekey', array(
-				'label'    => __( 'Site key', 'openlab-lite' ),
-				'description' => '<a'.$attribut_new_tab.' href="https://www.google.com/recaptcha/admin#list">'.__('Create an account here','openlab-lite').'</a> to get the Site key and the Secret key for the reCaptcha.',
+				'label'    => __( 'Site key', 'openlab-txtd' ),
+				'description' => '<a'.$attribut_new_tab.' href="https://www.google.com/recaptcha/admin#list">'.__('Create an account here','openlab-txtd').'</a> to get the Site key and the Secret key for the reCaptcha.',
 				'section'  => 'openlab_contactus_section',
 				'settings' => 'openlab_contactus_sitekey',
 				'priority'    => 7,
@@ -1013,7 +1132,7 @@ function openlab_customize_register( $wp_customize ) {
 	/* secret key */
 	$wp_customize->add_setting( 'openlab_contactus_secretkey', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_contactus_secretkey', array(
-				'label'    => __( 'Secret key', 'openlab-lite' ),
+				'label'    => __( 'Secret key', 'openlab-txtd' ),
 				'section'  => 'openlab_contactus_section',
 				'settings' => 'openlab_contactus_secretkey',
 				'priority'    => 8,
@@ -1025,25 +1144,25 @@ function openlab_customize_register( $wp_customize ) {
 		'priority' => 120,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-		'title' => __( 'General Map options', 'openlab-lite' )
+		'title' => __( 'General Map options', 'openlab-txtd' )
 	) );
 
 	$wp_customize->add_section( 'openlab_map_section' , array(
-			'title'       => __( 'Google map options', 'openlab-lite' ),
+			'title'       => __( 'Google map options', 'openlab-txtd' ),
 			'priority'    => 120,
 			'panel' => 'panel_openlab_map'
 	));
 
 	$wp_customize->add_setting( 'openlab_map_address', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_map_address', array(
-			'label'    => __( 'Address', 'openlab-lite' ),
+			'label'    => __( 'Address', 'openlab-txtd' ),
 			'section'  => 'openlab_map_section',
 			'settings' => 'openlab_map_address',
 			'priority' => 1,
 	));
 	$wp_customize->add_setting( 'openlab_map_zoom', array('sanitize_callback' => 'openlab_sanitize_text'));
 	$wp_customize->add_control( 'openlab_map_zoom', array(
-			'label'    => __( 'Map Zoom', 'openlab-lite' ),
+			'label'    => __( 'Map Zoom', 'openlab-txtd' ),
 			'section'  => 'openlab_map_section',
 			'settings' => 'openlab_map_zoom',
 			'priority' => 2,
@@ -1054,7 +1173,7 @@ function openlab_customize_register( $wp_customize ) {
 	/* LOGO	*/
 	$wp_customize->add_setting( 'openlab_logo', array('sanitize_callback' => 'esc_url_raw'));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-			'label'    => __( 'Logo', 'openlab-lite' ),
+			'label'    => __( 'Logo', 'openlab-txtd' ),
 			'section'  => 'title_tagline',
 			'settings' => 'openlab_logo',
 			'priority'    => 1,
@@ -1084,8 +1203,8 @@ function openlab_registers() {
 
 	wp_localize_script( 'openlab_customizer_script', 'openlabLiteCustomizerObject', array(
 
-		'documentation' => __( 'View Documentation', 'openlab-lite' ),
-		'pro' => __('View PRO version','openlab-lite')
+		'documentation' => __( 'View Documentation', 'openlab-txtd' ),
+		'pro' => __('View PRO version','openlab-txtd')
 
 	) );
 }

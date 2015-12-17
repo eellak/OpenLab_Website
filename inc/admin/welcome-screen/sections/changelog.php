@@ -3,14 +3,14 @@
  * Changelog
  */
 
-$openlab_lite = wp_get_theme( 'openlab-lite' );
+$openlab_lite = wp_get_theme( 'openlab-txtd' );
 
 ?>
-<div class="openlab-lite-tab-pane" id="changelog">
+<div class="openlab-txtd-tab-pane" id="changelog">
 
 	<div class="openlab-tab-pane-center">
 	
-		<h1>Openlab Lite <?php if( !empty($openlab_lite['Version']) ): ?> <sup id="openlab-lite-theme-version"><?php echo esc_attr( $openlab_lite['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1>Openlab Lite <?php if( !empty($openlab_lite['Version']) ): ?> <sup id="openlab-txtd-theme-version"><?php echo esc_attr( $openlab_lite['Version'] ); ?> </sup><?php endif; ?></h1>
 
 	</div>
 

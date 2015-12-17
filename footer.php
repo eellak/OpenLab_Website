@@ -14,9 +14,8 @@
 
 	<?php
 		$footer_sections = 0;
-		//$openlab_address = get_theme_mod('openlab_address',__('Company address','openlab-lite'));
+		//$openlab_address = get_theme_mod('openlab_address',__('Company address','openlab-txtd'));
 		//$openlab_address_icon = get_theme_mod('openlab_address_icon',get_template_directory_uri().'/images/map25-redish.png');
-
 		//$openlab_map_icon = get_theme_mod('openlab_contact_map_icon', get_template_directory_uri().'/images/map-footer-icon.svg');
 
 
@@ -44,17 +43,13 @@
 		$openlab_socials_facebook = get_theme_mod('openlab_socials_facebook','#');
 		$openlab_socials_twitter = get_theme_mod('openlab_socials_twitter','#');
 		$openlab_socials_linkedin = get_theme_mod('openlab_socials_linkedin','#');
-		$openlab_socials_behance = get_theme_mod('openlab_socials_behance','#');
-		$openlab_socials_dribbble = get_theme_mod('openlab_socials_dribbble','#');
-
-		$openlab_accessibility = get_theme_mod('openlab_accessibility');
+		$openlab_socials_gplus = get_theme_mod('openlab_socials_gplus','#');
 
 		if(!empty($openlab_map_icon) || !empty($openlab_details_text)):
 			$footer_sections++;
 		endif;
 
-		if(!empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_behance) || !empty($openlab_socials_dribbble) ||
-		!empty($openlab_copyright)):
+		if(!empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_gplus) || !empty($openlab_copyright)):
 			$footer_sections++;
 		endif;
 
@@ -79,7 +74,7 @@
 		}
 		else{
 			echo '<div class="col-md-4 custom-fb-feed-error">
-					<p class="error">'. __('Please install and activate Custom Facebook Feed Plugin.' , 'openlab-lite') .'</p>
+					<p class="theme-error">'. __('Please install and activate Custom Facebook Feed Plugin.' , 'openlab-txtd') .'</p>
 				 </div>';
 		}
 
@@ -99,19 +94,16 @@
 
 
 		//Social Links
-		// open link in a new tab when checkbox "accessibility" is not ticked
-		$attribut_new_tab = (isset($openlab_accessibility) && ($openlab_accessibility != 1) ? ' target="_blank"' : '' );
 
-		if( !empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_behance) || !empty($openlab_socials_dribbble) ||
-		!empty($openlab_copyright)):
+		if( !empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_gplus) || !empty($openlab_copyright)):
 
 					echo '<div class="col-md-4 copyright">';
-					if(!empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_behance) || !empty($openlab_socials_dribbble)):
+					if(!empty($openlab_socials_facebook) || !empty($openlab_socials_twitter) || !empty($openlab_socials_linkedin) || !empty($openlab_socials_gplus) ):
 						echo '<ul class="social">';
 
 						/* facebook */
 						if( !empty($openlab_socials_facebook) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($openlab_socials_facebook).'">
+							echo '<li><a href="'.esc_url($openlab_socials_facebook).'" target="_blank">
 											<span class="footer-social">
 												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="-230 373.4 50 50" style="enable-background:new -230 373.4 50 50;" xml:space="preserve">
@@ -124,7 +116,7 @@
 						endif;
 						/* twitter */
 						if( !empty($openlab_socials_twitter) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($openlab_socials_twitter).'">
+							echo '<li><a href="'.esc_url($openlab_socials_twitter).'" target="_blank">
 											<span class="footer-social">
 												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="-230.1 373.4 50 50" style="enable-background:new -230.1 373.4 50 50;" xml:space="preserve">
@@ -140,7 +132,7 @@
 						endif;
 						/* linkedin */
 						if( !empty($openlab_socials_linkedin) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($openlab_socials_linkedin).'">
+							echo '<li><a href="'.esc_url($openlab_socials_linkedin).'" target="_blank">
 											<span class="footer-social">
 												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="-230 373.4 50 50" style="enable-background:new -230 373.4 50 50;" xml:space="preserve">
@@ -153,26 +145,10 @@
 											</span>
 										</a></li>';
 						endif;
-						/* behance */
-						if( !empty($openlab_socials_behance) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($openlab_socials_behance).'">
-											<span class="footer-social">
-												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-													 viewBox="-230.2 373.4 49.3 50" style="enable-background:new -230.2 373.4 49.3 50;" xml:space="preserve">
-												<polyline class="st0" points="-230.2,423.4 -230.2,373.4 -180.8,373.4 "/>
-												<path class="st1" d="M-209,395.6c0,0,3.1-0.2,3.1-3.9c0-3.7-2.6-5.5-5.8-5.5h-6h-0.2h-4.6v20.6h4.6h0.2h6c0,0,6.6,0.2,6.6-6.1
-													C-205.2,400.7-204.9,395.6-209,395.6z M-212.5,389.9h0.8c0,0,1.5,0,1.5,2.1s-0.9,2.5-1.8,2.5h-5.6v-4.6H-212.5z M-212,403.2h-5.7
-													v-5.5h6c0,0,2.2,0,2.2,2.8C-209.6,402.9-211.2,403.2-212,403.2z"/>
-												<path class="st1" d="M-196.4,391.4c-7.9,0-7.9,7.9-7.9,7.9s-0.5,7.9,7.9,7.9c0,0,7.1,0.4,7.1-5.5h-3.6c0,0,0.1,2.2-3.3,2.2
-													c0,0-3.6,0.2-3.6-3.6h10.7C-189.2,400.4-188.1,391.4-196.4,391.4z M-200,397.6c0,0,0.4-3.2,3.6-3.2c3.2,0,3.1,3.2,3.1,3.2H-200z"/>
-												<rect x="-200.9" y="387.4" class="st1" width="8.5" height="2.5"/>
-												</svg>
-											</span>
-										</a></li>';
-						endif;
-						/* dribbble */
-						if( !empty($openlab_socials_dribbble) ):
-							echo '<li><a'.$attribut_new_tab.' href="'.esc_url($openlab_socials_dribbble).'">
+
+						/* gplus */
+						if( !empty($openlab_socials_gplus) ):
+							echo '<li><a href="'.esc_url($openlab_socials_gplus).'" target="_blank">
 											<span class="footer-social">
 												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													viewBox="-230 373 49.2 50" style="enable-background:new -230 373 49.2 50;" xml:space="preserve">
@@ -195,11 +171,17 @@
 											</span>
 										</a></li>';
 						endif;
-						echo '</ul>';
-					endif;
 
-					if( !empty($openlab_copyright) ):
-						echo esc_attr($openlab_copyright);
+						//Lisence Desclaimer
+						echo '<li>';
+							echo '<div class="license-disclaimer">';
+								echo '<p>'. __('Implementation using Opensource Software','openlab-txtd') .'</p>';
+								echo '<p>'. __('<a href="https://wordpress.org/" target="_blank">Wordpress</a>','openlab-txtd') .'</p>';
+								echo '<p>'. __('Content is licensed under: <a href="http://creativecommons.org/licenses/by-sa/1.0/" target="_blank">CC-BY-SA</a>','openlab-txtd') .'</p>';
+							echo '</div>';
+						echo '</li>';
+						echo '</ul>';
+
 					endif;
 
 					echo '</div>';
@@ -208,15 +190,7 @@
 	?>
 
 </div> <!-- / END CONTAINER -->
-<div id="gmap-embed" class="modal fade">
-		<div class="button-wrap">
-			<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
-		</div>
-<?php
-if($openlab_map_address):
-	echo '<iframe class="map-container" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="80%" height="80%" src="https://maps.google.com/maps?q='. $openlab_map_address .'&ie=UTF8&t=roadmap&z=17&iwloc=B&output=embed"></iframe>';
-endif;
-?>
+
 </div>
 
 </footer> <!-- / END FOOOTER  -->
@@ -227,6 +201,17 @@ endif;
 
 
 <?php wp_footer(); ?>
+
+<!-- MAP MODAL-->
+<div id="gmap-embed" class="modal fade">
+		<div class="button-wrap">
+			<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
+</div>
+<?php
+if($openlab_map_address):
+	echo '<iframe class="map-container" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="80%" height="80%" src="https://maps.google.com/maps?q='. $openlab_map_address .'&ie=UTF8&t=roadmap&z=17&iwloc=B&output=embed"></iframe>';
+endif;
+?>
 
 </body>
 

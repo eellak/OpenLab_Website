@@ -1,0 +1,183 @@
+.search.search-results{
+
+  h1.page-title-search{
+    @extend .font-1;
+    color:$font-breadcrumb;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .search-form-container{
+    margin:15px 0;
+    position:relative;
+    .input-wrap{
+      width: 100%;
+      float: right;
+      padding-left: 50px
+    }
+    button.btn-search{
+      position:absolute;
+      top:5px;
+      left:0;
+      padding: 10px 0;
+      margin:0;
+      background-color: #fff;
+      float:left;
+      svg{
+        width:30px;
+        height:30px;
+      }
+    }
+    input{
+      height:50px;
+      border:1px solid $bg-light-gray;
+      float:right;
+      width:100%;
+      @extend .font-4;
+      letter-spacing: 0.05em;
+      color:$font-post-header;
+      &:focus{
+        border:1px solid $font-breadcrumb;
+      }
+    }
+  }
+  .page-header {
+    margin:0;
+  }
+  .col-md-10,.col-md-2{
+    padding:0;
+  }
+  .post-content-wrap{
+    padding:0 0;
+  }
+  .result-date{
+    @extend .font-21;
+    color:$bg-single-post;
+  }
+  .entry-content{
+    margin:0;
+  }
+  .post-image.col-md-2{
+    width:13.66666%;
+  }
+  .post-content-wrap.col-md-8{
+    width:69.66666%;
+  }
+
+  h3.page-results-for{
+    padding:15px 0;
+    @extend .font-4;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    span{
+      @extend .font-4;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+  }
+  .post-link{
+    width: 70px;
+    height: 70px;
+    background-size:auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .post.type-post{
+    .square-content{
+      background-color: $bg-single-post;
+      background-image: url('../images/announcement-white.svg');
+      @extend .bg-position;
+    }
+    .post-link{
+      background-image: url('../images/arrow-right.svg');
+    }
+  }
+  .event.type-event{
+    .passed{
+      .square-content{
+      background-color: $bg-single-post;
+      }
+      &.seminar{
+        .square-content{
+          background-image: url('../images/seminar-past.svg');
+          @extend .bg-position2;
+        }
+      }
+      &.speech{
+        .square-content{
+          background-image: url('../images/speech-past.svg');
+          @extend .bg-position2;
+        }
+      }
+      &.workshop{
+        .square-content{
+          background-image: url('../images/workshop-past.svg');
+          @extend .bg-position2;
+        }
+      }
+    }
+    .active{
+      &.seminar{
+        .square-content{
+          background-image: url('../images/seminar-white.svg');
+          @extend .bg-position;
+          background-color: $bg-seminar;
+        }
+      }
+      &.speech{
+        .square-content{
+        background-color: $bg-speech;
+        background-image: url('../images/speech-white.svg');
+        @extend .bg-position;
+        }
+      }
+      &.workshop{
+        .square-content{
+        background-color: $bg-workshop;
+        background-image: url('../images/workshop-white.svg');
+        @extend .bg-position;
+        }
+      }
+    }
+  }
+
+  .active.seminar .post-link{
+    background-image: url('../images/arrow-right-seminar.svg');
+  }
+  .active.workshop .post-link{
+    background-image: url('../images/arrow-right-workshop.svg');
+  }
+  .active.speech .post-link{
+    background-image: url('../images/arrow-right-lecture.svg');
+  }
+  .passed .post-link{
+    background-image: url('../images/arrow-right.svg');
+  }
+
+  article.hentry {
+    margin:0 0 30px 0;
+    padding:0;
+    border-bottom:0;
+    position:relative;
+    .square-content-wrap{
+     padding:0;
+    }
+    h2.entry-title{
+      padding:10px 30px 0 30px;
+      @extend .font-8;
+      letter-spacing: 0.05em;
+      color:$font-post-header;
+    }
+    .result-date{
+      padding: 7px 30px 7px 30px;
+    }
+    .entry-content{
+      padding: 0 30px 7px 30px;
+    }
+    .post-link.col-md-2 {
+      position: absolute;
+      top: 50%;
+      left: 83.3333%;
+      margin-top: -35.5px;
+    }
+  }
+}

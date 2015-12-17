@@ -1,0 +1,193 @@
+.single.single-post{
+
+  .post-meta-wrap{
+    .featured-img-container{
+      span.featured-img{
+        width: 100%;
+        height:100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display:block;
+        font-size: 0;
+      }
+      span.empty-featured-img{
+        font-size: 0;
+        position:relative;
+        svg{
+          margin: 35px;
+        }
+      }
+    }
+  }
+
+  .featured-img-container.has-feat-img{
+    width: 100%;
+    height:100%;
+  }
+  .featured-img-container.no-feat-img{
+    background-color: $bg-single-post;
+    width: 100%;
+    height: 100%;
+    background-size: 70% 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../images/post.svg');
+  }
+
+
+  .square-box{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      .meta-icon{
+        width: 40%;
+        display: inline-block;
+        margin-bottom:0;
+      }
+      .address-desc{
+        margin-bottom:0;
+        margin-top: 5px;
+      }
+
+  }
+  .square-box:before{
+      content: "";
+      display: block;
+      padding-top: 100%;
+  }
+  .square-content-wrap{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+  }
+  .square-content {
+     display: table;
+     width: 100%;
+     height: 100%;
+     background-color: $bg-single-post;
+  }
+  .square-content span {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+  }
+
+  .grid-1.clearfix{
+    width:100%;
+  }
+  .grid-2.clearfix{
+    width:100%;
+    .post-date, .post-share{
+      width: 50%;
+      display: inline-block;
+      float: left;
+    }
+    .post-date span{
+      @extend .font-20;
+      color:$font-white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  h1.entry-title{
+    @extend .font-8;
+    color:$font-post-header;
+    font-weight: bold;
+    padding: 0 0 20px 0;
+  }
+  div.entry-content{
+    margin:0;
+    p, span, a{
+      @extend .font-14;
+      text-align:left;
+    }
+  }
+
+  /* Share Buttons */
+  span.main-state{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: $bg-single-post;
+    visibility: visible;
+    background-size: 50% 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("../images/share-icon.svg");
+  }
+  .square-content-wrap{
+    &:hover{
+      .main-state{
+        visibility:hidden;
+        display:none !important;
+      }
+      .hover-state{
+        visibility: visible !important;
+      }
+    }
+  }
+  .square-content.hover-state{
+    position:relative;
+    display:block;
+    visibility: hidden;
+  }
+  .share-fb{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    height:50%;
+    box-sizing:border-box;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+  }
+  .share-tw{
+    position:absolute;
+    width:50%;
+    height:50%;
+    top:0;
+    right:0;
+    box-sizing:border-box;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+  }
+  .share-ln{
+    position:absolute;
+    width:50%;
+    height:50%;
+    bottom:0;
+    left:0;
+    box-sizing:border-box;
+    border-right: 5px solid #fff;
+    border-top: 5px solid #fff;
+  }
+  .share-em{
+    position:absolute;
+    width:50%;
+    height:50%;
+    bottom:0;
+    right:0;
+    box-sizing:border-box;
+    border-left: 5px solid #fff;
+    border-top: 5px solid #fff;
+  }
+  .grid-item a{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display:block;
+    i.fa{
+      color:$font-white;
+      font-size: 20px;
+    }
+  }
+  .grid-item{
+    &:hover{
+      background-color:$bg-dark-hover;
+    }
+  }
+}

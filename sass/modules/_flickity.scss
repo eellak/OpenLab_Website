@@ -50,7 +50,7 @@ http://flickity.metafizzy.co
   width: 44px;
   height: 44px;
   border: none;
-  //border-radius: 50%;
+  padding: 0;
   background: none;
 /*  background: hsla(0, 0%, 100%, 0.75);/*
   cursor: pointer;
@@ -68,8 +68,8 @@ http://flickity.metafizzy.co
 }
 
 .flickity-prev-next-button:active {
-  filter: alpha(opacity=60); /* IE8 */
-  opacity: 0.6;
+  filter: alpha(opacity=80); /* IE8 */
+  opacity: 0.8;
 }
 
 .flickity-prev-next-button.previous { left: 10px; }

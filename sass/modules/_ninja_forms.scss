@@ -1,0 +1,168 @@
+.modal.nf{
+  width:100%;
+  background-color: $bg-dark-hover;
+  &.in{
+    overflow-y:auto;
+  }
+  .button-wrap{
+    float:right;
+    /*position: fixed;
+    right: 42px;
+    top: 25px;*/
+    svg{
+      width:30px;
+      height:30px;
+      margin:25px;
+    }
+  }
+  div,label,p,span,h1,h2,h3,h4,h5,h6{
+    color:$font-white;
+  }
+  .ninja-forms-response-msg, .ninja-forms-form-title, .ninja-forms-required-items{
+    text-align: left;
+  }
+  h2.ninja-forms-form-title{
+    @extend .font-6;
+    text-transform: uppercase;
+  }
+  label{
+    text-align: left;
+    display:block!important;
+    float:none !important;
+    padding-top: 35px;
+  }
+  input[type=text]{
+    height:50px;
+    width:70%;
+    color:$font-breadcrumb-hover;
+    @extend .font-10;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0;
+  }
+  input[type=checkbox], input[type=radio]{
+    margin-left:0 !important;
+  }
+  input[type=submit]{
+    margin-left:0;
+    height:50px;
+    width:70%;
+    background-color: $font-breadcrumb-hover;
+    @extend .font-4;
+    color:$font-white;
+    font-weight: bold;
+  }
+  .submit-wrap{
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  ul{
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    float:none!important;
+    li{
+      padding-left: 0 !important;
+      margin: 0;
+      float:none!important;
+      label{
+        padding-top: 15px;
+        position:relative;
+      }
+    }
+  }
+  .field-wrap{
+    text-align: left;
+    margin:0;
+  }
+
+  .modal-form-container{
+    width:50%;
+    margin:0 auto;
+    display:block;
+    min-width:400px;
+
+    /* Radio Buttons*/
+    div.list-radio-wrap, div.list-checkbox-wrap{
+      span.label-desc{
+        position: absolute;
+        top: 27px;
+        left: 50px;
+      }
+
+       input[type=radio], input[type=checkbox]{
+        visibility: hidden;
+        position: absolute;
+      }
+      input[type=radio] + label, input[type=checkbox] + label{
+        cursor:pointer;
+      }
+      input[type=radio] + label:before{
+        height:35px;
+        width:35px;
+        margin-right: 4px;
+        content: " ";
+        display:inline-block;
+        vertical-align: baseline;
+        transition: 0.3s;
+        box-shadow: inset 0 45px #ffffff;
+        border:0px;
+      }
+      input[type=checkbox] + label:before{
+         height:35px;
+         width:35px;
+         margin-right: 4px;
+         content: " ";
+         display:inline-block;
+         vertical-align: baseline;
+         transition: 0.3s;
+         border:0px solid #ccc;
+         border-radius:0px;
+         box-shadow: inset 0 45px #fff;
+         transition: 0.3s;
+       }
+      input[type=radio] + label:before{
+        border-radius:50%;
+        width:35px;
+        height:35px;
+      }
+      input[type=checkbox] + label:before{
+        border-radius:0px;
+        width:35px;
+        height:35px;
+      }
+      input[type=radio]:checked + label:before{
+        box-shadow:inset 0 0 0 40px #6c93c2;
+      }
+      input[type=checkbox]:checked + label:before{
+        box-shadow:inset 0 0 0 40px #6c93c2;
+      }
+
+    }
+
+
+
+    /*Error styles*/
+    .ninja-forms-field-error{
+      display:none;
+      visibility: hidden;
+      font-size: 0;
+    }
+    div.ninja-forms-error{
+      input[type=text]{
+        background-color: $font-error;
+      }
+    }
+    .ninja-forms-required-items{
+      display:none;
+      visibility: hidden;
+      font-size:0;
+    }
+    .ninja-forms-error-msg{
+      display:none;
+      visibility: hidden;
+      font-size:0;
+    }
+  }
+}

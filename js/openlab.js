@@ -89,7 +89,6 @@ jQuery(document).ready(function(){
 
 
 /* Scroll To Top */
-
 jQuery(document).ready(function(){
 
   jQuery(window).scroll(function () {
@@ -107,6 +106,57 @@ jQuery(document).ready(function(){
 
 });
 
+
+/* Disable scrolbar if modal form is visible */
+jQuery(document).ready(function(){
+
+  jQuery('.open-form-btn').click(function(){
+    jQuery("html").toggleClass('disable-scroll');
+    //return false;
+  });
+  jQuery('.close-form-btn').click(function(){
+    jQuery("html").toggleClass('disable-scroll');
+    //return false;
+  });
+
+});
+
+/* Un-Nest Label-input of radio/checkboxes in ninja-forms */
+jQuery(document).ready(function(){
+
+  jQuery('.list-radio-wrap > span > ul > li > label').each(function(){
+
+        jQuery(this).children('input').each(function(){
+
+          var htmlContents = jQuery(this)[0].outerHTML;
+
+          jQuery(this).parent().parent().prepend(htmlContents);
+          jQuery(this).parent().wrapInner('<span class="label-desc"></span>');
+          jQuery(this).remove();
+
+        });
+
+  });
+
+  jQuery('.list-checkbox-wrap > span > ul > li > label').each(function(){
+
+        jQuery(this).children('input').each(function(){
+          //get id of input and add it as for attr to label
+          var inputID = jQuery(this)[0].id;
+          
+          jQuery(this).parent().attr("for", inputID );
+
+          var htmlContents = jQuery(this)[0].outerHTML;
+
+          jQuery(this).parent().parent().prepend(htmlContents);
+          jQuery(this).parent().wrapInner('<span class="label-desc"></span>');
+          jQuery(this).remove();
+
+        });
+
+  });
+
+});
 
 
 /* show/hide reCaptcha */
@@ -336,9 +386,25 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function(){
 
-  if ( jQuery('body').hasClass('home') ){
+  //if ( jQuery('body').hasClass('home') ){
     jQuery('.custom-fb-feed').perfectScrollbar();
-  }
+  //}
+
+});
+
+/* ================================
+
+ ===  Remove Calendar Placeholder   ====
+
+ ================================= */
+
+
+jQuery(document).ready(function(){
+
+  jQuery('.search-form').find("input[type=search]").each(function(ev){
+    var placeHolder;
+    placeHolder  = jQuery(this).attr("placeholder", "");
+  });
 
 });
 

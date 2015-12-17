@@ -18,19 +18,19 @@ function openlab_paging_nav() {
 
 	<nav class="navigation paging-navigation" role="navigation">
 
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'openlab-lite' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'openlab-txtd' ); ?></h2>
 
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
 
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'openlab-lite' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'openlab-txtd' ) ); ?></div>
 
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
 
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'openlab-lite' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'openlab-txtd' ) ); ?></div>
 
 			<?php endif; ?>
 
@@ -68,15 +68,15 @@ function openlab_post_nav() {
 
 	<nav class="navigation post-navigation" role="navigation">
 
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'openlab-lite' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'openlab-txtd' ); ?></h2>
 
 		<div class="nav-links">
 
 			<?php
 
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'openlab-lite' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'openlab-txtd' ) );
 
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'openlab-lite' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'openlab-txtd' ) );
 
 			?>
 
@@ -120,7 +120,7 @@ function openlab_posted_on() {
 
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'openlab-lite' ),
+	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'openlab-txtd' ),
 
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 

@@ -10,14 +10,16 @@ function openlab_setup() {
     if (!isset($content_width)) {
         $content_width = 640;
     }
-
+	if(!defined('OPENLAB_PATH_IMG')):
+		define( "OPENLAB_PATH_IMG", get_template_directory() .'/images' );
+	endif;
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
      * If you're building a theme based on openlab, use a find and replace
-     * to change 'openlab-lite' to the name of your theme in all the template files
+     * to change 'openlab-txtd' to the name of your theme in all the template files
      */
-    load_theme_textdomain('openlab-lite', get_template_directory() . '/languages');
+    load_theme_textdomain('openlab-txtd', get_template_directory() . '/languages');
 
     add_theme_support('automatic-feed-links');
 
@@ -36,7 +38,7 @@ function openlab_setup() {
 
 	/* Register primary menu */
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'openlab-lite'),
+        'primary' => __('Primary Menu', 'openlab-txtd'),
     ));
 
     /* Enable support for Post Formats. */
@@ -92,30 +94,37 @@ function openlab_setup() {
          */
         $openlab_required_actions = array(
             array(
-                "id" => 'openlab-lite-req-ac-install-pirate-forms',
-                "title" => esc_html__( 'Install Pirate Forms' ,'openlab-lite' ),
-                "description"=> esc_html__( 'Please make sure you install the Pirate Forms plugin.','openlab-lite' ),
-                "check" => defined("PIRATE_FORMS_VERSION"),
-                "plugin_slug" => 'pirate-forms'
+			                "id" => 'openlab-txtd-req-ac-install-pirate-forms',
+			                "title" => esc_html__( 'Install Pirate Forms' ,'openlab-txtd' ),
+			                "description"=> esc_html__( 'Please make sure you install the Pirate Forms plugin.','openlab-txtd' ),
+			                "check" => defined("PIRATE_FORMS_VERSION"),
+			                "plugin_slug" => 'pirate-forms'
             ),
 						array(
-			                "id" => 'openlab-lite-req-ac-install-meta-box',
-			                "title" => esc_html__( 'Install Meta box' ,'openlab-lite' ),
-			                "description"=> esc_html__( 'Please make sure you install the Meta Box plugin.','openlab-lite' ),
+			                "id" => 'openlab-txtd-req-ac-install-meta-box',
+			                "title" => esc_html__( 'Install Meta box' ,'openlab-txtd' ),
+			                "description"=> esc_html__( 'Please make sure you install the Meta Box plugin.','openlab-txtd' ),
 			                "check" => defined('RWMB_VER'),
 			                "plugin_slug" => 'meta-box'
-			            ),
+			    	),
 						array(
-			                "id" => 'openlab-lite-req-ac-install-meta-box',
-			                "title" => esc_html__( 'Install Custom Facebook Feed' ,'openlab-lite' ),
-			                "description"=> esc_html__( 'Please make sure you install the Facebook Feed plugin.','openlab-lite' ),
+			                "id" => 'openlab-txtd-req-ac-install-ninja-forms',
+			                "title" => esc_html__( 'Install Ninja Forms' ,'openlab-txtd' ),
+			                "description"=> esc_html__( 'Please make sure you install the Ninja Forms plugin.','openlab-txtd' ),
+			                "check" => defined('NF_PLUGIN_VERSION'),
+			                "plugin_slug" => 'ninja-forms'
+			    	),
+						array(
+			                "id" => 'openlab-txtd-req-ac-install-cff',
+			                "title" => esc_html__( 'Install Custom Facebook Feed' ,'openlab-txtd' ),
+			                "description"=> esc_html__( 'Please make sure you install the Facebook Feed plugin.','openlab-txtd' ),
 			                "check" => defined('CFFVER'),
 			                "plugin_slug" => 'custom-facebook-feed'
             ),
             array(
-                "id" => 'openlab-lite-req-ac-check-pirate-forms',
-                "title" => esc_html__( 'Check the contact form after installing Pirate Forms' ,'openlab-lite' ),
-                "description"=> esc_html__( "After installing the Pirate Forms plugin, please make sure you check your frontpage contact form is working fine. Also, if you use Openlab Lite in other language(s) please make sure the translation is ok. If not, please translate the contact form again.",'openlab-lite' ),
+			                "id" => 'openlab-txtd-req-ac-check-pirate-forms',
+			                "title" => esc_html__( 'Check the contact form after installing Pirate Forms' ,'openlab-txtd' ),
+			                "description"=> esc_html__( "After installing the Pirate Forms plugin, please make sure you check your frontpage contact form is working fine. Also, if you use Openlab Lite in other language(s) please make sure the translation is ok. If not, please translate the contact form again.",'openlab-txtd' ),
             ),
 
         );
@@ -133,7 +142,7 @@ add_action('after_setup_theme', 'openlab_setup');
 function openlab_widgets_init() {
 
 	register_sidebar(array(
-        'name' => __('Sidebar', 'openlab-lite'),
+        'name' => __('Sidebar', 'openlab-txtd'),
         'id' => 'sidebar-1',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -141,14 +150,14 @@ function openlab_widgets_init() {
         'after_title' => '</h2>',
     ));
 
-    register_sidebar(array(
-        'name' => __('About us section', 'openlab-lite'),
+    /*register_sidebar(array(
+        'name' => __('About us section', 'openlab-txtd'),
         'id' => 'sidebar-aboutus',
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
-    ));
+    ));*/
 
 }
 
@@ -160,13 +169,13 @@ function openlab_slug_fonts_url() {
     * supported by Lora, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $lato = _x( 'on', 'Lato font: on or off', 'openlab-lite' );
-    $homemade = _x( 'on', 'Homemade font: on or off', 'openlab-lite' );
+    $lato = _x( 'on', 'Lato font: on or off', 'openlab-txtd' );
+    $homemade = _x( 'on', 'Homemade font: on or off', 'openlab-txtd' );
     /* Translators: If there are characters in your language that are not
     * supported by Open Sans, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $monserrat = _x( 'on', 'Monserrat font: on or off', 'openlab-lite' );
+    $monserrat = _x( 'on', 'Monserrat font: on or off', 'openlab-txtd' );
      if ( 'off' !== $lato || 'off' !== $monserrat|| 'off' !== $homemade ) {
         $font_families = array();
 
@@ -285,11 +294,6 @@ function openlab_register_required_plugins() {
 				'required' => false
 			),
 			array(
-				'name'      => 'Login customizer',
-				'slug'      => 'login-customizer',
-				'required'  => false,
-			),
-			array(
 				'name'      => 'Pirate Forms',
 				'slug'      => 'pirate-forms',
 				'required'  => true,
@@ -310,14 +314,19 @@ function openlab_register_required_plugins() {
 
 		$plugins = array(
 			array(
-				'name'      => 'Login customizer',
-				'slug'      => 'login-customizer',
-				'required'  => false,
-			),
-			array(
 				'name'      => 'Pirate Forms',
 				'slug'      => 'pirate-forms',
-				'required'  => false,
+				'required'  => true,
+			),
+			array(
+				'name'      => 'Ninja Forms',
+				'slug'      => 'ninja-forms',
+				'required'  => true,
+			),
+			array(
+				'name'      => 'Custom Facebook Feed',
+				'slug'      => 'custom-facebook-feed',
+				'required'  => true,
 			)
 		);
 
@@ -332,23 +341,23 @@ function openlab_register_required_plugins() {
         'is_automatic' => false,
         'message' => '',
         'strings' => array(
-            'page_title' => __('Install Required Plugins', 'openlab-lite'),
-            'menu_title' => __('Install Plugins', 'openlab-lite'),
-            'installing' => __('Installing Plugin: %s', 'openlab-lite'),
-            'oops' => __('Something went wrong with the plugin API.', 'openlab-lite'),
-            'notice_can_install_required' => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','openlab-lite'),
-            'notice_can_install_recommended' => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','openlab-lite'),
-            'notice_cannot_install' => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.','openlab-lite'),
-            'notice_can_activate_required' => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.','openlab-lite'),
-            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.','openlab-lite'),
-            'notice_cannot_activate' => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.','openlab-lite'),
-            'notice_ask_to_update' => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.','openlab-lite'),
-            'notice_cannot_update' => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','openlab-lite'),
-            'install_link' => _n_noop('Begin installing plugin', 'Begin installing plugins','openlab-lite'),
-            'activate_link' => _n_noop('Begin activating plugin', 'Begin activating plugins','openlab-lite'),
-            'return' => __('Return to Required Plugins Installer', 'openlab-lite'),
-            'plugin_activated' => __('Plugin activated successfully.', 'openlab-lite'),
-            'complete' => __('All plugins installed and activated successfully. %s', 'openlab-lite'),
+            'page_title' => __('Install Required Plugins', 'openlab-txtd'),
+            'menu_title' => __('Install Plugins', 'openlab-txtd'),
+            'installing' => __('Installing Plugin: %s', 'openlab-txtd'),
+            'oops' => __('Something went wrong with the plugin API.', 'openlab-txtd'),
+            'notice_can_install_required' => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','openlab-txtd'),
+            'notice_can_install_recommended' => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','openlab-txtd'),
+            'notice_cannot_install' => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.','openlab-txtd'),
+            'notice_can_activate_required' => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.','openlab-txtd'),
+            'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.','openlab-txtd'),
+            'notice_cannot_activate' => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.','openlab-txtd'),
+            'notice_ask_to_update' => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.','openlab-txtd'),
+            'notice_cannot_update' => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','openlab-txtd'),
+            'install_link' => _n_noop('Begin installing plugin', 'Begin installing plugins','openlab-txtd'),
+            'activate_link' => _n_noop('Begin activating plugin', 'Begin activating plugins','openlab-txtd'),
+            'return' => __('Return to Required Plugins Installer', 'openlab-txtd'),
+            'plugin_activated' => __('Plugin activated successfully.', 'openlab-txtd'),
+            'complete' => __('All plugins installed and activated successfully. %s', 'openlab-txtd'),
             'nag_type' => 'updated'
         )
     );
@@ -377,7 +386,7 @@ function openlab_default_title($title) {
 
 	if ($title == '')
 
-        $title = __("Default title",'openlab-lite');
+        $title = __("Default title",'openlab-txtd');
 
     return $title;
 
@@ -391,28 +400,30 @@ add_action('widgets_init', 'openlab_register_widgets');
 
 function openlab_register_widgets() {
 
-	register_widget('openlab_ourfocus');
-	register_widget('openlab_map_details_widget');
+	//register_widget('openlab_ourfocus');
+	//register_widget('openlab_map_details_widget');
   register_widget('openlab_team_widget');
-	register_widget('openlab_next_event_widget');
-	register_widget('openlab_latest_post_widget');
+	//register_widget('openlab_next_event_widget');
+	//register_widget('openlab_latest_post_widget');
+	register_widget('openlab_events_archive_widget');
 
 	//Sidebars
 	$openlab_lite_sidebars = array (
-	'sidebar-ourfocus' => 'sidebar-ourfocus',
+	/* 'sidebar-ourfocus' => 'sidebar-ourfocus', */
 	/* 'sidebar-testimonials' => 'sidebar-testimonials',*/
 	'sidebar-ourteam' => 'sidebar-ourteam' );
 
 	/* Register sidebars */
 	foreach ( $openlab_lite_sidebars as $openlab_lite_sidebar ):
 
-		if( $openlab_lite_sidebar == 'sidebar-ourfocus' ):
+		/*if( $openlab_lite_sidebar == 'sidebar-ourfocus' ):
 
-			$openlab_lite_name = __('Our focus section widgets', 'openlab-lite');
+			$openlab_lite_name = __('Our focus section widgets', 'openlab-txtd');
 
-		elseif( $openlab_lite_sidebar == 'sidebar-ourteam' ):
+		else */
+		if( $openlab_lite_sidebar == 'sidebar-ourteam' ):
 
-			$openlab_lite_name = __('Our team section widgets', 'openlab-lite');
+			$openlab_lite_name = __('Our team section widgets', 'openlab-txtd');
 
 		else:
 
@@ -441,7 +452,7 @@ add_action('after_switch_theme', 'openlab_register_default_widgets');
 function openlab_register_default_widgets() {
 
 	$openlab_lite_sidebars = array (
-	'sidebar-ourfocus' => 'sidebar-ourfocus',
+	/* 'sidebar-ourfocus' => 'sidebar-ourfocus', */
 	'sidebar-ourteam' => 'sidebar-ourteam'
 );
 
@@ -450,11 +461,11 @@ function openlab_register_default_widgets() {
 	/**
      * Default Our Focus widgets
      */
-	if ( empty ( $active_widgets[ $openlab_lite_sidebars['sidebar-ourfocus'] ] ) ):
+	/* if ( empty ( $active_widgets[ $openlab_lite_sidebars['sidebar-ourfocus'] ] ) ):
 
 		$openlab_lite_counter = 1;
 
-        /* our focus widget #1 */
+        /* our focus widget #1
 		$active_widgets[ 'sidebar-ourfocus' ][0] = 'ctup-ads-widget-' . $openlab_lite_counter;
         if ( file_exists( get_stylesheet_directory_uri().'/images/parallax.png' ) ):
             $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'PARALLAX EFFECT', 'text' => 'Create memorable pages with smooth parallax effects that everyone loves. Also, use our lightweight content slider offering you smooth and great-looking animations.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/parallax.png" );
@@ -464,7 +475,7 @@ function openlab_register_default_widgets() {
         update_option( 'widget_ctup-ads-widget', $ourfocus_content );
         $openlab_lite_counter++;
 
-        /* our focus widget #2 */
+        /* our focus widget #2
         $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
         if ( file_exists( get_stylesheet_directory_uri().'/images/woo.png' ) ):
             $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'WOOCOMMERCE', 'text' => 'Build a front page for your WooCommerce store in a matter of minutes. The neat and clean presentation will help your sales and make your store accessible to everyone.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/woo.png" );
@@ -474,7 +485,7 @@ function openlab_register_default_widgets() {
         update_option( 'widget_ctup-ads-widget', $ourfocus_content );
         $openlab_lite_counter++;
 
-        /* our focus widget #3 */
+        /* our focus widget #3
         $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
         if ( file_exists( get_stylesheet_directory_uri().'/images/ccc.png' ) ):
             $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'CUSTOM CONTENT BLOCKS', 'text' => 'Showcase your team, products, clients, about info, testimonials, latest posts from the blog, contact form, additional calls to action. Everything translation ready.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/ccc.png" );
@@ -484,7 +495,7 @@ function openlab_register_default_widgets() {
         update_option( 'widget_ctup-ads-widget', $ourfocus_content );
         $openlab_lite_counter++;
 
-        /* our focus widget #4 */
+        /* our focus widget #4
         $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
         if ( file_exists( get_stylesheet_directory_uri().'/images/ti-logo.png' ) ):
             $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'GO PRO FOR MORE FEATURES', 'text' => 'Get new content blocks: pricing table, Google Maps, and more. Change the sections order, display each block exactly where you need it, customize the blocks with whatever colors you wish.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/ti-logo.png" );
@@ -497,6 +508,7 @@ function openlab_register_default_widgets() {
 		update_option( 'sidebars_widgets', $active_widgets );
 
     endif;
+		*/
 
 
     /**
@@ -508,25 +520,25 @@ function openlab_register_default_widgets() {
 
         /* our team widget #1 */
         $active_widgets[ 'sidebar-ourteam' ][0] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'ASHLEY SIMMONS', 'position' => 'Project Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team1.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'ASHLEY SIMMONS', 'position' => 'Project Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team1.png" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #2 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TIMOTHY SPRAY', 'position' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team2.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TIMOTHY SPRAY', 'position' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team2.png" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #3 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TONYA GARCIA', 'position' => 'Account Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team3.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TONYA GARCIA', 'position' => 'Account Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team3.png" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #4 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'JASON LANE', 'position' => 'Business Development', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'db_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team4.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'JASON LANE', 'position' => 'Business Development', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team4.png" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
@@ -540,7 +552,7 @@ function openlab_register_default_widgets() {
 /****** our focus widget */
 /************************/
 
-add_action('admin_enqueue_scripts', 'openlab_ourfocus_widget_scripts');
+//add_action('admin_enqueue_scripts', 'openlab_ourfocus_widget_scripts');
 
 function openlab_ourfocus_widget_scripts() {
 
@@ -548,13 +560,13 @@ function openlab_ourfocus_widget_scripts() {
   wp_enqueue_script('openlab_our_focus_widget_script', get_template_directory_uri() . '/js/widget.js', false, '1.0', true);
 
 }
-
+/*
 class openlab_ourfocus extends WP_Widget {
 
 	public function __construct() {
 		parent::__construct(
 			'ctUp-ads-widget',
-			__( 'Openlab - Our focus widget', 'openlab-lite' )
+			__( 'Openlab - Our focus widget', 'openlab-txtd' )
 		);
 	}
 
@@ -620,34 +632,35 @@ class openlab_ourfocus extends WP_Widget {
         ?>
 
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php if( !empty($instance['title']) ): echo $instance['title']; endif; ?>" class="widefat">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text', 'openlab-txtd'); ?></label><br/>
             <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>"><?php if( !empty($instance['text']) ): echo htmlspecialchars_decode($instance['text']); endif; ?></textarea>
         </p>
 		<p>
-			<label for="<?php echo $this->get_field_id('link'); ?>"><?php _e('Link','openlab-lite'); ?></label><br />
+			<label for="<?php echo $this->get_field_id('link'); ?>"><?php _e('Link','openlab-txtd'); ?></label><br />
 			<input type="text" name="<?php echo $this->get_field_name('link'); ?>" id="<?php echo $this->get_field_id('link'); ?>" value="<?php if( !empty($instance['link']) ): echo $instance['link']; endif; ?>" class="widefat">
 		</p>
         <p>
-            <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'openlab-txtd'); ?></label><br/>
             <?php
             if ( !empty($instance['image_uri']) ) :
-                echo '<img class="custom_media_image" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" alt="'.__( 'Uploaded image', 'openlab-lite' ).'" /><br />';
+                echo '<img class="custom_media_image" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" alt="'.__( 'Uploaded image', 'openlab-txtd' ).'" /><br />';
             endif;
             ?>
 
             <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>" style="margin-top:5px;">
 
-            <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','openlab-lite'); ?>" style="margin-top:5px;"/>
+            <input type="button" class="button button-primary custom_media_button" id="custom_media_button" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','openlab-txtd'); ?>" style="margin-top:5px;"/>
         </p>
     <?php
 
     }
 
 }
+*/
 
 /****************************/
 /****** Next Event widget **/
@@ -657,7 +670,7 @@ class openlab_next_event_widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'openlab-next-event-widget',
-			__( 'Openlab - Next Event widget', 'openlab-lite' )
+			__( 'Openlab - Next Event widget', 'openlab-txtd' )
 		);
 	}
 
@@ -749,7 +762,7 @@ class openlab_latest_post_widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'openlab-latest-post-widget',
-			__( 'Openlab - Latest Post widget', 'openlab-lite' )
+			__( 'Openlab - Latest Post widget', 'openlab-txtd' )
 		);
 	}
 
@@ -876,6 +889,87 @@ class openlab_latest_post_widget extends WP_Widget {
 
 }
 
+
+/****** Latest 3 EVENTS widget **/
+/***************************/
+class openlab_events_archive_widget extends WP_Widget {
+
+	public function __construct() {
+		parent::__construct(
+			'openlab-events-archive-widget',
+			__( 'Openlab - Events Archive widget', 'openlab-txtd' )
+		);
+	}
+
+    function widget($args, $instance) {
+
+        extract($args);
+        echo $before_widget;
+				$viewed_in						= $GLOBALS['post']->ID;
+				$args 								= array( 'numberposts' => '3', 'post_type' => 'event', 'post__not_in' => array($viewed_in)  );
+				$recent_events				= wp_get_recent_posts( $args );
+				$archive_permalink 		= get_post_type_archive_link( 'event' );
+				$ev_title 						= '';
+				$ev_date 							= '';
+				$ev_permalink					= '';
+				$ev_type							= '';
+
+        ?>
+
+				<div class="recent-events-archive widget">
+					<h2 class="events-widget"><?php echo __('Other Events', 'openlab-txtd') ?></h2>
+	      	<div class="recent-events-wrap">
+
+					<?php
+						if($recent_events):
+
+							foreach($recent_events as $ev):
+
+								$ev_type 			= get_post_meta($ev['ID'], 'event_type', true);
+								$ev_title 		= $ev['post_title'];
+								$ev_date 			= get_post_meta($ev['ID'], 'event_datetime_start', true);
+								if($ev_date):
+									$ev_date = gmdate('j F Y', $ev_date);
+								endif;
+								$ev_permalink = esc_url( get_post_permalink($ev['ID']) );
+
+								echo '<div class="widget-event '. $ev_type .'">';
+									if($ev_date){
+										echo '<p class="event-date">'. $ev_date .'</p>';
+									}
+									if($ev_title && $ev_permalink){
+										echo '<h4 class="event-title"><a href="'. esc_url($ev_permalink) .'">'. $ev_title .'</a></h4>';
+									}
+
+								echo '</div>';
+							endforeach;
+						endif;
+					?>
+
+	      </div>
+			</div>
+
+        <?php
+
+        echo $after_widget;
+
+    }
+
+    function update($new_instance, $old_instance) {
+
+        $instance = $old_instance;
+
+        return $instance;
+
+    }
+
+    function form($instance) {
+
+    }
+
+}
+
+
 /****************************/
 /****** Map Detals widget **/
 /***************************/
@@ -884,7 +978,7 @@ class openlab_map_details_widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'openlab_map_details_widget',
-			__( 'Openlab - Map Details Widget', 'openlab-lite' )
+			__( 'Openlab - Map Details Widget', 'openlab-txtd' )
 		);
 	}
 
@@ -994,11 +1088,6 @@ class event_cpt_calendar extends WP_Widget {
 // register CPT Calendar widget
 add_action('widgets_init', create_function('', 'return register_widget("event_cpt_calendar");'));
 
-
-/* oplb_events_get_calendar() :: Extends get_calendar() by including custom post types.
- * Derived from get_calendar() code in /wp-includes/general-template.php.
- */
-
 function oplb_events_get_calendar( $post_types = '' , $initial = true , $echo = true ) {
   global $wpdb, $m, $monthnum, $year, $wp_locale, $posts;
 
@@ -1079,8 +1168,51 @@ function oplb_events_get_calendar( $post_types = '' , $initial = true , $echo = 
 
   //$calendar_caption = _x( '%1$s %2$s' , 'calendar caption' );
   $calendar_caption = _x( '%1$s' , 'calendar caption' );
-  $calendar_output = '<table id="wp-calendar" summary="' . esc_attr__( 'Calendar' ) . '">
-  <caption>' . sprintf( $calendar_caption , $wp_locale->get_month( $thismonth ) , date( 'Y' , $unixmonth ) ) . '</caption>
+
+	$month_desc = $wp_locale->get_month( $thismonth );
+
+	switch ($month_desc) {
+    case "Ιανουαρίου":
+				$month_desc = 'ΙΑΝΟΥΑΡΙΟΣ';
+        break;
+		case "Φεβρουαρίου":
+				$month_desc = 'ΦΕΒΡΟΥΑΡΙΟΣ';
+        break;
+		case "Μαρτίου":
+				$month_desc = 'ΜΑΡΤΙΟΣ';
+        break;
+		case "Απριλίου":
+				$month_desc = 'ΑΠΡΙΛΙΟΣ';
+        break;
+		case "Μαΐου":
+				$month_desc = 'ΜΑΪΟΣ';
+				break;
+		case "Ιουνίου":
+				$month_desc = 'ΙΟΥΝΙΟΣ';
+        break;
+		case "Ιουλίου":
+				$month_desc = 'ΙΟΥΛΙΟΣ';
+        break;
+		case "Αυγούστου":
+				$month_desc = 'ΑΥΓΟΥΣΤΟΣ';
+        break;
+		case "Σεπτεμβρίου":
+				$month_desc = 'ΣΕΠΤΕΜΒΡΙΟΣ';
+        break;
+		case "Οκτωβρίου":
+				$month_desc = 'ΟΚΤΩΒΡΙΟΣ';
+				break;
+		case "Νοεμβρίου":
+				$month_desc = 'ΝΟΕΜΒΡΙΟΣ';
+        break;
+		case "Δεκεμβρίου":
+				$month_desc = 'ΔΕΚΕΜΒΡΙΟΣ';
+        break;
+
+}
+
+  $calendar_output = '<table id="wp-events-calendar">
+  <h3>' . sprintf( $calendar_caption , $month_desc , date( 'Y' , $unixmonth ) ) . '</h3>
   <thead>
   <tr>';
 
@@ -1098,29 +1230,10 @@ function oplb_events_get_calendar( $post_types = '' , $initial = true , $echo = 
 
   $calendar_output .= '
   </tr>
-  </thead>
-
-  <tfoot>
-  <tr>';
-//disable months
-  /*if ( $previous ) {    $calendar_output .= "\n\t\t" . '<td colspan="3" id="prev"><a href="' . get_month_link( $previous->year , $previous->month ) . '&post_type=event" title="' . sprintf( __( 'View posts for %1$s %2$s' ) , $wp_locale->get_month( $previous->month ) , date( 'Y' , mktime( 0 , 0 , 0 , $previous->month , 1 , $previous->year ) ) ) . '">&laquo; ' . $wp_locale->get_month_abbrev( $wp_locale->get_month( $previous->month ) ) . '</a></td>';
-  } else {
-    $calendar_output .= "\n\t\t" . '<td colspan="3" id="prev" class="pad">&nbsp;</td>';
-  }
-
-  $calendar_output .= "\n\t\t" . '<td class="pad">&nbsp;</td>';
-
-  if ( $next ) {    $calendar_output .= "\n\t\t" . '<td colspan="3" id="next"><a href="' . get_month_link( $next->year , $next->month ) . '&post_type=event" title="' . esc_attr( sprintf( __( 'View posts for %1$s %2$s' ) , $wp_locale->get_month( $next->month ) , date( 'Y' , mktime( 0 , 0 , 0 , $next->month , 1 , $next->year ) ) ) ) . '">' . $wp_locale->get_month_abbrev( $wp_locale->get_month( $next->month ) ) . ' &raquo;</a></td>';
-  } else {
-    $calendar_output .= "\n\t\t" . '<td colspan="3" id="next" class="pad">&nbsp;</td>';
-  }
-  */
+  </thead>';
 
   $calendar_output .= '
-  </tr>
-  </tfoot>
-
-  <tbody>
+    <tbody>
   <tr>';
 
   // Get days with posts
@@ -1236,7 +1349,7 @@ class openlab_team_widget extends WP_Widget{
 	public function __construct() {
 		parent::__construct(
 			'openlab_team-widget',
-			__( 'Openlab - Team member widget', 'openlab-lite' )
+			__( 'Openlab - Team member widget', 'openlab-txtd' )
 		);
 	}
 
@@ -1256,7 +1369,15 @@ class openlab_team_widget extends WP_Widget{
 
 					<figure class="profile-pic">
 
-						<img src="<?php echo esc_url($instance['image_uri']); ?>" alt="<?php _e( 'Uploaded image', 'openlab-lite' ); ?>" />
+						<img src="<?php echo esc_url($instance['image_uri']); ?>" alt="<?php _e( 'Uploaded image', 'openlab-txtd' ); ?>" />
+
+					</figure>
+
+				<?php else: ?>
+
+					<figure class="profile-pic-empty">
+
+						<img src="<?php echo esc_url( get_template_directory_uri().'/images/people-empty.svg' ); ?>" alt="<?php _e( 'Uploaded image', 'openlab-txtd' ); ?>" />
 
 					</figure>
 
@@ -1282,24 +1403,14 @@ class openlab_team_widget extends WP_Widget{
 
                     <ul>
                         <?php
-                            $openlab_team_target = '_self';
-                            if( !empty($instance['open_new_window']) ):
-                                $openlab_team_target = '_blank';
-                            endif;
+                            $openlab_team_target = '_blank';
                         ?>
 
                         <?php if ( !empty($instance['fb_link']) ): ?>
                             <li>
 															<a href="<?php echo apply_filters('widget_title', $instance['fb_link']); ?>" target="<?php echo $openlab_team_target; ?>">
 																<span class="widget-social">
-																	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-																		 viewBox="-230 373.4 50 50" style="enable-background:new -230 373.4 50 50;" xml:space="preserve">
-																	<g>
-																		<polyline points="-230,423.4 -230,373.4 -180,373.4 	"/>
-																		<path class="st1" d="M-187.7,403.3l1-7.7h-7.6v-4.9c0-2.2,0.6-3.7,3.8-3.7l4.1,0v-6.8c-0.7-0.1-3.1-0.3-5.9-0.3
-																			c-5.8,0-9.8,3.6-9.8,10.1v5.6h-6.6v7.7h6.6v19.6h7.9v-19.6H-187.7z"/>
-																	</g>
-																	</svg>
+																	<i class="fa fa-facebook"></i>
 																</span>
 															</a>
 														</li>
@@ -1309,15 +1420,7 @@ class openlab_team_widget extends WP_Widget{
                             <li>
 															<a href="<?php echo apply_filters('widget_title', $instance['tw_link']); ?>" target="<?php echo $openlab_team_target; ?>">
 																<span class="widget-social">
-																	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-																		 viewBox="-230.1 373.4 50 50" style="enable-background:new -230.1 373.4 50 50;" xml:space="preserve">
-																	<polyline class="st0" points="-230.1,423.4 -230.1,373.4 -180.1,373.4 "/>
-																	<path class="st1" d="M-189.7,388c-1.2,0.5-2.5,0.9-3.9,1.1c1.4-0.8,2.5-2.2,3-3.8c-1.3,0.8-2.8,1.4-4.3,1.7c-1.2-1.3-3-2.2-5-2.2
-																		c-3.8,0-6.8,3.1-6.8,6.8c0,0.5,0.1,1.1,0.2,1.6c-5.7-0.3-10.7-3-14.1-7.1c-0.6,1-0.9,2.2-0.9,3.4c0,2.4,1.2,4.5,3,5.7
-																		c-1.1,0-2.2-0.3-3.1-0.9v0.1c0,3.3,2.4,6.1,5.5,6.7c-0.6,0.2-1.2,0.2-1.8,0.2c-0.4,0-0.9,0-1.3-0.1c0.9,2.7,3.4,4.7,6.4,4.7
-																		c-2.3,1.8-5.3,2.9-8.5,2.9c-0.6,0-1.1,0-1.6-0.1c3,1.9,6.6,3.1,10.5,3.1c12.6,0,19.5-10.4,19.5-19.5c0-0.3,0-0.6,0-0.9
-																		C-191.8,390.6-190.6,389.4-189.7,388z"/>
-																	</svg>
+																	<i class="fa fa-twitter"></i>
 																</span>
 															</a>
 														</li>
@@ -1327,43 +1430,17 @@ class openlab_team_widget extends WP_Widget{
                             <li>
 															<a href="<?php echo apply_filters('widget_title', $instance['bh_link']); ?>" target="<?php echo $openlab_team_target; ?>">
 																<span class="widget-social">
-																	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-																		 viewBox="-230.2 373.4 49.3 50" style="enable-background:new -230.2 373.4 49.3 50;" xml:space="preserve">
-																	<polyline class="st0" points="-230.2,423.4 -230.2,373.4 -180.8,373.4 "/>
-																	<path class="st1" d="M-209,395.6c0,0,3.1-0.2,3.1-3.9c0-3.7-2.6-5.5-5.8-5.5h-6h-0.2h-4.6v20.6h4.6h0.2h6c0,0,6.6,0.2,6.6-6.1
-																		C-205.2,400.7-204.9,395.6-209,395.6z M-212.5,389.9h0.8c0,0,1.5,0,1.5,2.1s-0.9,2.5-1.8,2.5h-5.6v-4.6H-212.5z M-212,403.2h-5.7
-																		v-5.5h6c0,0,2.2,0,2.2,2.8C-209.6,402.9-211.2,403.2-212,403.2z"/>
-																	<path class="st1" d="M-196.4,391.4c-7.9,0-7.9,7.9-7.9,7.9s-0.5,7.9,7.9,7.9c0,0,7.1,0.4,7.1-5.5h-3.6c0,0,0.1,2.2-3.3,2.2
-																		c0,0-3.6,0.2-3.6-3.6h10.7C-189.2,400.4-188.1,391.4-196.4,391.4z M-200,397.6c0,0,0.4-3.2,3.6-3.2c3.2,0,3.1,3.2,3.1,3.2H-200z"/>
-																	<rect x="-200.9" y="387.4" class="st1" width="8.5" height="2.5"/>
-																	</svg>
+																	<i class="fa fa-behance"></i>
 																</span>
 															</a>
 														</li>
                         <?php endif; ?>
 
-                        <?php if ( !empty($instance['db_link']) ): ?>
+                        <?php if ( !empty($instance['gp_link']) ): ?>
                             <li>
-															<a href="<?php echo apply_filters('widget_title', $instance['db_link']); ?>" target="<?php echo $openlab_team_target; ?>">
+															<a href="<?php echo apply_filters('widget_title', $instance['gp_link']); ?>" target="<?php echo $openlab_team_target; ?>">
 																<span class="widget-social">
-																	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-																		viewBox="-230 373 49.2 50" style="enable-background:new -230 373 49.2 50;" xml:space="preserve">
-																		<polyline class="st0" points="-230,423 -230,373 -180.8,373 "/>
-																		<path class="st1" d="M-206.2,380.8c0.3,0.2,0.7,0.5,1,0.8c0.4,0.4,0.7,0.9,1.1,1.4c0.3,0.5,0.6,1.2,0.9,1.9c0.2,0.7,0.3,1.6,0.3,2.6
-																		c0,1.8-0.4,3.2-1.2,4.3c-0.4,0.5-0.8,1-1.2,1.4c-0.5,0.4-0.9,0.9-1.4,1.3c-0.3,0.3-0.6,0.7-0.8,1c-0.3,0.4-0.4,0.9-0.4,1.4
-																		c0,0.5,0.1,0.9,0.4,1.3c0.3,0.3,0.5,0.6,0.7,0.9l1.7,1.4c1,0.9,1.9,1.8,2.7,2.8c0.7,1.1,1.1,2.4,1.1,4.1c0,2.4-1.1,4.6-3.1,6.4
-																		c-2.2,1.9-5.3,2.9-9.4,3c-3.4,0-6-0.8-7.7-2.2c-1.7-1.4-2.6-3-2.6-4.9c0-0.9,0.3-1.9,0.8-3.1c0.5-1.1,1.5-2.1,2.9-3
-																		c1.6-0.9,3.3-1.5,5-1.8c1.7-0.3,3.2-0.4,4.3-0.4c-0.4-0.5-0.7-1-0.9-1.5c-0.3-0.5-0.5-1.1-0.5-1.9c0-0.4,0.1-0.8,0.2-1.1
-																		c0.1-0.3,0.2-0.6,0.3-0.9c-0.6,0.1-1.1,0.1-1.6,0.1c-2.6,0-4.6-0.9-6-2.5c-1.4-1.5-2.1-3.3-2.1-5.3c0-2.4,1-4.7,3-6.7
-																		c1.4-1.2,2.8-1.9,4.3-2.3c1.5-0.3,2.9-0.5,4.2-0.5h9.8l-3,1.8L-206.2,380.8L-206.2,380.8z M-204.3,409.5c0-1.3-0.4-2.4-1.2-3.3
-																		c-0.9-0.9-2.2-2-4-3.3c-0.3,0-0.7,0-1.1,0c-0.3,0-0.9,0-1.9,0.1c-1,0.1-2.1,0.4-3.1,0.7c-0.3,0.1-0.6,0.2-1.1,0.4
-																		c-0.5,0.2-0.9,0.5-1.4,0.9c-0.5,0.4-0.8,0.9-1.1,1.5c-0.4,0.6-0.5,1.4-0.5,2.3c0,1.7,0.8,3.2,2.3,4.3c1.5,1.1,3.5,1.7,6.1,1.8
-																		c2.3,0,4.1-0.6,5.3-1.6C-204.9,412.3-204.3,411-204.3,409.5z M-211.2,394.9c1.3,0,2.4-0.5,3.2-1.4c0.4-0.6,0.7-1.3,0.8-1.9
-																		c0.1-0.7,0.1-1.2,0.1-1.7c0-2-0.5-3.9-1.5-5.9c-0.5-1-1.1-1.7-1.8-2.3c-0.8-0.6-1.7-0.9-2.7-0.9c-1.3,0-2.4,0.6-3.3,1.6
-																		c-0.7,1.1-1.1,2.3-1.1,3.7c0,1.8,0.5,3.7,1.6,5.6c0.5,0.9,1.1,1.7,1.9,2.3C-213.1,394.6-212.2,394.9-211.2,394.9z"/>
-																		<polygon class="st1" points="-186.9,384.5 -192,384.5 -192,379.2 -194.5,379.2 -194.5,384.5 -199.7,384.5 -199.7,387 -194.5,387
-																		-194.5,392.2 -192,392.2 -192,387 -186.9,387 "/>
-																	</svg>
+																	<i class="fa fa-google-plus"></i>
 																</span>
 															</a>
 														</li>
@@ -1373,16 +1450,7 @@ class openlab_team_widget extends WP_Widget{
                             <li>
 															<a href="<?php echo apply_filters('widget_title', $instance['ln_link']); ?>" target="<?php echo $openlab_team_target; ?>">
 																<span class="widget-social">
-																	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-																		 viewBox="-230 373.4 50 50" style="enable-background:new -230 373.4 50 50;" xml:space="preserve">
-																	<g>
-																		<polyline class="st0" points="-230,423.4 -230,373.4 -180,373.4 	"/>
-																		<path class="st1" d="M-221.5,392.7h7.1v22.7h-7.1V392.7z M-217.9,381.4c2.3,0,4.1,1.8,4.1,4.1c0,2.3-1.8,4.1-4.1,4.1
-																			c-2.3,0-4.1-1.8-4.1-4.1C-222,383.2-220.2,381.4-217.9,381.4"/>
-																		<path class="st1" d="M-210,392.7h6.8v3.1h0.1c0.9-1.8,3.2-3.7,6.7-3.7c7.1,0,8.5,4.7,8.5,10.8v12.4h-7v-11c0-2.6-0.1-6-3.7-6
-																			c-3.7,0-4.2,2.9-4.2,5.8v11.2h-7C-210,415.3-210,392.7-210,392.7z"/>
-																	</g>
-																	</svg>
+																	<i class="fa fa-linkedin"></i>
 																</span>
 															</a>
 														</li>
@@ -1412,7 +1480,7 @@ class openlab_team_widget extends WP_Widget{
         $instance['fb_link'] = strip_tags($new_instance['fb_link']);
         $instance['tw_link'] = strip_tags($new_instance['tw_link']);
         $instance['bh_link'] = strip_tags($new_instance['bh_link']);
-        $instance['db_link'] = strip_tags($new_instance['db_link']);
+        $instance['gp_link'] = strip_tags($new_instance['gp_link']);
 				$instance['ln_link'] = strip_tags($new_instance['ln_link']);
         $instance['image_uri'] = strip_tags($new_instance['image_uri']);
         $instance['open_new_window'] = strip_tags($new_instance['open_new_window']);
@@ -1426,53 +1494,53 @@ class openlab_team_widget extends WP_Widget{
         ?>
 
         <p>
-            <label for="<?php echo $this->get_field_id('name'); ?>"><?php _e('Name', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('name'); ?>"><?php _e('Name', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('name'); ?>" id="<?php echo $this->get_field_id('name'); ?>" value="<?php if( !empty($instance['name']) ): echo $instance['name']; endif; ?>" class="widefat"/>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('position'); ?>"><?php _e('Position', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('position'); ?>"><?php _e('Position', 'openlab-txtd'); ?></label><br/>
             <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('position'); ?>" id="<?php echo $this->get_field_id('position'); ?>"><?php if( !empty($instance['position']) ): echo htmlspecialchars_decode($instance['position']); endif; ?></textarea>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('fb_link'); ?>"><?php _e('Facebook link', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('fb_link'); ?>"><?php _e('Facebook link', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('fb_link'); ?>" id="<?php echo $this->get_field_id('fb_link'); ?>" value="<?php if( !empty($instance['fb_link']) ): echo $instance['fb_link']; endif; ?>" class="widefat">
 
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('tw_link'); ?>"><?php _e('Twitter link', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('tw_link'); ?>"><?php _e('Twitter link', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('tw_link'); ?>" id="<?php echo $this->get_field_id('tw_link'); ?>" value="<?php if( !empty($instance['tw_link']) ): echo $instance['tw_link']; endif; ?>" class="widefat">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('bh_link'); ?>"><?php _e('Behance link', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('bh_link'); ?>"><?php _e('Behance link', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('bh_link'); ?>" id="<?php echo $this->get_field_id('bh_link'); ?>" value="<?php if( !empty($instance['bh_link']) ): echo $instance['bh_link']; endif; ?>" class="widefat">
 
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('db_link'); ?>"><?php _e('Dribble link', 'openlab-lite'); ?></label><br/>
-            <input type="text" name="<?php echo $this->get_field_name('db_link'); ?>" id="<?php echo $this->get_field_id('db_link'); ?>" value="<?php if( !empty($instance['db_link']) ): echo $instance['db_link']; endif; ?>" class="widefat">
+            <label for="<?php echo $this->get_field_id('gp_link'); ?>"><?php _e('Google+ link', 'openlab-txtd'); ?></label><br/>
+            <input type="text" name="<?php echo $this->get_field_name('gp_link'); ?>" id="<?php echo $this->get_field_id('gp_link'); ?>" value="<?php if( !empty($instance['gp_link']) ): echo $instance['gp_link']; endif; ?>" class="widefat">
         </p>
 		<p>
-            <label for="<?php echo $this->get_field_id('ln_link'); ?>"><?php _e('Linkedin link', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('ln_link'); ?>"><?php _e('Linkedin link', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('ln_link'); ?>" id="<?php echo $this->get_field_id('ln_link'); ?>" value="<?php if( !empty($instance['ln_link']) ): echo $instance['ln_link']; endif; ?>" class="widefat">
         </p>
         <p>
-            <input type="checkbox" name="<?php echo $this->get_field_name('open_new_window'); ?>" id="<?php echo $this->get_field_id('open_new_window'); ?>" <?php if( !empty($instance['open_new_window']) ): checked( (bool) $instance['open_new_window'], true ); endif; ?> ><?php _e( 'Open links in new window?','openlab-lite' ); ?><br>
+            <input type="checkbox" name="<?php echo $this->get_field_name('open_new_window'); ?>" id="<?php echo $this->get_field_id('open_new_window'); ?>" <?php if( !empty($instance['open_new_window']) ): checked( (bool) $instance['open_new_window'], true ); endif; ?> ><?php _e( 'Open links in new window?','openlab-txtd' ); ?><br>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'openlab-lite'); ?></label><br/>
+            <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'openlab-txtd'); ?></label><br/>
 
             <?php
 
             if ( !empty($instance['image_uri']) ) :
 
-                echo '<img class="custom_media_image_team" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" alt="'.__( 'Uploaded image', 'openlab-lite' ).'" /><br />';
+                echo '<img class="custom_media_image_team" src="' . $instance['image_uri'] . '" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" alt="'.__( 'Uploaded image', 'openlab-txtd' ).'" /><br />';
 
             endif;
 
             ?>
 
             <input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>" style="margin-top:5px;">
-            <input type="button" class="button button-primary custom_media_button_team" id="custom_media_button_clients" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','openlab-lite'); ?>" style="margin-top:5px;">
+            <input type="button" class="button button-primary custom_media_button_team" id="custom_media_button_clients" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','openlab-txtd'); ?>" style="margin-top:5px;">
         </p>
 
     <?php
@@ -1522,7 +1590,7 @@ function remove_class_function( $classes ) {
 		else{
 
 			$avail_sl = get_registered_gallery_slides();
-			if( ($avail_sl !== false) || ( count($avail_sl) >= 2 ) ){
+			if( ($avail_sl !== false) || ( count($avail_sl) >= 1 ) ){
 				//add extra class to body
 				$classes[] = 'no-background';
 				$key = array_search('custom-background', $classes);
@@ -1681,11 +1749,11 @@ function openlab_register_meta_boxes( $meta_boxes ){
 
 	// Date time Picker for event START
 	$meta_boxes[] = array(
-		'title' => __( 'The Date/Time Event Starts', 'openlab-lite' ),
+		'title' => __( 'The Date/Time Event Starts', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			array(
-				'name' => __( 'Date and time', 'openlab-lite' ),
+				'name' => __( 'Date and time', 'openlab-txtd' ),
 				'id'   => 'event_datetime_start',
 				'type' => 'datetime',
 				'timestamp' => true,
@@ -1703,7 +1771,7 @@ function openlab_register_meta_boxes( $meta_boxes ){
 				),
 				'messages' => array(
 														'event_datetime_start' => array(
-														'required'  => __( 'Please select a date/time', 'openlab-lite' )
+														'required'  => __( 'Please select a date/time', 'openlab-txtd' )
 														)
 														)
 			),
@@ -1711,11 +1779,11 @@ function openlab_register_meta_boxes( $meta_boxes ){
 
 	// Date time Picker for event END time
 	$meta_boxes[] = array(
-		'title' => __( 'The Date/Time Event Ends', 'openlab-lite' ),
+		'title' => __( 'The Date/Time Event Ends', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			array(
-				'name' => __( 'Date and time', 'openlab-lite' ),
+				'name' => __( 'Date and time', 'openlab-txtd' ),
 				'id'   => 'event_datetime_end',
 				'type' => 'datetime',
 				'timestamp' => true,
@@ -1733,7 +1801,7 @@ function openlab_register_meta_boxes( $meta_boxes ){
 				),
 				'messages' => array(
 														'event_datetime_end' => array(
-														'required'  => __( 'Please select a date/time', 'openlab-lite' )
+														'required'  => __( 'Please select a date/time', 'openlab-txtd' )
 														)
 														)
 			),
@@ -1741,19 +1809,19 @@ function openlab_register_meta_boxes( $meta_boxes ){
 
 	// Google Map
 	$meta_boxes[] = array(
-		'title'  => __( 'Location of Event', 'openlab-lite' ),
+		'title'  => __( 'Location of Event', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			// Map requires at least one address field (with type = text)
 			array(
 				'id'   => 'event_location',
-				'name' => __( 'Address', 'openlab-lite' ),
+				'name' => __( 'Address', 'openlab-txtd' ),
 				'type' => 'text',
-				'std'  => __( 'Athens, Greece', 'openlab-lite' ),
+				'std'  => __( 'Athens, Greece', 'openlab-txtd' ),
 			),
 			array(
 				'id'            => 'map',
-				'name'          => __( 'Location', 'openlab-lite' ),
+				'name'          => __( 'Location', 'openlab-txtd' ),
 				'type'          => 'map',
 				// Default location: 'latitude,longitude[,zoom]' (zoom is optional)
 				'std'           => '37.9758306,23.7389269,15',
@@ -1764,36 +1832,37 @@ function openlab_register_meta_boxes( $meta_boxes ){
 	);
 
 	// Slider Images
-	$meta_boxes[] = array(
-		'title'  => __( 'Event Slider Images', 'openlab-lite' ),
+	/*$meta_boxes[] = array(
+		'title'  => __( 'Event Slider Images', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			array(
 				'id'               => 'image_advanced',
-				'name'             => __( 'Slider images', 'openlab-lite' ),
+				'name'             => __( 'Slider images', 'openlab-txtd' ),
 				'type'             => 'image_advanced',
 				'force_delete'     => false,
 				'max_file_uploads' => 9,
 			),
 		),
 	);
+	*/
 
 	//Type of event
 	$meta_boxes[] = array(
-		'title'  => __( 'Select the Type of Event', 'openlab-lite' ),
+		'title'  => __( 'Select the Type of Event', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			array(
-				'name'        => __( 'Select the Type of Event', 'openlab-lite' ),
+				'name'        => __( 'Select the Type of Event', 'openlab-txtd' ),
 				'id'          => 'event_type',
 				'type'        => 'select',
 				'options'     => array(
-					'speech' => __( 'Speech', 'openlab-lite' ),
-					'seminar' => __( 'Seminar', 'openlab-lite' ),
-					'workshop' => __( 'Workshop', 'openlab-lite' ),
+					'speech' => __( 'Speech', 'openlab-txtd' ),
+					'seminar' => __( 'Seminar', 'openlab-txtd' ),
+					'workshop' => __( 'Workshop', 'openlab-txtd' ),
 				),
 				'multiple'    => false,
-				'placeholder' => __( 'Select...', 'openlab-lite' ),
+				'placeholder' => __( 'Select...', 'openlab-txtd' ),
 			),
 		),
 		'validation' => array(
@@ -1804,47 +1873,56 @@ function openlab_register_meta_boxes( $meta_boxes ){
 				),
 				'messages' => array(
 														'event_type' => array(
-														'required'  => __( 'Please select an event type', 'openlab-lite' )
+														'required'  => __( 'Please select an event type', 'openlab-txtd' )
 														)
 														)
 			),
 
 	);
 
-	//Ninja Form Select
-	//get available ninja forms
-	global $wpdb;
-	$prfx = $wpdb->prefix;
-	$available_forms = array();
-
-	if($prfx){
-		$ninja_forms_query = '';
-		$ninja_forms_query = 'SELECT object_id as nform_id, meta_value as nform_title FROM '. $prfx .'nf_objectmeta WHERE meta_key = "form_title"';
-		$results = $wpdb->get_results( $ninja_forms_query, ARRAY_A );
-
-	}
-	if ($results){
-
-		foreach( $results as $form){
-
-			$available_forms[ $form['nform_id'] ] = $form['nform_title'];
-
-		}
-	}
-	if($available_forms){
+	//Event Price field
 	$meta_boxes[] = array(
-		'title'  => __( 'Select a Ninja Form', 'openlab-lite' ),
+		'title'  => __( 'Participation Ticket Price', 'openlab-txtd' ),
 		'post_types' => 'event',
 		'fields' => array(
 			array(
-				'name'        => __( 'Select a ninja Form', 'openlab-lite' ),
+				'name'        => __( 'Event Price', 'openlab-txtd' ),
+				'id'          => 'event_price',
+				'type'        => 'text',
+				'std' 				=> __( 'FREE', 'openlab-txtd' ),
+				'size'				=> '30',
+			),
+		),
+		'validation' => array(
+				'rules'    => array(
+														'event_price' => array(
+														'required'  => true
+														),
+				),
+				'messages' => array(
+														'event_price' => array(
+														'required'  => __( 'Please add the Event Price', 'openlab-txtd' )
+														)
+														)
+			),
+
+	);
+
+	$available_forms = get_available_nf_forms();
+	if($available_forms){
+	$meta_boxes[] = array(
+		'title'  => __( 'Select a Ninja Form', 'openlab-txtd' ),
+		'post_types' => 'event',
+		'fields' => array(
+			array(
+				'name'        => __( 'Select a ninja Form', 'openlab-txtd' ),
 				'id'          => 'selected_ninja_form_id',
 				'type'        => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'     => $available_forms,
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
-				'placeholder' => __( 'Select...', 'openlab-lite' ),
+				'placeholder' => __( 'Select...', 'openlab-txtd' ),
 			),
 		)
 	);
@@ -1897,6 +1975,33 @@ add_action('template_redirect', 'single_post_single_result_redirect');
 /********************************************************************************************/
 
 
+
+//Get available ninja forms, returns array
+function get_available_nf_forms(){
+	global $wpdb;
+	$prfx = $wpdb->prefix;
+	$available_forms = array();
+
+	if($prfx){
+		$ninja_forms_query = '';
+		$ninja_forms_query = 'SELECT object_id as nform_id, meta_value as nform_title FROM '. $prfx .'nf_objectmeta WHERE meta_key = "form_title"';
+		$results = $wpdb->get_results( $ninja_forms_query, ARRAY_A );
+
+	}
+	if ($results){
+
+		foreach( $results as $form){
+
+			$available_forms[ $form['nform_id'] ] = $form['nform_title'];
+
+		}
+	}
+
+	return $available_forms;
+}
+
+
+
 //get available slide images for homePage gallery
 function get_registered_gallery_slides(){
 
@@ -1910,27 +2015,27 @@ function get_registered_gallery_slides(){
 	$openlab_sl_6 = get_theme_mod('openlab_slider_img6',get_template_directory_uri() . '/images/slide6.jpg');
 
 	if($openlab_sl_1):
-		$openlab_slides[] = $openlab_sl_1;
+		$openlab_slides['s1'] = $openlab_sl_1;
 	endif;
 
 	if($openlab_sl_2):
-		$openlab_slides[] = $openlab_sl_2;
+		$openlab_slides['s2'] = $openlab_sl_2;
 	endif;
 
 	if($openlab_sl_3):
-		$openlab_slides[] = $openlab_sl_3;
+		$openlab_slides['s3'] = $openlab_sl_3;
 	endif;
 
 	if($openlab_sl_4):
-		$openlab_slides[] = $openlab_sl_4;
+		$openlab_slides['s4'] = $openlab_sl_4;
 	endif;
 
 	if($openlab_sl_5):
-		$openlab_slides[] = $openlab_sl_5;
+		$openlab_slides['s5'] = $openlab_sl_5;
 	endif;
 
 	if($openlab_sl_6):
-		$openlab_slides[] = $openlab_sl_6;
+		$openlab_slides['s6'] = $openlab_sl_6;
 	endif;
 
 	if($openlab_slides){
@@ -1939,6 +2044,50 @@ function get_registered_gallery_slides(){
 	else{
 		return false;
 	}
+}
+
+
+function get_registered_slide_captions(){
+	$openlab_captions = array();
+
+	$openlab_cap_1 = get_theme_mod('openlab_slide1_caption');
+	$openlab_cap_2 = get_theme_mod('openlab_slide2_caption');
+	$openlab_cap_3 = get_theme_mod('openlab_slide3_caption');
+	$openlab_cap_4 = get_theme_mod('openlab_slide4_caption');
+	$openlab_cap_5 = get_theme_mod('openlab_slide5_caption');
+	$openlab_cap_6 = get_theme_mod('openlab_slide6_caption');
+
+	if($openlab_cap_1):
+		$openlab_captions['s1'] = $openlab_cap_1;
+	endif;
+
+	if($openlab_cap_2):
+		$openlab_captions['s2'] = $openlab_cap_2;
+	endif;
+
+	if($openlab_cap_3):
+		$openlab_captions['s3'] = $openlab_cap_3;
+	endif;
+
+	if($openlab_cap_4):
+		$openlab_captions['s4'] = $openlab_cap_4;
+	endif;
+
+	if($openlab_cap_5):
+		$openlab_captions['s5'] = $openlab_cap_5;
+	endif;
+
+	if($openlab_cap_6):
+		$openlab_captions['s6'] = $openlab_cap_6;
+	endif;
+
+	if($openlab_captions){
+		return $openlab_captions;
+	}
+	else{
+		return false;
+	}
+
 }
 
 //Check if an event is on a future date, or it's date has passed.
@@ -1960,5 +2109,363 @@ function get_event_state($event_id){
 
 	return $state;
 
+}
 
+
+
+// Return SVG Image Data
+function get_svg_images_src($type){
+
+$data = '';
+
+if($type):
+
+	if($type == 'speech'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+									<path fill="#ffffff" d="M29.877,35.932H11.916c-3.273,0-5.938,2.662-5.938,5.936v23.697c0,3.273,2.664,5.938,5.938,5.938h0.99
+										v17.961h3.539V67.852h-4.529c-1.283,0-2.289-1.006-2.289-2.287V41.867c0-1.281,1.006-2.287,2.289-2.287h18.07
+										c1.281,0,2.287,1.006,2.287,2.287v23.697c0,1.281-1.006,2.287-2.287,2.287h-4.744v21.502h3.539V71.502h1.205
+										c3.273,0,5.936-2.664,5.936-5.938V41.852C35.805,38.531,33.148,35.932,29.877,35.932z"/>
+									<path fill="#ffffff" d="M20.898,32.33c6.018,0,10.914-4.898,10.914-10.914c0-5.916-5-10.914-10.914-10.914
+										c-5.92,0-10.914,4.998-10.914,10.914C9.984,27.33,14.979,32.33,20.898,32.33z M20.898,14.041c4.064,0,7.369,3.309,7.369,7.375
+										c0,4.062-3.305,7.373-7.369,7.373c-4.068,0-7.375-3.311-7.375-7.373C13.523,17.35,16.83,14.041,20.898,14.041z"/>
+									<path fill="#ffffff" d="M33.68,10.502v3.539h52.588v42.758c0,1.281-1.002,2.289-2.283,2.289H40.713v3.648h43.162
+										c3.273,0,5.938-2.664,5.938-5.938V14.041h3.461v-3.539H33.68z"/>
+									<polygon fill="#ffffff" points="56.266,66.445 52.727,66.445 52.727,72.963 37.617,87.963 40.156,90.502 52.727,78.039
+										52.727,90.006 56.266,90.006 56.266,78.039 68.836,90.502 71.375,87.963 56.266,72.963 	"/>
+							</svg>';
+	endif;
+
+	if($type == 'seminar'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+							<path fill="#ffffff" d="M19.801,35.02l0.003,0.021c0.063,0.471,0.299,0.875,0.624,1.164c0.324,0.289,0.755,0.48,1.236,0.48
+								c0.024,0,0.045-0.002,0.066-0.002h17.06c0.253,0,0.493-0.055,0.71-0.146c0.324-0.137,0.6-0.357,0.807-0.641
+								c0.206-0.283,0.344-0.641,0.344-1.037c0-0.254-0.057-0.492-0.15-0.705c-0.142-0.32-0.361-0.586-0.641-0.785
+								c-0.278-0.199-0.626-0.334-1.016-0.334c-0.02,0-0.046,0-0.076,0.002H21.887c-0.061-0.016-0.128-0.025-0.208-0.025
+								c-0.014,0-0.03,0.002-0.044,0.004c-0.011-0.002-0.021-0.004-0.031-0.004c-0.098-0.002-0.189,0.02-0.274,0.049
+								c-0.19,0.031-0.369,0.094-0.528,0.178c-0.307,0.162-0.548,0.396-0.722,0.674c-0.173,0.277-0.284,0.602-0.285,0.961
+								c0,0.037,0.001,0.08,0.005,0.125L19.801,35.02z"/>
+							<path fill="#ffffff" d="M21.656,42.771L21.656,42.771c-0.263,0-0.509,0.064-0.722,0.164c-0.32,0.152-0.573,0.383-0.761,0.658
+								c-0.185,0.277-0.309,0.607-0.31,0.984c0,0.016,0.001,0.035,0.002,0.053l0,0v0.002c0.001,0.021,0,0.039,0.002,0.062h0.001
+								c0.009,0.23,0.062,0.449,0.15,0.645c0.146,0.318,0.373,0.58,0.653,0.771c0.28,0.189,0.623,0.311,0.998,0.311
+								c0.023,0,0.04-0.002,0.059-0.002h30.48c0.253,0,0.494-0.055,0.71-0.146c0.324-0.139,0.6-0.359,0.806-0.643
+								c0.205-0.283,0.343-0.641,0.343-1.035c0-0.262-0.062-0.512-0.163-0.729c-0.153-0.328-0.391-0.592-0.679-0.783
+								s-0.636-0.311-1.017-0.312H21.727C21.692,42.771,21.692,42.771,21.656,42.771z"/>
+							<path fill="#ffffff" d="M78.261,62.617c-0.281-0.201-0.636-0.338-1.031-0.338H21.728c-0.035,0-0.106,0-0.178,0
+								c-0.036,0-0.071,0-0.106,0h-0.06l-0.06,0.008c-0.241,0.035-0.457,0.123-0.643,0.236c-0.279,0.174-0.498,0.402-0.66,0.672
+								c-0.16,0.27-0.268,0.584-0.269,0.938c0,0.07,0.005,0.145,0.016,0.221h-0.001c0.001,0.004,0.002,0.006,0.002,0.006
+								c0.001,0.006,0,0.006,0.001,0.008l0,0c0.067,0.467,0.306,0.855,0.624,1.135c0.322,0.281,0.742,0.467,1.216,0.469
+								c0.04,0,0.079-0.006,0.117-0.008l0,0h55.502c0.263,0,0.512-0.062,0.73-0.164c0.327-0.152,0.591-0.391,0.782-0.68
+								c0.189-0.287,0.311-0.635,0.312-1.016c-0.001-0.254-0.059-0.49-0.151-0.701C78.761,63.086,78.541,62.818,78.261,62.617z"/>
+							<path fill="#ffffff" d="M66.165,17.652c-3.536,0-6.753,1.445-9.079,3.773c-2.327,2.328-3.773,5.551-3.773,9.102
+								c0,3.549,1.446,6.779,3.772,9.115c2.324,2.338,5.542,3.793,9.08,3.793c3.554,0,6.781-1.455,9.111-3.793
+								c2.331-2.336,3.777-5.566,3.777-9.115c0-3.551-1.447-6.773-3.779-9.102C72.944,19.098,69.717,17.652,66.165,17.652z M68.025,34.979
+								l3.259,3.254c-0.959,0.639-2.064,1.096-3.259,1.322V34.979z M68.025,21.539c1.821,0.357,3.442,1.242,4.701,2.494
+								c1.258,1.256,2.15,2.873,2.51,4.703h-7.211V21.539z M73.844,35.635l-3.231-3.248h4.609C74.974,33.568,74.497,34.658,73.844,35.635z
+								 M64.34,39.549c-1.96-0.391-3.69-1.398-4.983-2.816c-1.488-1.637-2.393-3.805-2.394-6.205c0.001-2.402,0.904-4.562,2.389-6.189
+								c1.295-1.416,3.028-2.42,4.988-2.805V39.549z"/>
+							<path fill="#ffffff" d="M88.109,12.998c-1.145-1.154-2.733-1.885-4.478-1.885H15.359c-1.745,0-3.334,0.73-4.479,1.885
+								s-1.862,2.748-1.862,4.488v51.059c0,1.74,0.719,3.328,1.866,4.473c1.146,1.146,2.735,1.863,4.476,1.863h17.488L24.37,88.246
+								l0.003,0.002c-0.228,0.312-0.332,0.678-0.331,1.02c0.001,0.303,0.071,0.594,0.205,0.861s0.332,0.514,0.6,0.699l0.02,0.014
+								l0.02,0.012c0.298,0.184,0.625,0.258,0.937,0.258c0.327,0,0.646-0.08,0.937-0.24c0.268-0.146,0.511-0.373,0.681-0.672l0.002,0.002
+								l9.733-15.314l0.003-0.008h10.491v14.344c0,0.254,0.055,0.494,0.147,0.711c0.139,0.324,0.359,0.6,0.643,0.805
+								s0.641,0.342,1.035,0.342c0.263,0,0.512-0.061,0.729-0.162c0.328-0.154,0.592-0.391,0.783-0.68c0.19-0.287,0.311-0.635,0.312-1.016
+								v-14.34h10.456l0.002,0.004l9.735,15.316l0.003-0.002c0.168,0.299,0.412,0.525,0.679,0.672c0.291,0.16,0.609,0.24,0.937,0.24
+								c0.312,0,0.638-0.076,0.935-0.256l0.022-0.014l0.02-0.014c0.268-0.186,0.467-0.432,0.601-0.697
+								c0.133-0.268,0.204-0.561,0.204-0.863c0.001-0.342-0.103-0.705-0.331-1.018l0.003-0.004l-8.475-13.365h17.523
+								c1.741,0,3.329-0.719,4.476-1.863c1.147-1.146,1.867-2.732,1.866-4.473V17.486C89.974,15.746,89.256,14.152,88.109,12.998z
+								 M83.632,71.232H15.359c-0.756,0-1.422-0.299-1.908-0.783c-0.486-0.486-0.783-1.15-0.784-1.904V17.486
+								c0.001-0.754,0.301-1.432,0.789-1.928c0.489-0.494,1.154-0.795,1.903-0.797h68.272c0.749,0.002,1.414,0.303,1.903,0.797
+								c0.488,0.496,0.788,1.174,0.788,1.928v51.059c0,0.754-0.298,1.418-0.783,1.904C85.053,70.934,84.387,71.232,83.632,71.232z"/>
+							<path fill="#ffffff" d="M77.229,52.545H21.728c-0.035,0-0.106,0-0.178,0c-0.036,0-0.071,0-0.106,0h-0.06l-0.058,0.008
+								c-0.232,0.033-0.445,0.115-0.632,0.225c-0.279,0.164-0.505,0.393-0.671,0.664c-0.164,0.271-0.271,0.596-0.271,0.949
+								c0,0.074,0.005,0.152,0.016,0.232c0.064,0.471,0.312,0.865,0.637,1.137c0.326,0.271,0.741,0.439,1.196,0.439
+								c0.044,0,0.085-0.004,0.127-0.008h55.501l0,0c0.018,0,0.035,0.002,0.054,0.002c0.258,0,0.504-0.062,0.717-0.164
+								c0.321-0.152,0.576-0.389,0.759-0.672c0.182-0.283,0.294-0.623,0.295-0.99c-0.002-0.51-0.218-0.961-0.54-1.283
+								C78.189,52.762,77.739,52.545,77.229,52.545z"/>
+							<polygon fill="#ffffff" points="19.769,54.625 19.769,54.623 19.769,54.619 	"/>
+						</svg>';
+	endif;
+
+	if($type == 'workshop'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+							<path fill="#ffffff" d="M63.568,53.459h-4.736V42.711c0-5.101-4.149-9.25-9.251-9.25c-5.1,0-9.25,4.149-9.25,9.25v10.748h-4.736
+								 M17.092,53.459h-2.495H4.994c-0.925,0-1.672,0.748-1.672,1.673c0,0.923,0.748,1.671,1.672,1.671h7.931v27.834
+								c0,0.925,0.748,1.673,1.672,1.673h69.968c0.925,0,1.673-0.748,1.673-1.673V56.803h7.931c0.925,0,1.673-0.748,1.673-1.671
+								c0-0.925-0.748-1.673-1.673-1.673h-9.604H82.07 M78.727,53.46H66.913 M43.675,42.713c0-3.257,2.65-5.906,5.906-5.906
+								c3.257,0,5.907,2.649,5.907,5.906V53.46H43.675V42.713z M32.25,53.46H20.437 M82.894,82.965H16.269V56.803h2.496h15.157h8.081
+								h15.158h8.081h15.157h2.496v26.162H82.894z"/>
+							<path fill="#ffffff" d="M49.581,31.181c4.101,0,7.436-3.336,7.436-7.436s-3.335-7.436-7.436-7.436c-4.1,0-7.435,3.336-7.435,7.436
+								S45.481,31.181,49.581,31.181z M49.581,19.654c2.257,0,4.091,1.835,4.091,4.091c0,2.254-1.834,4.091-4.091,4.091
+								c-2.254,0-4.09-1.835-4.09-4.091S47.327,19.654,49.581,19.654z"/>
+						</svg>';
+	endif;
+
+	if($type == 'passed'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 154.7 154.3" style="enable-background:new 0 0 154.7 154.3;" xml:space="preserve">
+						<line class="passed-indicator" x1="153" y1="1.8" x2="2.3" y2="152.7"/>
+						</svg>';
+	endif;
+
+	if($type == 'map'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+								<path fill="#ffffff" d="M45,43.6l-6.2-22.4l0,0c-0.2-0.4-0.7-0.7-1.1-0.7h-7.8c2.2-4,3.4-7,3.4-9.1C33.3,5.1,28.4,0,22.5,0
+									c-5.9,0-10.8,5.1-10.8,11.3c0,2,1.1,5.1,3.4,9.1H8.6c-0.5,0-0.9,0.3-1,0.8L0.1,43.6c-0.2,0.4-0.1,0.8,0.1,1l0,0
+									C0.4,44.7,0.7,45,1.1,45h42.8c0.4,0,0.7-0.2,0.9-0.4C45,44.2,45.1,43.9,45,43.6z M22.5,2.2c4.8,0,8.6,4,8.6,9.2
+									c0,4.4-7.3,14.6-8.6,16.5c-1-1.3-2.7-3.9-4.5-6.7c-0.1-0.2-0.1-0.3-0.3-0.4c-2.5-4.3-3.9-7.5-3.9-9.4C13.9,6.3,17.8,2.2,22.5,2.2z
+									 M22.5,30.8c0.4,0,0.7-0.2,0.9-0.4c0,0,0.1-0.2,0.3-0.4c0.7-1,2.9-4,5-7.4h8.3l5.6,20.3H2.6l6.8-20.3h7c2.1,3.4,4.3,6.4,5,7.4
+									c0.1,0.2,0.2,0.3,0.3,0.4C21.8,30.6,22.1,30.8,22.5,30.8z"/>
+								<path fill="#ffffff" d="M22,17.3c3.2,0.3,6-2.2,6.2-5.5c0.3-3.3-2-6.2-5.2-6.5c-3.2-0.3-6,2.2-6.2,5.5C16.5,14.1,18.8,17,22,17.3z
+									 M22.8,7.5c2,0.2,3.4,2,3.2,4.1c-0.2,2.1-1.9,3.7-3.9,3.5c-2-0.2-3.4-2-3.2-4.1C19.1,8.9,20.9,7.3,22.8,7.5z"/>
+							</svg>';
+	endif;
+
+	if($type == 'share'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 60.8 62.9" style="enable-background:new 0 0 60.8 62.9;" xml:space="preserve">
+					<path fill="#ffffff" d="M18,39.8c-4.7,0-8.4-3.7-8.4-8.4c0-4.7,3.7-8.4,8.4-8.4c4.7,0,8.4,3.7,8.4,8.4
+						C26.4,36.1,22.5,39.8,18,39.8z M18,26.5c-2.7,0-4.9,2.2-4.9,4.9c0,2.7,2.2,4.9,4.9,4.9c2.7,0,4.9-2.2,4.9-4.9
+						C22.9,28.7,20.6,26.5,18,26.5z"/>
+						<path fill="#ffffff" d="M42.9,16.8c-4.7,0-8.4-3.7-8.4-8.4c0-4.7,3.7-8.4,8.4-8.4c4.7,0,8.4,3.7,8.4,8.4
+							C51.3,13.1,47.4,16.8,42.9,16.8z M42.9,3.5c-2.7,0-4.9,2.2-4.9,4.9c0,2.7,2.2,4.9,4.9,4.9c2.7,0,4.9-2.2,4.9-4.9
+							C47.8,5.7,45.6,3.5,42.9,3.5z"/>
+						<path fill="#ffffff" d="M42.9,62.9c-4.7,0-8.4-3.7-8.4-8.4c0-4.7,3.7-8.4,8.4-8.4c4.7,0,8.4,3.7,8.4,8.4
+							C51.3,59.1,47.4,62.9,42.9,62.9z M42.9,49.6c-2.7,0-4.9,2.2-4.9,4.9c0,2.7,2.2,4.9,4.9,4.9c2.7,0,4.9-2.2,4.9-4.9
+							C47.8,51.8,45.6,49.6,42.9,49.6z"/>
+						<rect fill="#ffffff" x="28.6" y="9.4" transform="matrix(0.7073 0.707 -0.707 0.7073 22.8845 -15.3884)" width="2.9" height="21"/>
+						<rect fill="#ffffff" x="19.5" y="41.5" transform="matrix(0.7071 0.7071 -0.7071 0.7071 39.1462 -8.6578)" width="21" height="2.9"/>
+			</svg>';
+	endif;
+
+	if($type == 'close-icon'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 31.8 31.8" style="enable-background:new 0 0 31.8 31.8;" xml:space="preserve">
+							<path fill="#d9be40" d="M26.8,21.2L26.8,21.2l-5-5l8.3-8.3c1.6-1.6,1.6-4.2,0-5.8c-1.6-1.6-4.2-1.6-5.8,0L21,5.4l-5,5L7.7,2.1
+								c-1.6-1.6-4.2-1.6-5.8,0c-1.6,1.6-1.6,4.2,0,5.8l3.3,3.3l5,5l-8.3,8.3c-1.6,1.6-1.6,4.2,0,5.8c1.6,1.6,4.2,1.6,5.8,0L11,27l0,0l5-5
+								l8.3,8.3c1.6,1.6,4.2,1.6,5.8,0c1.6-1.6,1.6-4.2,0-5.8L26.8,21.2z"/>
+					 		</svg>';
+	endif;
+
+	if($type == 'post'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="-255 347 100 100" style="enable-background:new -255 347 100 100;" xml:space="preserve">
+								<path fill="#FFFFFF" d="M-198.1,398.3c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6c0-0.3-0.1-0.6-0.3-0.8
+									c-0.2-0.2-0.5-0.3-0.8-0.3h-19c0,0,0,0,0,0c0,0,0,0-0.1,0h0l0,0c-0.2,0-0.3,0.1-0.4,0.1c-0.2,0.1-0.3,0.2-0.4,0.4
+									c-0.1,0.2-0.2,0.4-0.2,0.6c0,0,0,0,0,0.1l0,0l0,0c0,0.3,0.2,0.5,0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0,0,0,0h19
+									C-198.4,398.4-198.3,398.3-198.1,398.3z"/>
+								<path fill="#FFFFFF" d="M-229.4,414.8L-229.4,414.8c0,0.3,0.2,0.5,0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0.1,0,0.1,0h16.3c0,0,0,0,0,0
+									c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.2-0.4-0.4-0.5
+									c-0.2-0.1-0.4-0.2-0.6-0.2h-16.3c0,0-0.1,0-0.1,0s0,0-0.1,0h0l0,0c-0.3,0-0.5,0.2-0.7,0.4C-229.3,414.2-229.4,414.4-229.4,414.8
+									C-229.4,414.7-229.4,414.7-229.4,414.8L-229.4,414.8z"/>
+								<path fill="#FFFFFF" d="M-217.7,391.2h19.3c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6v-11.2
+									c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.2-0.4-0.4-0.5c-0.2-0.1-0.4-0.2-0.6-0.2h-19.3c0,0,0,0-0.1,0h0l0,0c-0.3,0-0.5,0.2-0.7,0.4
+									c-0.2,0.2-0.3,0.4-0.3,0.7v11.2c0,0.3,0.1,0.6,0.3,0.8C-218.3,391.1-218,391.2-217.7,391.2z M-216.6,380h17.1v9h-17.1V380z"/>
+								<path fill="#FFFFFF" d="M-175.7,385.1c-0.7-0.7-1.6-1.1-2.7-1.1h-2.4v-8.2c0-1-0.4-2-1.1-2.7c-0.7-0.7-1.6-1.1-2.7-1.1h-47.1
+									c-1,0-2,0.4-2.7,1.1c-0.7,0.7-1.1,1.6-1.1,2.7v42.4c0,1,0.4,2,1.1,2.7c0.7,0.7,1.6,1.1,2.7,1.1h51.2h1.7h0.3c0,0,0.1,0,0.1,0h0.7
+									v-0.1c0.8-0.2,1.5-0.6,2.1-1.3c0.6-0.7,0.9-1.5,0.9-2.4v-30.4C-174.6,386.7-175,385.8-175.7,385.1z M-176.8,418.2
+									c0,0.4-0.2,0.8-0.5,1.1c-0.3,0.3-0.7,0.5-1.1,0.5h-0.3c-0.2,0-0.5-0.1-0.8-0.2c-0.2-0.1-0.3-0.2-0.5-0.3c-0.2-0.2-0.4-0.5-0.6-0.9
+									c-0.2-0.5-0.3-1.1-0.3-2v-30.2h2.4c0.5,0,0.9,0.2,1.1,0.5c0.3,0.3,0.5,0.7,0.5,1.1V418.2z M-231.6,374.2h47.1
+									c0.5,0,0.9,0.2,1.1,0.5c0.3,0.3,0.5,0.7,0.5,1.1v9.1c0,0,0,0.1,0,0.1s0,0.1,0,0.1v30.1v1.1c0,1,0.1,1.8,0.4,2.5
+									c0.1,0.4,0.3,0.7,0.4,1h-49.5c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.5-0.7-0.5-1.1v-42.4c0-0.4,0.2-0.8,0.5-1.1
+									C-232.5,374.4-232.1,374.2-231.6,374.2z"/>
+								<path fill="#FFFFFF" d="M-229.4,409L-229.4,409c0,0.3,0.2,0.5,0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0.1,0,0.1,0h16.3l0,0c0,0,0,0,0,0
+									c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.2-0.4-0.4-0.5
+									c-0.2-0.1-0.4-0.2-0.6-0.2h-16.3c0,0-0.1,0-0.1,0s0,0-0.1,0h0l0,0c-0.1,0-0.3,0.1-0.4,0.1c-0.2,0.1-0.3,0.2-0.4,0.4
+									C-229.3,408.5-229.4,408.7-229.4,409C-229.4,408.9-229.4,408.9-229.4,409L-229.4,409z"/>
+								<path fill="#FFFFFF" d="M-187.4,413.8c-0.2-0.1-0.4-0.2-0.6-0.2h-16.3c0,0,0,0-0.1,0c0,0,0,0,0,0h0l0,0c-0.3,0-0.5,0.2-0.7,0.4
+									c-0.2,0.2-0.3,0.4-0.3,0.7c0,0,0,0.1,0,0.1l0,0c0,0,0,0,0,0c0,0,0,0,0,0v0c0,0.3,0.2,0.5,0.4,0.7c0.2,0.2,0.4,0.3,0.7,0.3
+									c0,0,0.1,0,0.1,0h16.3c0,0,0,0,0,0c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6c0-0.2,0-0.3-0.1-0.4
+									C-187,414-187.2,413.9-187.4,413.8z"/>
+								<path fill="#FFFFFF" d="M-187.4,408c-0.2-0.1-0.4-0.2-0.6-0.2h-16.3c0,0,0,0-0.1,0c0,0,0,0,0,0h0l0,0c-0.3,0-0.5,0.2-0.7,0.4
+									c-0.2,0.2-0.3,0.4-0.3,0.7c0,0,0,0.1,0,0.1l0,0c0,0,0,0,0,0c0,0,0,0,0,0l0,0c0,0.3,0.2,0.5,0.3,0.7c0.2,0.2,0.4,0.3,0.7,0.3
+									c0,0,0.1,0,0.1,0l0,0h16.3l0,0c0,0,0,0,0,0c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.3-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6
+									c0-0.2,0-0.3-0.1-0.4C-187,408.2-187.2,408.1-187.4,408z"/>
+								<path fill="#FFFFFF" d="M-229.4,403.2L-229.4,403.2c0,0.3,0.2,0.5,0.4,0.7s0.4,0.3,0.7,0.3c0,0,0.1,0,0.1,0h16.3c0,0,0,0,0,0
+									c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.3-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.2-0.4-0.4-0.5
+									c-0.2-0.1-0.4-0.2-0.6-0.2h-16.3c0,0-0.1,0-0.1,0c0,0,0,0-0.1,0h0l0,0c-0.1,0-0.3,0.1-0.4,0.1c-0.2,0.1-0.3,0.2-0.4,0.4
+									C-229.3,402.7-229.4,402.9-229.4,403.2C-229.4,403.1-229.4,403.1-229.4,403.2L-229.4,403.2z"/>
+								<path fill="#FFFFFF" d="M-204.4,402C-204.4,402-204.4,402-204.4,402L-204.4,402l-0.1,0c-0.3,0-0.5,0.2-0.7,0.4
+									c-0.2,0.2-0.3,0.4-0.3,0.7c0,0,0,0.1,0,0.1h0c0,0,0,0,0,0c0,0,0,0,0,0l0,0c0,0.1,0.1,0.3,0.1,0.4c0.1,0.2,0.2,0.3,0.4,0.4
+									c0.2,0.1,0.4,0.2,0.6,0.2c0,0,0.1,0,0.1,0h16.3c0,0,0,0,0,0c0.2,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.2,0.5-0.4c0.1-0.2,0.2-0.4,0.2-0.6
+									c0-0.2,0-0.3-0.1-0.4c-0.1-0.2-0.2-0.4-0.4-0.5s-0.4-0.2-0.6-0.2L-204.4,402C-204.3,402-204.3,402-204.4,402z"/>
+							</svg>';
+	endif;
+
+	if($type == 'link-right'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+							<polygon fill="#B5B2AE" points="62.4,40 27.4,5 17.6,14.9 42.7,40 17.6,65.1 27.4,75 	"/>
+							</svg>';
+	endif;
+
+	if($type == 'focus-icon'):
+		$data = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 29.8 30" xml:space="preserve">
+								<circle style="fill:none;stroke:#B5B2AE;stroke-width:6;stroke-miterlimit:10;" cx="13.4" cy="13.5" r="10.2"/>
+								<line style="fill:none;stroke:#B5B2AE;stroke-width:6;stroke-miterlimit:10;" x1="19.9" y1="19.8" x2="27.6" y2="27.5"/>
+							</svg>';
+	endif;
+
+endif;
+
+return $data;
+
+}
+
+
+function get_single_event_formatted_date($start,$end){
+	$formatted 	= '';
+	$s_date 		= gmdate('d M Y', $start);
+	$e_date 		= gmdate('d M Y', $end);
+
+
+		if($s_date == $e_date):
+
+			$formatted = gmdate('d M Y', $start);
+
+		elseif($s_date !== $e_date):
+
+			$first_part 	= gmdate('d.m.Y', $start);
+			$second_part 	= gmdate('d.m.Y', $end);
+			$time_start 	= gmdate('H:i', $start);
+			$time_end 		= gmdate('H:i', $end);
+
+			$formatted = $first_part;
+			$formatted .= '<br>'. __('TO','openlab-txtd') .'<br>';
+			$formatted .= $second_part;
+			$formatted .= '<br><br>'. $time_start .' - '. $time_end;
+
+
+		else:
+
+		    $formatted = 'Error!';
+
+		endif;
+
+	return $formatted;
+}
+
+function get_single_event_list_formatted_date($start,$end){
+	$formatted 	= '';
+	$s_date 		= gmdate('d M Y', $start);
+	$e_date 		= gmdate('d M Y', $end);
+
+
+		if($s_date == $e_date):
+
+			$formatted = gmdate('j M', $start);
+
+		elseif($s_date !== $e_date):
+
+			$first_part 	= gmdate('d.m', $start);
+			$second_part 	= gmdate('d.m', $end);
+
+			$formatted = $first_part .'-'. $second_part ;
+
+		else:
+
+		    $formatted = 'Error!';
+
+		endif;
+
+	return $formatted;
+}
+
+function get_single_event_list_formatted_time($start,$end){
+	$formatted 	= '';
+	$s_date 		= gmdate('H:i', $start);
+	$e_date 		= gmdate('H:i', $end);
+
+		if($s_date == $e_date):
+
+			$formatted = gmdate('H:i', $start);
+
+		elseif($s_date !== $e_date):
+
+			$first_part 	= gmdate('H:i', $start);
+			$second_part 	= gmdate('H:i', $end);
+
+			$formatted = $first_part .' - '. $second_part ;
+
+		else:
+
+		    $formatted = 'Error!';
+
+		endif;
+
+	return $formatted;
+}
+
+function get_single_event_widget_formatted_date($start,$end){
+	$formatted 	= '';
+	$s_date 		= gmdate('d.m.Y', $start);
+	$e_date 		= gmdate('d.m.Y', $end);
+
+		if($s_date == $e_date):
+
+			$formatted = gmdate('d.m.Y', $start);
+
+		elseif($s_date !== $e_date):
+
+			$first_part 	= gmdate('d.m.Y', $start);
+			$second_part 	= gmdate('d.m.Y', $end);
+
+			$formatted = $first_part .' - '. $second_part ;
+
+		else:
+
+		    $formatted = 'Error!';
+
+		endif;
+
+	return $formatted;
+}
+
+
+// Get active events
+function get_active_events(){
+
+	$args = array(
+		'post_type'    		=> 'event',
+		'post_status'     => 'publish',
+		'posts_per_page'  => 3,
+		'meta_key'     		=> 'event_datetime_start',
+		'meta_value'   		=> date( "U" ),
+		'meta_compare' 		=> '>',
+		'orderby'    		=> 'meta_value_num',
+		'order'      		=> 'ASC'
+	);
+	$active = new WP_Query( $args );
+
+ return $active;
+
+}
+
+// Get active events
+function get_passed_events($num){
+
+	$args = array(
+		'post_type'    		=> 'event',
+		'post_status'     => 'publish',
+		'posts_per_page'  => $num,
+		'meta_key'     		=> 'event_datetime_end',
+		'meta_value'   		=> date( "U" ),
+		'meta_compare' 		=> '<',
+		'orderby'    		=> 'meta_value_num',
+		'order'      		=> 'ASC'
+	);
+	$passed = new WP_Query( $args );
+
+ return $passed;
+
+}
+
+//make modal contact form - gets called in footer.php
+function event_modal_contact_form_html($event_id){
+	
 }

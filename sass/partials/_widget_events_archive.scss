@@ -1,0 +1,74 @@
+.recent-events-archive.widget{
+  margin-left: 5px;
+  margin-right: 5px;
+
+  .widget-event:hover{
+    h4 a, p{
+      color:$font-breadcrumb !important;
+    }
+  }
+  .seminar{
+    h4 a, p{
+      color:$bg-seminar;
+    }
+  }
+  .workshop{
+    h4 a, p{
+      color:$bg-workshop;
+    }
+  }
+  .speech{
+    h4 a, p{
+      color:$bg-speech;
+    }
+  }
+  h2.events-widget{
+    text-align: left;
+    display: block;
+    @extend .font-15;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .recent-events-wrap{
+    .widget-event{
+
+      p.event-date{
+        text-align: left;
+        display: block;
+        margin:0;
+        text-transform: uppercase;
+        padding-top:13px;
+        @extend .font-1;
+      }
+
+      h4.event-title a{
+        @extend .font-14;
+        text-align: left;
+        display: block;
+        padding-bottom:13px;
+        border-bottom: 1px solid $bg-light-gray;
+        font-weight: bold;
+      }
+    }
+
+  }
+  .recent-events-wrap > .widget-event:last-child{
+    h4.event-title a{
+      border:0 !important;
+    }
+  }
+  .more-events span{
+      text-align: left;
+      display: block;
+      a{
+        @extend .font-1;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:$font-breadcrumb;
+        &:hover{
+          color:$font-breadcrumb-hover;
+        }
+      }
+  }
+
+}

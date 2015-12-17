@@ -62,7 +62,7 @@
 			
 			wp_link_pages( array(
 
-				'before' => '<div class="page-links">' . __( 'Pages:', 'openlab-lite' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'openlab-txtd' ),
 
 				'after'  => '</div>',
 
@@ -77,7 +77,7 @@
 			<?php
 
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'openlab-lite' ) );
+				$categories_list = get_the_category_list( __( ', ', 'openlab-txtd' ) );
 
 				if ( $categories_list && openlab_categorized_blog() ) :
 
@@ -85,7 +85,7 @@
 
 			<span class="cat-links">
 
-				<?php printf( __( 'Posted in %1$s', 'openlab-lite' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'openlab-txtd' ), $categories_list ); ?>
 
 			</span>
 
@@ -95,7 +95,7 @@
 
 				/* translators: used between list items, there is a space after the comma */
 
-				$tags_list = get_the_tag_list( '', __( ', ', 'openlab-lite' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'openlab-txtd' ) );
 
 				if ( $tags_list ) :
 
@@ -103,7 +103,7 @@
 
 			<span class="tags-links">
 
-				<?php printf( __( 'Tagged %1$s', 'openlab-lite' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'openlab-txtd' ), $tags_list ); ?>
 
 			</span>
 
@@ -113,11 +113,11 @@
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'openlab-lite' ), __( '1 Comment', 'openlab-lite' ), __( '% Comments', 'openlab-lite' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'openlab-txtd' ), __( '1 Comment', 'openlab-txtd' ), __( '% Comments', 'openlab-txtd' ) ); ?></span>
 
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'openlab-lite' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'openlab-txtd' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-footer -->
 

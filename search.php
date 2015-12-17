@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<div class="container">
 
-		<div class="content-left-wrap col-md-9">
+		<div class="content-left-wrap col-md-12 search">
 
 			<div id="primary" class="content-area">
 
@@ -22,17 +22,31 @@ get_header(); ?>
 
 					<header class="page-header">
 
-						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'openlab-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<h1 class="page-title-search"><?php echo __('Search', 'openlab-txtd'); ?></h1>
+						<div class="col-md-10">
+							<div class="search-form-container">
+								<form role="search" method="get" class="search-form" action="<?php echo get_site_url().'/' ?>">
+									<button type="submit" class="btn-search">
+										<span><?php echo get_svg_images_src('focus-icon'); ?></span>
+									</button>
+									<span class="input-wrap">
+										<input type="search" class="search-field" placeholder="" value="" name="s" title="<?php echo __('Search for...', 'openlab-txtd'); ?>">
+									</span>
+								</form>
+							</div>
+						</div>
+
+						<h3 class="page-results-for"><?php printf( __( 'Search Results for: %s', 'openlab-txtd' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 
 					</header><!-- .page-header -->
 
 					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php //echo 'The post type is: ' . get_post_type( get_the_ID() ); ?>
+						<?php get_template_part( 'search/content', get_post_type( get_the_ID() ) ); ?>
 
 					<?php endwhile; ?>
 
-					<?php openlab_paging_nav(); ?>
+					<?php //openlab_paging_nav(); ?>
 
 				<?php else : ?>
 
@@ -46,11 +60,11 @@ get_header(); ?>
 
 		</div><!-- .content-left-wrap -->
 
-		<div class="sidebar-wrap col-md-3 content-left-wrap">
+		<!--<div class="sidebar-wrap col-md-3 content-left-wrap">-->
 
-			<?php get_sidebar(); ?>
+			<?php //get_sidebar(); ?>
 
-		</div><!-- .sidebar-wrap -->
+		<!--</div>--> <!-- .sidebar-wrap -->
 
 	</div><!-- .container -->
 

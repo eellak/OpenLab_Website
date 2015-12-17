@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
 
     /* Number of required actions */
     if ((typeof openlab_aboutpage !== 'undefined') && (typeof openlab_nr_actions_required !== 'undefined') && (openlab_nr_actions_required != '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + openlab_aboutpage + '"><span class="openlab-lite-actions-count">' + openlab_nr_actions_required + '</span></a>');
+        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + openlab_aboutpage + '"><span class="openlab-txtd-actions-count">' + openlab_nr_actions_required + '</span></a>');
     }
 
     /* Upsell in Customizer (Link to Welcome page) */

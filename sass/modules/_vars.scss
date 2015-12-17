@@ -1,13 +1,27 @@
 /* Font colors */
-$font-blue:         #5695c6;
-$font-yellow:       #e5c02f;
-$font-dark:         #272425;
-$font-dark2:        #3f4245;
-$font-white:        #ffffff;
+$font-blue:             #5695c6;
+$font-yellow:           #e5c02f;
+$font-dark:             #272425;
+$font-dark2:            #3f4245;
+$font-white:            #ffffff;
+$font-breadcrumb:       #424447;
+$font-breadcrumb-hover: #6c93c2;
+$font-post-header:      #2b292a;
+$font-error:            #ad272c;
 
 /* Bg colors */
-$bg-extra-light-gray: #d7d9d8;
-$bg-light-gray:       #b9b4b0;
-$bg-dark-gray:        #3f4245;
-$bg-black:            #272425;
-$bg-yellow:           #e5c02f;
+$bg-extra-light-gray:   #d7d9d8;
+$bg-extra-light-gray2:  #d6d9d8;
+$bg-light-gray:         #b9b4b0;
+$bg-dark-gray:          #3f4245;
+$bg-black:              #272425;
+$bg-yellow:             #d9be41;
+$bg-dark-hover:         #424447;
+$bg-article:            #d6d8d7;
+$bg-single-post:        #b5b2ae;
+
+/*Event types bg*/
+$bg-speech:           #5695C6;
+$bg-seminar:          #E5C02F;
+$bg-workshop:         #84AAB4;
+$bg-passed:           #b5b2ae;

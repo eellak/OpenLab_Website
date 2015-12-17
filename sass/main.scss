@@ -11,6 +11,8 @@
 @import "modules/custom_facebook_feed";
 @import "modules/vars";
 @import "modules/extends";
+@import "modules/layout";
+@import "modules/ninja_forms";
 
 
 /* Partials */
@@ -18,3 +20,8 @@
 @import "partials/home";
 @import "partials/footer";
 @import "partials/header";
+@import "partials/single_event";
+@import "partials/single_post";
+@import "partials/post_archive";
+@import "partials/search";
+@import "partials/widget_events_archive";

@@ -1,5 +1,5 @@
 /*
-Theme Name: Openlab Lite
+Theme Name: Openlab
 Theme URI: http://roleplay.gr
 Author: Roleplay
 Author URI: http://roleplay.gr
@@ -7,9 +7,9 @@ Description: Openlab is a free event focused Wordpress theme.
 Version: 0.1
 License: GNU General Public License version 3
 License URI: license.txt
-Text Domain: openlab-lite
+Text Domain: openlab-txtd
 Domain Path: /languages/
-Tags: black, gray, red, white, one-column, two-columns, right-sidebar,fixed-layout,light,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options,responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, photoblogging, accessibility-ready
+Tags: Events
 */
 
 
@@ -129,11 +129,11 @@ padding-left: 0 !important;
 }
 /* Selection colours (easy to forget) */
 ::selection {
-	background: #FC6D6D;
+	background: #428bca;
 	color: #FFF;
 }
 ::-moz-selection {
-	background: #FC6D6D;
+	background: #428bca;
 	color: #FFF;
 }
 /*a {
@@ -144,9 +144,7 @@ padding-left: 0 !important;
 a,a:hover {
 	text-decoration: none;
 }
-a:hover {
-	color: #cb4332;
-}
+
 p {
     margin: 0;
 }
@@ -175,8 +173,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #424447;
+	font-family: 'Verdana';
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -385,12 +383,10 @@ figure {
 	margin: 0 0 24px;
 }
 table {
-	border-bottom: 1px solid #ededed;
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: 14px;
 	line-height: 2;
-	margin: 0 0 20px;
 	width: 100%;
 }
 caption,
@@ -548,7 +544,7 @@ input[type="submit"] {
 	/*border-radius: 4px;*/
 	margin: 10px;
 	border: none;
-	background-color: #e96656;
+	/*background-color: #e96656;*/
 	box-shadow: none;
 	text-shadow: none;
 	font-weight: 400;
@@ -562,7 +558,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa #bbb;
+	/*border-color: #ccc #bbb #aaa #bbb;*/
 }
 button:focus,
 input[type="button"]:focus,
@@ -572,7 +568,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
+	/*border-color: #aaa #bbb #bbb #bbb;*/
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -598,8 +594,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #555;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+/*	color: #555;
+	border: 1px solid rgba(0, 0, 0, 0.1);*/
 	border-radius: 0;
 }
 input[type="text"]:focus,
@@ -608,7 +604,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-	color: #111;
+	/*color: #111;*/
 }
 input[type="text"],
 input[type="email"],
@@ -633,7 +629,7 @@ textarea {
 .entry-content input[type="button"]:hover,
 .entry-content input[type="reset"]:hover,
 .entry-content input[type="submit"]:hover {
-	background: #cb4332;
+	/*background: #cb4332;*/
 }
 .input-box {
 	border: 0 !important;
@@ -681,6 +677,7 @@ textarea:focus {
  /*---------------------------------------
  **   5.1 Links                 -----
 -----------------------------------------*/
+/*
 a {
 	color: #e96656;
 }
@@ -691,7 +688,7 @@ a:hover,
 a:focus,
 a:active {
 	color: #cb4332;
-}
+} */
 /*---------------------------------------
  **   5.2 Menus                  -----
 -----------------------------------------*/
@@ -776,7 +773,7 @@ a:active {
  /*---------------------------------------
  **   6.0 Accessibility                   -----
 -----------------------------------------*/
-/* Text meant only for screen readers */
+/* Text meant only for screen readers
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -799,7 +796,7 @@ a:active {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar */
+	z-index: 100000; /* Above WP toolbar
 }
  /*---------------------------------------
  **   7.0 Alignments                   -----
@@ -1027,17 +1024,6 @@ a:active {
 }
 .entry-title{
 	position: relative;
-}
-.entry-title:before {
-	position: absolute;
-	margin: auto;
-	z-index: 1;
-	content: "";
-	width: 10%;
-	height: 2px;
-	background: #e96656;
-	bottom: -9px;
-	left: 0;
 }
 .entry-meta{
 	margin-top: 10px;
@@ -1618,11 +1604,11 @@ ul.nav > li.current_page_item > a:before {
 	margin: auto;
 	z-index: 1;
 	content: "";
-	width: 75%;
-	height: 2px;
+	width: 120%;
+	height: 8px;
 	background: #5695C6;
-	bottom: 0px;
-	left: 12.5%;
+	bottom: -17px;
+	left: -9%;
 	display: block;
 }
 ul.nav > li.current_page_item.menu-item-home > a:before {
@@ -1680,92 +1666,16 @@ ul.nav > li.current_page_item.current > a:before {
 	padding-top: 100px;
 	background: #FFFFFF;
 }
-.carousel-inner {
-/*	margin: 0 30px; */
-}
+
 #carousel-homepage-latestnews .item{
 	height: auto;
 }
-.latesnews-content p,
-.latesnews-content {
-	font-size: 14px;
-	line-height: 18px;
-	color: #777777;
-}
-#carousel-homepage-latestnews .carousel-inner .item .latestnews-title {
-	margin-bottom: 15px;
-	color: #404040;
-	position: relative;
-	display: inline-block;
-	text-transform: uppercase;
-	margin-bottom: 30px;
-	font-weight: bold;
-	font-size: 17px;
-	float: none;
-	width: auto;
-	margin-top: 15px;
-}
-#carousel-homepage-latestnews .carousel-inner .item .latestnews-title a {
-	text-transform: uppercase;
-	color: #404040;
-	font-weight: 700;
-	display: block;
-}
-#carousel-homepage-latestnews .item .latestnews-box .latestnews-title a:before {
-	position: absolute;
-	margin: auto;
-	z-index: 1;
-	content: "";
-	width: 75%;
-	height: 2px;
-	background: #5695C6;
-	bottom: -9px;
-	left: 12.5%;
-}
-#carousel-homepage-latestnews .item .latestnews-box:nth-child(4n+1) .latestnews-title a:before {
-	background: #5695C6;
-}
-#carousel-homepage-latestnews .item .latestnews-box:nth-child(4n+2) .latestnews-title a:before {
-	background: #34d293;
-}
-#carousel-homepage-latestnews .item .latestnews-box:nth-child(4n+3) .latestnews-title a:before {
-	background: #3ab0e2;
-}
-#carousel-homepage-latestnews .item .latestnews-box:nth-child(4n) .latestnews-title a:before {
-	background: #f7d861;
-}
-#carousel-homepage-latestnews .item .latestnews-box .latestnews-img .latestnews-img-a {
-	display:block;
-}
-#carousel-homepage-latestnews {
-	margin: 0 30px;
-}
+
 #carousel-homepage-latestnews .carousel-control {
 	width: 45px;
 	background: none;
 }
-.carousel-control.left {
-	margin-left: -45px;
-}
-.carousel-control.right {
-	margin-right: -45px;
-}
-#carousel-homepage-latestnews .glyphicon-chevron-left:before{
-	content: "";
-	background: url(images/left-arrow.png) no-repeat center center;
-	width: 30px;
-	height: 30px;
-	float: left;
-}
-#carousel-homepage-latestnews .glyphicon-chevron-right:before{
-	content: "";
-	background: url(images/right-arrow.png) no-repeat center center;
-	width: 30px;
-	height: 30px;
-	float: left;
-}
-#carousel-homepage-latestnews {
-}
+
 
 /*---------------------------------------
  **   Section: Our focus             -----
@@ -3039,10 +2949,10 @@ article .posted-on a:hover{
 .content-left-wrap{
 	padding-top: 60px;
 }
-.sidebar-wrap.content-left-wrap{
+/*.sidebar-wrap.content-left-wrap{
 	margin-top: 60px;
 	padding-top: 0;
-}
+}*/
 .debar-wrap {
 	margin-top: 50px;
 }
@@ -3058,30 +2968,7 @@ article .posted-on a:hover{
 	display: none;
 	content: "";
 }
-.entry-title:after {
-	position: absolute;
-	margin: auto;
-	z-index: 1;
-	content: "";
-	width: 10%;
-	height: 2px;
-	background: #5695C6;
-	bottom: -9px;
-	left: 0;
-}
-.listpost-content-wrap .entry-title a:after {
-	position: absolute;
-	margin: auto;
-	z-index: 1;
-	content: "";
-	width: 35%;
-	height: 2px;
-	background: #5695C6;
-	bottom: -9px;
-	left: 0;
-	width: 50px;
-	display: none;
-}
+
 .post .entry-footer {
 }
 .listpost-content-wrap h1.entry-title a {
