@@ -26,9 +26,7 @@
         if($featured_img[0]){
           echo '<span class="featured-img" style="background-image: url('. esc_url($featured_img[0]) .');"></span>';
         }
-        //else{
-          //echo '<span class="empty-featured-img"></span>';
-      //  }
+
          ?>
       </div>
     </div>
@@ -64,17 +62,3 @@
 
 
 </div>
-
-<?php
-//share Buttons
-/*
-<ul class="share-buttons">
-	<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url?>&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Facebook.png"></a></li>
-	<li><a href="https://twitter.com/intent/tweet?source=<?php echo $site_url?>&text=:%20<?php echo $site_url?>" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Twitter.png"></a></li>
-	<li><a href="https://plus.google.com/share?url=<?php echo $site_url?>" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Google+.png"></a></li>
-	<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo $site_url?>&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"><img src="images/simple_icons/Pinterest.png"></a></li>
-	<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $site_url?>&title=&summary=&source=http%3A%2F%2Fopenlab.sirtimid.com" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="images/simple_icons/LinkedIn.png"></a></li>
-	<li><a href="mailto:?subject=&body=:<?php echo $site_url?>" target="_blank" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Email.png"></a></li>
-</ul>
-*/
-?>

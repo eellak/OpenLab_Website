@@ -4,17 +4,7 @@
   &.in{
     overflow-y:auto;
   }
-  .button-wrap{
-    float:right;
-    /*position: fixed;
-    right: 42px;
-    top: 25px;*/
-    svg{
-      width:30px;
-      height:30px;
-      margin:25px;
-    }
-  }
+
   div,label,p,span,h1,h2,h3,h4,h5,h6{
     color:$font-white;
   }
@@ -66,6 +56,7 @@
       padding-left: 0 !important;
       margin: 0;
       float:none!important;
+      list-style: none;
       label{
         padding-top: 15px;
         position:relative;

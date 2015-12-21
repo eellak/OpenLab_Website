@@ -92,11 +92,14 @@ jQuery(document).ready(function(){
 jQuery(document).ready(function(){
 
   jQuery(window).scroll(function () {
-    if (jQuery(this).scrollTop() > 1400) {
-      jQuery('#scroll-top').addClass('to-top');
-    } else {
+
+    if (jQuery(window).scrollTop() == jQuery(document).height() - jQuery(window).height()) {
+       jQuery('#scroll-top').addClass('to-top');
+    }
+    else{
       jQuery('#scroll-top').removeClass('to-top');
     }
+
   });
 
   jQuery('#scroll-top').click(function(){
@@ -107,7 +110,7 @@ jQuery(document).ready(function(){
 });
 
 
-/* Disable scrolbar if modal form is visible */
+/* Disable scrollbar if modal form is visible */
 jQuery(document).ready(function(){
 
   jQuery('.open-form-btn').click(function(){
@@ -143,7 +146,7 @@ jQuery(document).ready(function(){
         jQuery(this).children('input').each(function(){
           //get id of input and add it as for attr to label
           var inputID = jQuery(this)[0].id;
-          
+
           jQuery(this).parent().attr("for", inputID );
 
           var htmlContents = jQuery(this)[0].outerHTML;
@@ -309,6 +312,108 @@ jQuery(document).ready(function(){
         }
     }
 });
+
+/* OPENLAB EVENT MAP */
+jQuery(document).ready(function(){
+
+  var mapContainer = document.getElementById("event_map_container");
+  if (typeof mapContainer === "undefined" || mapContainer === null ) return;
+
+  var CoordsElem = document.getElementById("event_coords");
+  if (typeof CoordsElem === "undefined" || CoordsElem === null ) return;
+
+  var mapCoords = CoordsElem.getAttribute("data-coords");
+  if (typeof mapCoords === "undefined" || mapCoords === null ) return;
+
+  var addressDesc = document.getElementById("event_address_desc").innerHTML;
+  if (typeof addressDesc === "undefined" || addressDesc === null ) return;
+
+  var maxDataString = 7;
+  var latLong = mapCoords.split(",");
+  var lat = latLong[0];
+  var lng = latLong[1];
+
+  lat = lat.substring(0, maxDataString);
+  lng = lng.substring(0, maxDataString);
+
+  if( lat.length <= 0 || lng.length <= 0 ) return;
+
+  var map = L.map( mapContainer ).setView([lat,lng], 17);
+
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+  }).addTo(map);
+
+  L.marker([lat,lng]).addTo(map);
+
+  //add popup Address Description
+  if(addressDesc !== ''){
+  var popUpContent = '<span class="map-popup">'+ addressDesc +'</span>';
+    L.marker([lat,lng]).addTo(map).bindPopup(popUpContent);
+  }
+
+  jQuery('#event_map').on('show.bs.modal', function(){
+    setTimeout(function() {
+      map.invalidateSize();
+    }, 1000);
+   });
+});
+
+
+/* OPENLAB FOOTER MAP */
+jQuery(document).ready(function(){
+
+  var mapContainer = document.getElementById("openlab_map_container");
+  if (typeof mapContainer === "undefined" || mapContainer === null ) return;
+
+  var CoordsElem = document.getElementById("map_coords");
+  if (typeof CoordsElem === "undefined" || CoordsElem === null ) return;
+
+  var mapCoords = CoordsElem.getAttribute("data-openlab-coords");
+  if (typeof mapCoords === "undefined" || mapCoords === null ) return;
+
+  var addressDesc = document.getElementById("openlab_address_desc").innerHTML;
+  if (typeof addressDesc === "undefined" || addressDesc === null ) return;
+
+  var maxDataString = 7;
+  var latLong = mapCoords.split(",");
+  var lat = latLong[0];
+  var lng = latLong[1];
+
+  lat = lat.substring(0, maxDataString);
+  lng = lng.substring(0, maxDataString);
+
+  if( lat.length <= 0 || lng.length <= 0 ) return;
+
+  var map = L.map( mapContainer ).setView([lat,lng], 17);
+
+  L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+  }).addTo(map);
+
+  L.marker([lat,lng]).addTo(map);
+
+  //add popup Address Description
+  if(addressDesc !== ''){
+  var popUpContent = '<span class="map-popup">'+ addressDesc +'</span>';
+    L.marker([lat,lng]).addTo(map).bindPopup(popUpContent);
+  }
+
+  jQuery('#openlab_map').on('show.bs.modal', function(){
+    setTimeout(function() {
+      map.invalidateSize();
+    }, 1000);
+   });
+});
+
+
+
+
+
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
 
@@ -538,9 +643,9 @@ var isMobile = {
 };
 
 /* Rollover on mobile devices */
-if( isMobile.any() ) {
+/*if( isMobile.any() ) {
 
-    /* Our team section */
+    // Our team section
     jQuery('.team-member').on('click', function(){
         jQuery('.team-member-open').removeClass('team-member-open');
         jQuery(this).addClass('team-member-open');
@@ -550,7 +655,7 @@ if( isMobile.any() ) {
         jQuery('.team-member-open').removeClass('team-member-open');
     });
 
-    /* Portfolio section */
+    // Portfolio section
     jQuery(document).ready(function(){
         jQuery('.cbp-rfgrid li').prepend('<p class="cbp-rfgrid-tr"></p>');
     });
@@ -569,9 +674,10 @@ if( isMobile.any() ) {
         jQuery('.cbp-rfgrid-open').removeClass('cbp-rfgrid-open');
     });
 
-}
+}*/
 
-/* latest news */
+/*
+// latest news
 jQuery(window).load(openlab_home_latest_news);
 jQuery(window).resize(openlab_home_latest_news);
 function openlab_home_latest_news(){
@@ -592,7 +698,7 @@ function openlab_home_latest_news(){
         }
     }
 }
-
+*/
 /* fix for IE9 placeholders */
 
 jQuery(document).ready(function(){

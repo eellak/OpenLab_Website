@@ -14,10 +14,6 @@
 
 	<?php
 		$footer_sections = 0;
-		//$openlab_address = get_theme_mod('openlab_address',__('Company address','openlab-txtd'));
-		//$openlab_address_icon = get_theme_mod('openlab_address_icon',get_template_directory_uri().'/images/map25-redish.png');
-		//$openlab_map_icon = get_theme_mod('openlab_contact_map_icon', get_template_directory_uri().'/images/map-footer-icon.svg');
-
 
 		$openlab_map_icon = '<svg version="1.1" id="footer-map-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 													 viewBox="0 0 50.1 50" style="enable-background:new 0 0 50.1 50;" xml:space="preserve">
@@ -33,12 +29,10 @@
 													</g>
 												</svg>';
 
-		$openlab_map_address = get_theme_mod('openlab_map_address', 'Leoxarous 17, Athens, Greece');
+		$openlab_map_address = get_theme_mod('openlab_map_address', 'Panepistimiou 4, Athens, Greece');
+		$openlab_map_lat = get_theme_mod('openlab_map_lat', '37.976806');
+		$openlab_map_lng = get_theme_mod('openlab_map_lng', '23.736078');
 		$openlab_details_text = get_theme_mod('openlab_contact_details_text', '<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>');
-		//write_log($openlab_map_icon);
-
-		//$openlab_phone = get_theme_mod('openlab_phone','<a href="tel:0 332 548 954">0 332 548 954</a>');
-		//$openlab_phone_icon = get_theme_mod('openlab_phone_icon',get_template_directory_uri().'/images/telephone65-blue.png');
 
 		$openlab_socials_facebook = get_theme_mod('openlab_socials_facebook','#');
 		$openlab_socials_twitter = get_theme_mod('openlab_socials_twitter','#');
@@ -83,9 +77,9 @@
 		if( !empty($openlab_map_icon) || !empty($openlab_details_text) ):
 			echo '<div class="col-md-4 company-details-footer">';
 				echo '<div class="details-wrap">';
-					if( !empty($openlab_map_icon) && !empty($openlab_map_address) ) {
-
-						echo '<a data-toggle="modal" href="#gmap-embed"><span class="footer-map-icon">'. $openlab_map_icon .'</span></a>';
+					if( !empty($openlab_map_icon) && !empty($openlab_map_address) && !empty($openlab_map_lat) && !empty($openlab_map_lng) ) {
+						echo '<p class="location-desc" id="openlab_address_desc">'. strip_tags(esc_attr($openlab_map_address)) .'</p>';
+						echo '<a id="map_coords" data-toggle="modal" href="#openlab_map" data-openlab-coords="'.$openlab_map_lat.','.$openlab_map_lng.'"><span class="footer-map-icon">'. $openlab_map_icon .'</span></a>';
 					}
 					if( !empty($openlab_details_text) ) echo '<div class="details-text">'. $openlab_details_text .'</div>';
 				echo '</div>';
@@ -202,16 +196,26 @@
 
 <?php wp_footer(); ?>
 
-<!-- MAP MODAL-->
-<div id="gmap-embed" class="modal fade">
-		<div class="button-wrap">
-			<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
+<!-- General MAP MODAL-->
+<div id="openlab_map" class="modal fade">
+	<div class="button-wrap">
+		<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">
+			<span class="close-btn-inner"></span>
+		</button>
+	</div>
+	<div class="modal-container" id="openlab_map_container"></div>';
 </div>
-<?php
-if($openlab_map_address):
-	echo '<iframe class="map-container" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="80%" height="80%" src="https://maps.google.com/maps?q='. $openlab_map_address .'&ie=UTF8&t=roadmap&z=17&iwloc=B&output=embed"></iframe>';
-endif;
-?>
+
+<!-- EVENT MAP MODAL-->
+<div id="event_map" class="modal fade is-event">
+	<div class="button-wrap">
+		<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">
+			<span class="close-btn-inner"></span>
+		</button>
+	</div>
+	<div class="modal-container" id="event_map_container"></div>
+</div>
+
 
 </body>
 

@@ -87,7 +87,7 @@
     }
   }
 
-  #gmap-embed{
+  #openlab_map{
     .map-container{
       margin:100px;
     }
@@ -116,4 +116,43 @@
       height: 50px;
   }
 
+}
+#openlab_map, #event_map{
+  overflow-y:auto;
+  .button-wrap{
+    text-align:right;
+    .close-btn-inner{
+      width:30px;
+      height:30px;
+      display:block;
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("../images/close-btn.svg");
+    }
+  }
+}
+.nf-form-container, #home_contact_nf{
+  .button-wrap{
+    text-align:right;
+    .close-btn-inner{
+      width:30px;
+      height:30px;
+      display:block;
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("../images/close-btn.svg");
+    }
+  }
+}
+.openlab-close-modal{
+  background:none;
+}
+.location-desc{
+  display:none;
+  visibility: hidden;
+}
+.modal-container{
+  height: 80%;
 }

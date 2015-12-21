@@ -187,23 +187,38 @@ function openlab_customize_register( $wp_customize ) {
 				'panel' => 'panel_general'
 		));
 
-		/* map - ICON */
-		$wp_customize->add_setting( 'openlab_contact_map_icon', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/images/location-white.svg'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'openlab_contact_map_icon', array(
-					'label'    => __( 'Map section - icon', 'openlab-txtd' ),
-					'section'  => 'openlab_general_footer_section',
-					'settings' => 'openlab_contact_map_icon',
-					'priority'    => 9,
-		)));
-
 		/* text */
 		$wp_customize->add_setting( 'openlab_contact_details_text', array( 'sanitize_callback' => 'openlab_sanitize_text','default' => '<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>') );
 		$wp_customize->add_control( new Openlab_Customize_Textarea_Control( $wp_customize, 'openlab_contact_details_text', array(
 				'label'   => __( 'Contact Details', 'openlab-txtd' ),
 				'section' => 'openlab_general_footer_section',
 				'settings'   => 'openlab_contact_details_text',
-				'priority' => 10
-		)) );
+				'priority' => 11
+		)));
+		$wp_customize->add_setting( 'openlab_map_address', array('sanitize_callback' => 'openlab_sanitize_text'));
+		$wp_customize->add_control( 'openlab_map_address', array(
+				'label'    => __( 'Address', 'openlab-txtd' ),
+				'section'  => 'openlab_general_footer_section',
+				'settings' => 'openlab_map_address',
+				'priority' => 12,
+		));
+
+		$wp_customize->add_setting( 'openlab_map_lat', array('sanitize_callback' => 'openlab_sanitize_text'));
+		$wp_customize->add_control( 'openlab_map_lat', array(
+				'label'    => __( 'Latitude', 'openlab-txtd' ),
+				'section'  => 'openlab_general_footer_section',
+				'settings' => 'openlab_map_lat',
+				'priority' => 13,
+		));
+
+		$wp_customize->add_setting( 'openlab_map_lng', array('sanitize_callback' => 'openlab_sanitize_text'));
+		$wp_customize->add_control( 'openlab_map_lng', array(
+				'label'    => __( 'Longitude', 'openlab-txtd' ),
+				'section'  => 'openlab_general_footer_section',
+				'settings' => 'openlab_map_lng',
+				'priority' => 14,
+		));
+
 
 	else: /* Old versions of WordPress */
 
@@ -305,14 +320,6 @@ function openlab_customize_register( $wp_customize ) {
 				'settings' => 'openlab_socials_dribbble',
 				'priority'    => 8,
 		));
-		/* Map - ICON */
-		$wp_customize->add_setting( 'openlab_contact_map_icon', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/images/location-white.svg'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'openlab_contact_map_icon', array(
-					'label'    => __( 'Footer Map icon', 'openlab-txtd' ),
-					'section'  => 'openlab_general_section',
-					'settings' => 'openlab_contact_map_icon',
-					'priority'    => 9,
-		)));
 
 		/* Contact details Text */
 		$wp_customize->add_setting( 'openlab_contact_details_text', array( 'sanitize_callback' => 'openlab_sanitize_text','default' => __('<p>Company Name</p><p>Address</p><p>Tel</p><p>email@email.com</p>','openlab-txtd')) );
@@ -320,7 +327,7 @@ function openlab_customize_register( $wp_customize ) {
 				'label'   => __( 'Contact Details', 'openlab-txtd' ),
 				'section' => 'openlab_general_section',
 				'settings'   => 'openlab_contact_details_text',
-				'priority' => 10
+				'priority' => 9
 		)) );
 
 	endif;
@@ -663,15 +670,6 @@ function openlab_customize_register( $wp_customize ) {
 			'priority' => 4,
 		));
 
-	  /*
-		$wp_customize->add_setting( 'openlab_ourfocus_button_url', array('sanitize_callback' => 'esc_url_raw','default' => esc_url( home_url( '/' ) ).'#joinUs'));
-		$wp_customize->add_control( 'openlab_ourfocus_button_url', array(
-			'label'    => __( 'Join Us link', 'openlab-txtd' ),
-			'section'  => 'openlab_ourfocus_section',
-			'settings' => 'openlab_ourfocus_button_url',
-			'priority'    => 5,
-		));
-		*/
 		$available_forms = get_available_nf_forms();
 		$available_forms[0] = __( '-- Disabled --', 'openlab-txtd' );
 
@@ -1137,37 +1135,6 @@ function openlab_customize_register( $wp_customize ) {
 				'settings' => 'openlab_contactus_secretkey',
 				'priority'    => 8,
 	));
-
-	/* Openlab Map Settings section */
-
-	$wp_customize->add_panel( 'panel_openlab_map', array(
-		'priority' => 120,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => __( 'General Map options', 'openlab-txtd' )
-	) );
-
-	$wp_customize->add_section( 'openlab_map_section' , array(
-			'title'       => __( 'Google map options', 'openlab-txtd' ),
-			'priority'    => 120,
-			'panel' => 'panel_openlab_map'
-	));
-
-	$wp_customize->add_setting( 'openlab_map_address', array('sanitize_callback' => 'openlab_sanitize_text'));
-	$wp_customize->add_control( 'openlab_map_address', array(
-			'label'    => __( 'Address', 'openlab-txtd' ),
-			'section'  => 'openlab_map_section',
-			'settings' => 'openlab_map_address',
-			'priority' => 1,
-	));
-	$wp_customize->add_setting( 'openlab_map_zoom', array('sanitize_callback' => 'openlab_sanitize_text'));
-	$wp_customize->add_control( 'openlab_map_zoom', array(
-			'label'    => __( 'Map Zoom', 'openlab-txtd' ),
-			'section'  => 'openlab_map_section',
-			'settings' => 'openlab_map_zoom',
-			'priority' => 2,
-	));
-  //
 
 
 	/* LOGO	*/

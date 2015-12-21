@@ -5,6 +5,7 @@
 	$event_date_start = get_post_meta($event_id, 'event_datetime_start', true);
 	$event_date_end 	= get_post_meta($event_id, 'event_datetime_end', true);
 	$event_location 	= get_post_meta($event_id, 'event_location', true);
+	$event_coords 		= get_post_meta($event_id, 'map', true);
 	$event_form_id 		= get_post_meta($event_id, 'selected_ninja_form_id', true);
 	$event_price 			= get_post_meta($event_id, 'event_price', true);
 	$featured_img 		= wp_get_attachment_image_src( get_post_thumbnail_id( $event_id ), 'small' );
@@ -34,18 +35,13 @@
         }
         else{
 
-          if($event_type):
-            echo '<span class="empty-featured-img">'. get_svg_images_src($event_type) .'</span>';
-						if( !is_single()):
-								echo '<div class="event-date">'. $date_formatted .'</div>';
-						endif;
+					if( isset($event_type) && $event_state == 'active'):
+						echo '<span class="empty-featured-img active '. $event_type .'"></span>';
+					endif;
 
-          endif;
-
-          if($event_state == 'passed'):
-            echo '<span class="red-line">'. get_svg_images_src($event_state) .'</span>';
-
-          endif;
+					if( isset($event_type) && $event_state == 'passed'):
+						echo '<span class="empty-featured-img passed '. $event_type .'"></span>';
+					endif;
 
         }
 
@@ -74,7 +70,10 @@
         <div class="square-box">
           <div class="square-content-wrap">
             <div class="square-content">
-              <span class="location-icon"><a class="open-map" href="#" data-toggle="modal" data-target="#map-dummy"></a></span>
+              <span class="location-icon">
+								<a id="event_coords" class="open-map" href="#" data-toggle="modal" data-target="#event_map" <?php if ($event_coords): echo 'data-coords="'.$event_coords.'"'; endif;?>></a>
+							</span>
+							<p class="location-desc" id="event_address_desc"><?php if($event_location): echo strip_tags(esc_attr($event_location)); endif;?></p>
             </div>
           </div>
         </div>
@@ -109,10 +108,10 @@
 
 							echo '<div class="nf-form-container">';
 								echo '<div id="participate" class="modal fade nf">';
-									echo '<div class="button-wrap clearfix">';
-									echo '	<a href="#" class="openlab-close-modal open-form-btn" data-dismiss="modal" aria-hidden="true">
-														<span>'. get_svg_images_src('close-icon') .'</span>
-													</a>';
+									echo '<div class="button-wrap">';
+										echo '<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">';
+											echo '<span class="close-btn-inner"></span>';
+										echo '</button>';										
 									echo '</div>';
 									echo '<div class="modal-form-container">';
 									//bootstrap Modal
@@ -130,18 +129,3 @@
 		</div>
 
 </div>
-
-<?php
-
-//share Buttons
-/*
-<ul class="share-buttons">
-	<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url?>&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Facebook.png"></a></li>
-	<li><a href="https://twitter.com/intent/tweet?source=<?php echo $site_url?>&text=:%20<?php echo $site_url?>" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Twitter.png"></a></li>
-	<li><a href="https://plus.google.com/share?url=<?php echo $site_url?>" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Google+.png"></a></li>
-	<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo $site_url?>&description=" target="_blank" title="Pin it" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title)); return false;"><img src="images/simple_icons/Pinterest.png"></a></li>
-	<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $site_url?>&title=&summary=&source=http%3A%2F%2Fopenlab.sirtimid.com" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="images/simple_icons/LinkedIn.png"></a></li>
-	<li><a href="mailto:?subject=&body=:<?php echo $site_url?>" target="_blank" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img src="images/simple_icons/Email.png"></a></li>
-</ul>
-*/
-?>

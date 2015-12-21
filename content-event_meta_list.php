@@ -10,6 +10,7 @@
 	$featured_img 		= wp_get_attachment_image_src( get_post_thumbnail_id( $event_id ), 'small' );
 	$event_state			= get_event_state($event_id);
 	$site_url 				= urlencode(get_site_url());
+	$permalink 				= get_post_permalink();
 
 	$img_class = 'no-feat-img';
 	if($featured_img[0]){
@@ -25,27 +26,14 @@
 <div class="event-meta-wrap <?php echo esc_attr($event_state); ?>-event <?php echo esc_attr($event_type); ?> ">
 
   <div class="square-box">
-    <div class="square-content-wrap featured-img">
+    <div class="square-content-wrap featured-img" <?php if($featured_img[0]): echo 'style="background-image: url('. esc_url($featured_img[0]) .')"'; endif; ?> >
       <div class="featured-img-container <?php echo esc_attr($img_class); ?>">
-        <?php
-        if($featured_img[0]){
-          echo '<span class="featured-img" style="background-image: url('. esc_url($featured_img[0]) .');"></span>';
-        }
-        else{
 
-          if( isset($event_type) && $event_state == 'active'):
-            echo '<span class="empty-featured-img active '. $event_type .'"></span>';
-          endif;
+				<a href="<?php echo esc_url($permalink); ?>" class="link-mask">
+					<span class="icon-mask <?php echo esc_attr($event_state); ?>-event <?php echo esc_attr($event_type); ?>"></span>
+				</a>
+				<?php
 
-					if( isset($event_type) && $event_state == 'passed'):
-						echo '<span class="empty-featured-img passed '. $event_type .'"></span>';
-					endif;
-
-          /*if($event_state == 'passed'):
-            echo '<span class="red-line">'. get_svg_images_src($event_state) .'</span>';
-          endif;*/
-
-        }
 				if($date_formatted):
 				echo '<div class="event-date">'. $date_formatted .'</div>';
 				endif;

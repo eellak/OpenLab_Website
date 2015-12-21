@@ -63,6 +63,13 @@
       bottom: 0;
       right: 0;
   }
+  .post-date .square-content-wrap{
+    margin-right: 3.5px;
+  }
+  .post-share .square-content-wrap{
+    margin-left: 3.5px;
+  }
+
   .square-content {
      display: table;
      width: 100%;
@@ -79,6 +86,7 @@
     width:100%;
   }
   .grid-2.clearfix{
+    margin-top:10px;
     width:100%;
     .post-date, .post-share{
       width: 50%;
@@ -94,7 +102,7 @@
   }
 
   h1.entry-title{
-    @extend .font-8;
+    @extend .font-7;
     color:$font-post-header;
     font-weight: bold;
     padding: 0 0 20px 0;
@@ -104,6 +112,9 @@
     p, span, a{
       @extend .font-14;
       text-align:left;
+    }
+    img{
+      margin-bottom: 1.5em;
     }
   }
 
@@ -142,8 +153,8 @@
     width:50%;
     height:50%;
     box-sizing:border-box;
-    border-right: 5px solid #fff;
-    border-bottom: 5px solid #fff;
+    border-right: 3.5px solid #fff;
+    border-bottom: 3.5px solid #fff;
   }
   .share-tw{
     position:absolute;
@@ -152,8 +163,8 @@
     top:0;
     right:0;
     box-sizing:border-box;
-    border-left: 5px solid #fff;
-    border-bottom: 5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-bottom: 3.5px solid #fff;
   }
   .share-ln{
     position:absolute;
@@ -162,8 +173,8 @@
     bottom:0;
     left:0;
     box-sizing:border-box;
-    border-right: 5px solid #fff;
-    border-top: 5px solid #fff;
+    border-right: 3.5px solid #fff;
+    border-top: 3.5px solid #fff;
   }
   .share-em{
     position:absolute;
@@ -172,8 +183,8 @@
     bottom:0;
     right:0;
     box-sizing:border-box;
-    border-left: 5px solid #fff;
-    border-top: 5px solid #fff;
+    border-left: 3.5px solid #fff;
+    border-top: 3.5px solid #fff;
   }
   .grid-item a{
     position: relative;

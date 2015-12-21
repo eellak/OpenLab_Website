@@ -104,43 +104,12 @@ wp_head(); ?>
 
           echo '<div class="fixed-mark-openlab top-left"><img src="'.get_stylesheet_directory_uri().'/images/openlab-mark.svg" class="top-left" /></div>';
           echo '<div class="fixed-mark-openlab bottom-left"><img src="'.get_stylesheet_directory_uri().'/images/openlab-mark.svg" class="bottom-left" /></div>';
-          /*echo '<div id="scroll-top" class="fixed-mark-openlab bottom-right">
-                  <img src="'.get_stylesheet_directory_uri().'/images/openlab-mark.svg" class="bottom-right" />
-                </div>'; */
-
-
-                echo '<div id="scroll-top" class="fixed-mark-openlab bottom-right">
-                        <svg class="bottom-right"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                          viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-                          <polygon class="st0" points="0,0 0,30 8.5,30 8.5,8.5 30,8.5 30,0 "/>
-                        </svg>
-                      </div>';
-
-					//if(isset($openlab_logo) && $openlab_logo != ""):
-
-						//echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-
-							//echo '<img src="'.$openlab_logo.'" alt="'.get_bloginfo('title').'">';
-
-						//echo '</a>';
-
-					//else:
-
-						//echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
-
-							//if( file_exists(get_stylesheet_directory()."/images/openlab-logo.svg")):
-
-								//echo '<img src="'.get_stylesheet_directory_uri().'/images/openlab-logo.svg" alt="'.get_bloginfo('title').'">';
-
-							//else:
-
-								//echo '<img src="'.get_template_directory_uri().'/images/openlab-logo.svg" alt="'.get_bloginfo('title').'">';
-
-							//endif;
-
-						//echo '</a>';
-
-					//endif;
+          echo '<div id="scroll-top" class="fixed-mark-openlab bottom-right">
+                  <svg class="bottom-right"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+                    <polygon class="st0" points="0,0 0,30 8.5,30 8.5,8.5 30,8.5 30,0 "/>
+                  </svg>
+                </div>';
 
 				?>
 

@@ -1,6 +1,6 @@
 .single-event{
 
-  h1.entry-title{
+  h1.entry-title.single-event{
     @extend .font-7;
     font-weight: bold;
     padding: 0 0 20px 0;
@@ -12,8 +12,24 @@
       @extend .font-14;
       text-align:left;
     }
+    img{
+      margin-bottom: 1.5em;
+    }
   }
 
+  .event-meta-wrap.active-event, .event-meta-wrap.passed-event{
+    background-color: #ffffff !important;
+    .square-content-wrap {
+    background-color: #ffffff !important;
+    .empty-featured-img {
+    background-size: 70% 70% !important;
+    background-position: 50% 50% !important;
+    }
+    .grid-item{
+      border-color:#ffffff !important;
+    }
+    }
+  }
 
 
   .event-meta-wrap{

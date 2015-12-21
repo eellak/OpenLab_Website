@@ -1,0 +1,82 @@
+@media screen and (max-width: 767px) {
+  #homepage > .container{
+    padding:0px;
+  }
+  #focus-join-us .row{
+    background-attachment: scroll;
+  }
+  section#contact{
+    background-attachment: scroll;
+  }
+  #aboutus .openlab_about_us_center {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  #focus-join-us{
+    .light-text{
+      padding-left: 15px;
+      padding-right: 15px;
+      width:100%;
+    }
+  }
+  .container{
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .fixed-mark-openlab{
+    display:none;
+  }
+
+  #focus .col-md-3{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+/* Calendar */
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .event-date{
+    font-size: 5vw !important;
+  }
+  .event-img{
+    height: 60vw !important;
+    width: 60vw !important;
+  }
+  .event-title{
+    font-size: 7vw !important;
+    line-height: 8vw !important;
+  }
+  .calendar{
+    h3{
+      font-size: 6vw !important;
+      line-height: 6vw !important;
+      padding-top: 7vw !important;
+    }
+  }
+  #wp-events-calendar{
+    margin:0;
+    line-height: 13vw;
+    th{
+      font-size:5vw;
+    }
+    td, a{
+      font-size:4vw;
+    }
+  }
+ }
+ .fixed-mark-openlab.to-top{
+   display:block;
+   right: calc(50% - 15px);
+   bottom: 5px;
+ }
+
+
+/* HOMEPAGE*/
+@media (min-width: 767px) and (max-width: 990px) {
+  #focus{
+    .active,.calendar{
+      margin-top:7px;
+    }
+  }
+ }

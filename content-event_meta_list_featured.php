@@ -1,15 +1,23 @@
 	<?php
 	//get available meta fields
-	$event_id 				= get_the_ID();
-	$event_type				= get_post_meta($event_id, 'event_type', true);
+	$event_id 						= get_the_ID();
+	$event_type						= get_post_meta($event_id, 'event_type', true);
 	$event_date_start 		= get_post_meta($event_id, 'event_datetime_start', true);
-	$event_date_end 		= get_post_meta($event_id, 'event_datetime_end', true);
-	$event_location 		= get_post_meta($event_id, 'event_location', true);
-	$event_form_id 			= get_post_meta($event_id, 'selected_ninja_form_id', true);
-	$event_price 			= get_post_meta($event_id, 'event_price', true);
-	$featured_img 			= wp_get_attachment_image_src( get_post_thumbnail_id( $event_id ), 'small' );
-	$event_state			= get_event_state($event_id);
-	$site_url 				= urlencode(get_site_url());
+	$event_date_end 			= get_post_meta($event_id, 'event_datetime_end', true);
+	$event_location 			= get_post_meta($event_id, 'event_location', true);
+	$event_coords 				= get_post_meta($event_id, 'map', true);
+	$event_form_id 				= get_post_meta($event_id, 'selected_ninja_form_id', true);
+	$event_price 			 		= get_post_meta($event_id, 'event_price', true);
+	$featured_img 				= wp_get_attachment_image_src( get_post_thumbnail_id( $event_id ), 'small' );
+	$event_state					= get_event_state($event_id);
+	$site_url 						= urlencode(get_site_url());
+	$permalink 						= get_post_permalink();
+
+	if(is_numeric($event_form_id) && ($event_state == 'active')):
+		$GLOBALS['form_participate_active'] = $event_form_id;
+	else:
+		unset( $GLOBALS['form_participate_active'] );
+	endif;
 
 	$img_class = 'no-feat-img';
 	if($featured_img[0]){
@@ -26,24 +34,14 @@
 
 <div class="event-meta-wrap <?php echo esc_attr($event_state); ?>-event <?php echo esc_attr($event_type); ?> ">
 
-  <div class="square-box">
-    <div class="square-content-wrap featured-img">
+	<div class="square-box">
+    <div class="square-content-wrap featured-img" <?php if($featured_img[0]): echo 'style="background-image: url('. esc_url($featured_img[0]) .')"'; endif; ?> >
       <div class="featured-img-container <?php echo esc_attr($img_class); ?>">
-        <?php
-        if($featured_img[0]){
-          echo '<span class="featured-img" style="background-image: url('. esc_url($featured_img[0]) .');"></span>';
-        }
-        else{
 
-					if( isset($event_type) && $event_state == 'active'):
-						echo '<span class="empty-featured-img active '. $event_type .'"></span>';
-					endif;
-
-					if( isset($event_type) && $event_state == 'passed'):
-						echo '<span class="empty-featured-img passed '. $event_type .'"></span>';
-					endif;
-
-        }
+				<a href="<?php echo esc_url($permalink); ?>" class="link-mask">
+					<span class="icon-mask <?php echo esc_attr($event_state); ?>-event <?php echo esc_attr($event_type); ?>"></span>
+				</a>
+				<?php
 				if($date_formatted):
 				echo '<div class="event-date">'. $date_formatted .'</div>';
 				endif;
@@ -68,7 +66,8 @@
 			<div class="square-box">
 			  <div class="square-content-wrap">
 				<div class="square-content">
-				  <span class="location-icon"><a class="open-map" href="#" data-toggle="modal" data-target="#map-container"></a></span>
+				  <span class="location-icon"><a id="event_coords" class="open-map" href="#" data-toggle="modal" data-target="#event_map" <?php if ($event_coords): echo 'data-coords="'.$event_coords.'"'; endif;?>></a></span>
+					<p class="location-desc" id="event_address_desc"><?php if($event_location): echo strip_tags(esc_attr($event_location)); endif;?></p>
 				</div>
 			  </div>
 			</div>
@@ -100,13 +99,13 @@
 							echo '<div class="buttons">';
 								echo '	<a data-toggle="modal" data-target="#participate" data-backdrop="static" data-keyboard="true" class="btn open-form open-form-btn" >'. __('Participate','openlab-txtd') .'</a>';
 							echo '</div>';
-
+					endif;
 							echo '<div class="nf-form-container">';
 								echo '<div id="participate" class="modal fade nf">';
-									echo '<div class="button-wrap clearfix">';
-									echo '	<a href="#" class="openlab-close-modal close-form-btn" data-dismiss="modal" aria-hidden="true">
-														<span>'. get_svg_images_src('close-icon') .'</span>
-													</a>';
+									echo '<div class="button-wrap">';
+									echo '<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">';
+										echo '<span class="close-btn-inner"></span>';
+									echo '</button>';
 									echo '</div>';
 									echo '<div class="modal-form-container">';
 									//bootstrap Modal
@@ -116,23 +115,8 @@
 									echo '</div>';
 								echo '</div>';
 							echo '</div>';
-					endif;
-
 					 ?>
       </div>
-			<!-- <div class="modal-map">
-				<div id="map-container" class="modal fade">
-					<div class="button-wrap">
-						<button type="button" class="openlab-close-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-				  <iframe width="80%" height="80%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=23.72271180152893%2C37.98139897274821%2C23.733762502670288%2C37.98862053854105&amp;layer=mapnik&amp;marker=37.98500984448815%2C23.72823715209961" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=37.98501&amp;mlon=23.72824#map=17/37.98501/23.72824">View Larger Map</a></small>
-			  </div>
-			</div> -->
-
 		</div>
 
 </div>
-
-<?php
-
-?>

@@ -22,7 +22,7 @@ get_header(); ?>
 				<main id="main" class="site-main" role="main">
 
 					<?php
-					echo '<h1>'. __('Upcoming Events','openlab-txtd').'</h1>';
+					echo '<h1 class="featured-title">'. __('Upcoming Events','openlab-txtd').'</h1>';
 					//get Next Event from now
 					$args = array(
 						'post_type'    		=> 'event',
@@ -83,7 +83,7 @@ get_header(); ?>
 
 
 					//3 most recently Passed Events
-					echo '<h3>'. __('Passed Events','openlab-txtd').'</h3>';
+					echo '<h3 class="featured-title">'. __('Passed Events','openlab-txtd').'</h3>';
 
 					$args = array(
 						'post_type'    		=> 'event',

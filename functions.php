@@ -221,6 +221,8 @@ function openlab_scripts() {
 
 		wp_enqueue_style('openlab_custom_style', get_template_directory_uri() . '/css/main.css', array(), 'v1');
 
+		wp_enqueue_style('openlab_leaflet', get_template_directory_uri() . '/css/leaflet.css', array(), 'v1');
+
     if ( wp_is_mobile() ){
 
         wp_enqueue_style( 'openlab_style_mobile', get_template_directory_uri() . '/css/style-mobile.css', array('openlab_bootstrap_style', 'openlab_style'),'v1' );
@@ -251,6 +253,12 @@ function openlab_scripts() {
 		if ( !wp_is_mobile() ){
 			wp_enqueue_script( 'openlab_scrollReveal_script', get_template_directory_uri() . '/js/scrollReveal.js', array("jquery"), '20120206', true  );
 		}
+
+		/* Google Maps API */
+		/*wp_enqueue_script('gmaps_api_script', '//maps.googleapis.com/maps/api/js?sensor=false', array("jquery"), '', true);*/
+
+		/* Leaflet JS (Maps) */
+		wp_enqueue_script('openlab_leaflet', get_template_directory_uri() . '/js/leaflet.js', array("jquery"), '20120206', true  );
 
     /* openlab script */
     wp_enqueue_script('openlab_script', get_template_directory_uri() . '/js/openlab.js', array("jquery"), '20120206', true);
@@ -999,7 +1007,7 @@ class openlab_map_details_widget extends WP_Widget {
 					if( $openlab_map_address){
 						if( !empty($openlab_map_address) ) {
 
-							echo '<a data-toggle="modal" href="#gmap-embed">
+							echo '<a data-toggle="modal" href="#openlab-embed">
 											<svg version="1.1" class="map-top-icon widget-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 												<g>
@@ -1831,22 +1839,6 @@ function openlab_register_meta_boxes( $meta_boxes ){
 		),
 	);
 
-	// Slider Images
-	/*$meta_boxes[] = array(
-		'title'  => __( 'Event Slider Images', 'openlab-txtd' ),
-		'post_types' => 'event',
-		'fields' => array(
-			array(
-				'id'               => 'image_advanced',
-				'name'             => __( 'Slider images', 'openlab-txtd' ),
-				'type'             => 'image_advanced',
-				'force_delete'     => false,
-				'max_file_uploads' => 9,
-			),
-		),
-	);
-	*/
-
 	//Type of event
 	$meta_boxes[] = array(
 		'title'  => __( 'Select the Type of Event', 'openlab-txtd' ),
@@ -2466,6 +2458,25 @@ function get_passed_events($num){
 }
 
 //make modal contact form - gets called in footer.php
-function event_modal_contact_form_html($event_id){
-	
+function event_modal_contact_form($event_form_id){
+	//if(!$event_form_id): return;
+
+	if( is_numeric($event_form_id) && defined('NF_PLUGIN_VERSION') && shortcode_exists('ninja_forms') ):
+
+			$data = '<div class="nf-form-container">';
+				$data .= '<div id="participate" class="modal fade nf">';
+					$data .= '<div class="button-wrap clearfix">';
+					$data .= '	<a href="#" class="openlab-close-modal close-form-btn" data-dismiss="modal" aria-hidden="true">
+										<span>'. get_svg_images_src('close-icon') .'</span>
+									</a>';
+					$data .= '</div>';
+					$data .= '<div class="modal-form-container">';
+					//bootstrap Modal
+						if( function_exists( 'ninja_forms_display_form' ) ):
+							ninja_forms_display_form( $event_form_id );
+						endif;
+					$data .= '</div>';
+				$data .= '</div>';
+			$data .= '</div>';
+	endif;
 }

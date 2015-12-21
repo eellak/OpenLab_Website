@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Openlab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 12:24+0200\n"
-"PO-Revision-Date: Fri Dec 18 2015 16:10:13 GMT+0200 (EET)\n"
+"PO-Revision-Date: Fri Dec 18 2015 15:18:37 GMT+0200 (EET)\n"
 "Last-Translator: root <axil@eellak.gr>\n"
 "Language-Team: Roleplay <info@roleplay.gr>\n"
 "Language: Greek\n"
@@ -904,7 +904,7 @@ msgstr ""
 
 #: ../functions.php:916
 msgid "Other Events"
-msgstr "Εκδηλώσεις"
+msgstr ""
 
 #: ../functions.php:947
 msgid "More Events"
@@ -1172,6 +1172,14 @@ msgstr ""
 #. Name of the template
 msgid "Events Page"
 msgstr ""
+
+#: ../template-events.php:25
+msgid "Upcoming Events"
+msgstr "Επερχόμενες εκδηλώσεις"
+
+#: ../template-events.php:86
+msgid "Passed Events"
+msgstr "Περασμένες εκδηλώσεις"
 
 #. Name of the template
 msgid "Full Width Page"
@@ -2211,14 +2219,6 @@ msgstr ""
 #. Author of the theme
 msgid "Roleplay"
 msgstr ""
-
-#: ../template-events.php:25
-msgid "Upcoming Events"
-msgstr "Επερχόμενες εκδηλώσεις"
-
-#: ../template-events.php:86
-msgid "Passed Events"
-msgstr "Περασμένες εκδηλώσεις"
 
 #: ../404.php:25
 msgid "Oops! That page can&rsquo;t be found."

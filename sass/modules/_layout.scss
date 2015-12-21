@@ -32,7 +32,7 @@ a.theme-error{
 
 .square-content-wrap{
 	background-color: #ffffff;
-	padding: 5px 5px 5px 5px;
+	/*padding: 5px 5px 5px 5px;*/
 }
  .event-location{
 	.square-content-wrap{
@@ -42,7 +42,8 @@ a.theme-error{
 
 /* BreadCrumbs*/
 .breadcrumb-wrap{
-  padding: 1px 0 18px 0;
+  padding: 0 0 18px 0;
+  margin-top: -4px;
 
   .bcrmb {
   display: inline-block;
@@ -65,6 +66,9 @@ a.theme-error{
 .page-template-template-events .content-left-wrap.col-md-12{
     padding-top: 110px;
 }
+.post-type-archive-event .content-left-wrap.col-md-12{
+    padding-top: 110px;
+}
 .single-post .content-left-wrap{
     padding-top: 110px;
     margin-bottom:100px;
@@ -76,6 +80,11 @@ a.theme-error{
 }
 .single-event .content-left-wrap{
     padding-top: 110px;
+    margin-bottom:100px;
+}
+.page-template-default .content-left-wrap{
+    padding-top: 110px;
+    margin-top:0;
     margin-bottom:100px;
 }
 
@@ -132,11 +141,8 @@ aside.events-calendar{
 
 
 
-/* Template Events */
 .page-template-template-events, .page-template-template-news, .post-type-archive-event, .single-event{
-/*  .content-left-wrap{
-    padding-top:58px;
-  }*/
+
   .content-left-wrap.col-md-12{
     margin-bottom: 100px;
   }
@@ -158,16 +164,20 @@ aside.events-calendar{
           position: absolute;
           bottom: 0;
           right: -10px;
+          height:50px;
+          a.btn.read-more {
+            padding-top: 14px;
+          }
         }
       }
-      h1, h3{
+      h1.featured-title, h3.featured-title{
         text-align:left;
         @extend .font-14;
         font-weight:bold;
         text-transform: uppercase;
         margin-bottom:28px;
       }
-      h3{
+      h3.featured-title{
         padding-top:20px;
         padding-bottom: 15px;
       }
@@ -387,18 +397,35 @@ aside.events-calendar{
 
   .upcoming-featured{
     h2.entry-title{
-      padding-bottom: 30px;
-      padding-top: 3px;
+      /*padding-bottom: 20px;
+      padding-top: 20px;*/
+      padding: 20px;
       @extend .font-17;
       color:$font-post-header;
+      &:hover{
+        opacity:0.8;
+        color:$font-post-header;
+      }
+      a{
+        text-transform: none;
+      }
+    }
+    div.entry-content{
+      padding:0 20px 20px 20px;
     }
   }
   .upcoming,.passed-events{
     h2.entry-title{
-      padding-bottom: 30px;
-      padding-top: 3px;
+      padding: 20px;
       @extend .font-8;
       color:$font-post-header;
+      a:hover{
+        opacity:0.8;
+        color:$font-post-header;
+      }
+    }
+    div.entry-content{
+      padding:0 20px 20px 20px;
     }
   }
   .upcoming, .upcoming-featured {
@@ -533,7 +560,63 @@ aside.events-calendar{
   }
 }
 
+.page-template-template-events, .post-type-archive-event{
 
+  a.link-mask{
+    display:block;
+    width:100%;
+    height:100%;
+  }
+  .square-content-wrap.featured-img{
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  h2.entry-title{
+    padding: 20px;
+    @extend .font-8;
+    color:$font-post-header;
+    a:hover{
+      opacity:0.8;
+      color:$font-post-header;
+    }
+  }
+  div.entry-content{
+    padding:0 20px 20px 20px;
+  }
+}
+span.icon-mask{
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-size: 60% 60%;
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  opacity:1;
+  @include transition(all ease-in 0.3s);
+  &.workshop.active-event{
+    background-image: url("../images/workshop-white.svg");
+  }
+  &.seminar.active-event{
+    background-image: url("../images/seminar-white.svg");
+  }
+  &.speech.active-event{
+    background-image: url("../images/speech-white.svg");
+  }
+
+  &.workshop.passed-event{
+    background-image: url("../images/workshop-past.svg");
+  }
+  &.seminar.passed-event{
+    background-image: url("../images/seminar-past.svg");
+  }
+  &.speech.passed-event{
+    background-image: url("../images/speech-past.svg");
+  }
+  &:hover{
+    opacity:0.5;
+  }
+}
 
 /* RIGHT SIDEBAR */
 .sidebar-wrap {
@@ -541,15 +624,15 @@ aside.events-calendar{
 	#secondary{
 
     aside{
-      padding-top:10px;
-      padding-bottom:10px;
+      padding-top:0;
+      margin-bottom:20px;
     }
 
 		form.search-form {
 	    padding: 12px 15px 7px 10px;
 	    background-color: $bg-extra-light-gray2;
 			.search-submit {
-        top: 35px;
+        top: 39px;
         right: 5px;
 			}
 			span.screen-reader-text{
@@ -561,8 +644,8 @@ aside.events-calendar{
 				letter-spacing: 0.1em;
 			}
 			input.search-field {
-    		width: 100%;
-        padding: 0 0 0 5px;
+    		width: auto;
+        padding: 0 30px 0 6px;
 				height:50px;
 				border:0px;
 			}

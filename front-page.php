@@ -276,14 +276,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 	get_template_part( 'sections/ribbon_with_right_button' );
 
-	/* LATEST NEWS */
-	$openlab_latestnews_show = get_theme_mod('openlab_latestnews_show');
 
-	if( isset($openlab_latestnews_show) && $openlab_latestnews_show != 1 ):
-
-		get_template_part( 'sections/latest_news' );
-
-	endif;
 
 		/* CONTACT US */
 		$openlab_contactus_show = get_theme_mod('openlab_contactus_show');
@@ -422,6 +415,15 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 			</section> <!-- / END CONTACT US SECTION-->
 			<?php
 		endif;
+
+    /* LATEST NEWS */
+    $openlab_latestnews_show = get_theme_mod('openlab_latestnews_show');
+
+    if( isset($openlab_latestnews_show) && $openlab_latestnews_show != 1 ):
+
+      get_template_part( 'sections/latest_news' );
+
+    endif;
 
 }
 get_footer(); ?>
