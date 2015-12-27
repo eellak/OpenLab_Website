@@ -1,4 +1,3 @@
-[![License GPL 3][badge-license]][copying]
 
 Το Open Lab είναι ένα ανοικτό σύστημα αναδυόμενου γραφειακού χώρου (pop-up office) που απευθύνεται σε κοινότητες, ομάδες, φορείς, εκπαιδευτικά ιδρύματα, ιδιωτικές πρωτοβουλίες για start-ups κτλ και περιλαμβάνει τις υποενότητες [OpenLab_Architecture](https://github.com/eellak/OpenLab_Architecture), [OpenLab_Graphics](https://github.com/eellak/OpenLab_Graphics) και OpenLab_Website. 
 
