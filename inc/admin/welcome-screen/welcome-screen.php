@@ -22,17 +22,12 @@ class Openlab_Welcome {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'openlab_lite_welcome_scripts_for_customizer' ) );
 
 		/* load welcome screen */
-		add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_getting_started' ), 	    10 );
-		add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_actions_required' ),        20 );
-		//add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_child_themes' ), 		    30 );
-		//add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_github' ), 		            40 );
-		//add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_changelog' ), 				50 );
-		//add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_free_pro' ), 				60 );
+		add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_getting_started' ), 10 );
+		add_action( 'openlab_lite_welcome', array( $this, 'openlab_lite_welcome_actions_required' ), 20 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_openlab_lite_dismiss_required_action', array( $this, 'openlab_lite_dismiss_required_action_callback') );
 		add_action( 'wp_ajax_nopriv_openlab_lite_dismiss_required_action', array($this, 'openlab_lite_dismiss_required_action_callback') );
-
 	}
 
 	/**
@@ -41,7 +36,7 @@ class Openlab_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function openlab_lite_welcome_register_menu() {
-		add_theme_page( 'About Openlab Lite', 'About Openlab Lite', 'activate_plugins', 'openlab-txtd-welcome', array( $this, 'openlab_lite_welcome_screen' ) );
+		add_theme_page( __('About Openlab','openlab-txtd'), __('About Openlab','openlab-txtd'), 'activate_plugins', 'openlab-txtd-welcome', array( $this, 'openlab_lite_welcome_screen' ) );
 	}
 
 	/**
@@ -64,7 +59,7 @@ class Openlab_Welcome {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__( 'Welcome to Openlab theme!', 'openlab-txtd' ), '<a href="' . esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Openlab Lite', 'openlab-txtd' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=openlab-txtd-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Openlab', 'openlab-txtd' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -102,7 +97,7 @@ class Openlab_Welcome {
 				'nr_actions_required' => $nr_actions_required,
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
-				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.','openlab-txtd' )
+				'no_required_actions_text' => __( 'There are no required actions for you right now.','openlab-txtd' )
 			) );
 		}
 	}
@@ -209,7 +204,6 @@ class Openlab_Welcome {
 		<ul class="openlab-txtd-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','openlab-txtd'); ?></a></li>
 			<li role="presentation" class="openlab-txtd-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','openlab-txtd'); ?></a></li>
-			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child themes','openlab-txtd'); ?></a></li>
 		</ul>
 
 		<div class="openlab-txtd-tab-content">
@@ -218,10 +212,6 @@ class Openlab_Welcome {
 			/**
 			 * @hooked openlab_lite_welcome_getting_started - 10
 			 * @hooked openlab_lite_welcome_actions_required - 20
-			 * @hooked openlab_lite_welcome_child_themes - 30
-			 * @hooked openlab_lite_welcome_github - 40
-			 * @hooked openlab_lite_welcome_changelog - 50
-			 * @hooked openlab_lite_welcome_free_pro - 60
 			 */
 			do_action( 'openlab_lite_welcome' ); ?>
 
@@ -245,37 +235,6 @@ class Openlab_Welcome {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php' );
 	}
 
-	/**
-	 * Child themes
-	 * @since 1.8.2.4
-	 */
-	public function openlab_lite_welcome_child_themes() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/child-themes.php' );
-	}
-
-	/**
-	 * Contribute
-	 * @since 1.8.2.4
-	 */
-	public function openlab_lite_welcome_github() {
-		//require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/github.php' );
-	}
-
-	/**
-	 * Changelog
-	 * @since 1.8.2.4
-	 */
-	public function openlab_lite_welcome_changelog() {
-		//require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php' );
-	}
-
-	/**
-	 * Free vs PRO
-	 * @since 1.8.2.4
-	 */
-	public function openlab_lite_welcome_free_pro() {
-		//require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/free_pro.php' );
-	}
 }
 
 $GLOBALS['Openlab_Welcome'] = new Openlab_Welcome();

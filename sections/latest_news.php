@@ -38,11 +38,13 @@
 
 				echo '<div class="clear"></div>';
 
-				echo '<div id="carousel-homepage-latestnews" class="carousel slide" data-ride="carousel">';
+				//echo '<div id="carousel-homepage-latestnews" class="carousel slide" data-ride="carousel">';
+				echo '<div id="carousel-homepage-latestnews" class="carousel slide">';
 
 					/* Wrapper for slides */
 
-					echo '<div class="carousel-inner" role="listbox">';
+					//echo '<div class="carousel-inner" role="listbox">';
+					echo '<div class="carousel-inner" ';
 
 
 						$openlab_latest_loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => $openlab_total_posts, 'order' => 'DESC','ignore_sticky_posts' => true ) );
@@ -58,7 +60,7 @@
 
 								$i_latest_posts++;
 
-								if ( !wp_is_mobile() ){
+								//if ( !wp_is_mobile() ){
 
 										if($i_latest_posts == 1){
 											echo $newSlideActive;
@@ -104,7 +106,8 @@
 											echo $newSlideClose;
 										}
 
-								} else {
+								//}
+								/*else {
 
 									if( $i_latest_posts == 1 ) $active = 'active'; else $active = '';
 
@@ -125,7 +128,7 @@
 											echo '</div>';
 										echo '</div>';
 									echo '</div>';
-								}
+								}*/
 
 							endwhile;
 

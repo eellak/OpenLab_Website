@@ -1,12 +1,13 @@
 .navbar-brand {
 padding:0;
 }
-.home.blog section{
+.blog section{
   padding-top: 50px;
   padding-bottom: 50px;
 }
 #homepage{
   padding:0 !important;
+    margin-top:-8px;
 }
 .section-header{
   h2{
@@ -22,7 +23,7 @@ padding:0;
       background: #fff;
       .container{
         height: 100vh;
-        width: 100%;
+        width:100vw;
         margin:0;
         padding-top: 140px;
         padding-left: 90px;
@@ -50,6 +51,7 @@ padding:0;
       width: 100%;
       .inner-caption{
         @extend .font-6;
+        line-height: 44px;
         background-color: rgba(255, 255, 255, 0.8);
         padding: 10px 15px;
         color:$font-dark;
@@ -64,7 +66,6 @@ padding:0;
 }
 
 #focus{
-  margin-top:-8px;
   padding-top: 0px;
   p,span{
     @extend .font-1;
@@ -169,7 +170,7 @@ padding:0;
         line-height: 15.6px;
         font-weight: bold;
         color:$bg-yellow;
-        padding-top: 20px;
+        padding-top: 22px;
         text-transform: uppercase;
       }
     }
@@ -222,7 +223,6 @@ padding:0;
 /* Focus SubSection */
 #focus-join-us{
     .row{
-    background-image: url('../images/home-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -242,11 +242,11 @@ padding:0;
     .col-md-6.focus-join-us-content{
       padding-bottom: 25px;
       padding-top: 25px;
-      padding-left:0;
         h2.light-text{
           @extend .font-7;
           color:$font-white;
           text-align: left;
+          text-transform: uppercase;
           }
         div.section-legend{
           text-align: left;
@@ -262,10 +262,8 @@ padding:0;
       }
     }
     .focus-join-us-button{
-      padding:0px;
       .buttons{
         margin: 43px 0 30px 0;
-        /*padding-top: 30px;*/
         a.join-us-btn{
           @extend .font-4;
           display: inline-block !important;
@@ -298,16 +296,17 @@ padding:0;
       line-height: 1.4em;
     }
     .openlab_about_us_center{
-      /*padding-top: 7px;*/
+
       span,p{
         @extend .font-3;
         color:$font-white;
         line-height: 1.4em;
+        text-align: left;
+        display: block;
       }
 
     }
     .openlab-rtl-skills{
-      /*padding-top: 15px;*/
       .about-img-right{
         max-height: 250px;
       }
@@ -376,7 +375,7 @@ padding:0;
     }
 /* Contact Us Section */
   .contact-us {
-    background-image: url('../images/home-bg.jpg');
+    background-color: #000000;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -397,8 +396,6 @@ padding:0;
       }
     }
     .container{
-      padding-left: 70px;
-      padding-right: 70px;
       .pirate_forms_wrap{
         button#pirate-forms-contact-submit {
           width:100%;
@@ -452,6 +449,12 @@ span.widget-social{
   padding-left: 5px;
   padding-right: 5px;
   margin-top: 20px;
+  &:first-child{
+    padding-left: 0px !important;
+  }
+  &:last-child{
+    padding-right: 0px !important;
+  }
   h3.latestnews-title{
     padding: 15px 15px;
     a{
@@ -465,6 +468,7 @@ span.widget-social{
     @extend .font-1;
     text-align: left;
     padding: 0 15px;
+    letter-spacing: 0.05em;
   }
   .square-box{
     &:hover{

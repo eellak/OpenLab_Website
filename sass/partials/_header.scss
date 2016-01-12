@@ -1,7 +1,6 @@
 nav#site-navigation {
     margin-left: auto;
     margin-right: auto;
-    display: table !important;
 }
 #main-nav.fixed {
     background-color: $bg-black;
@@ -11,7 +10,52 @@ nav#site-navigation {
 padding-top: 4px;
 text-transform: uppercase;
 }
+nav.bs-navbar-collapse.navbar-collapse {
+    border-top: 0px !important;
+    box-shadow: none !important;
+}
+.navbar-toggle{
+  .icon-bar.first.closed{
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    margin-top: 6px;
+  }
+  .icon-bar.second.closed{
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    -webkit-transform: rotate(-45deg);
+    margin-top: -2px;
+  }
 
+}
+.navbar-toggle.collapsed{
+  .icon-bar.closed{
+    display:none;
+  }
+}
+.navbar-toggle.active{
+  .icon-bar.open{
+    display:none;
+  }
+}
+span.icon-wrap-responsive{
+  margin-top: 12px;
+  margin-left: 15px;
+  width:147px;
+  height:25px;
+  overflow: hidden;
+  text-align: left;
+  display:none;
+  img.logo-light{
+    height: 100%;
+  }
+}
+button.navbar-toggle{
+  &:hover, &:focus{
+    background: none !important;
+  }
+}
 .fixed-mark-openlab {
   position: fixed;
   font-size:0;

@@ -121,11 +121,6 @@ function openlab_setup() {
 			                "check" => defined('CFFVER'),
 			                "plugin_slug" => 'custom-facebook-feed'
             ),
-            array(
-			                "id" => 'openlab-txtd-req-ac-check-pirate-forms',
-			                "title" => esc_html__( 'Check the contact form after installing Pirate Forms' ,'openlab-txtd' ),
-			                "description"=> esc_html__( "After installing the Pirate Forms plugin, please make sure you check your frontpage contact form is working fine. Also, if you use Openlab Lite in other language(s) please make sure the translation is ok. If not, please translate the contact form again.",'openlab-txtd' ),
-            ),
 
         );
 
@@ -149,15 +144,6 @@ function openlab_widgets_init() {
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
-
-    /*register_sidebar(array(
-        'name' => __('About us section', 'openlab-txtd'),
-        'id' => 'sidebar-aboutus',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<h1 class="widget-title">',
-        'after_title' => '</h1>',
-    ));*/
 
 }
 
@@ -254,9 +240,6 @@ function openlab_scripts() {
 			wp_enqueue_script( 'openlab_scrollReveal_script', get_template_directory_uri() . '/js/scrollReveal.js', array("jquery"), '20120206', true  );
 		}
 
-		/* Google Maps API */
-		/*wp_enqueue_script('gmaps_api_script', '//maps.googleapis.com/maps/api/js?sensor=false', array("jquery"), '', true);*/
-
 		/* Leaflet JS (Maps) */
 		wp_enqueue_script('openlab_leaflet', get_template_directory_uri() . '/js/leaflet.js', array("jquery"), '20120206', true  );
 
@@ -297,9 +280,9 @@ function openlab_register_required_plugins() {
 
 		$plugins = array(
 			array(
-				'name' => 'Widget customizer',
-				'slug' => 'widget-customizer',
-				'required' => false
+				'name'      => 'Meta Box',
+				'slug'      => 'meta-box',
+				'required'  => true,
 			),
 			array(
 				'name'      => 'Pirate Forms',
@@ -334,6 +317,11 @@ function openlab_register_required_plugins() {
 			array(
 				'name'      => 'Custom Facebook Feed',
 				'slug'      => 'custom-facebook-feed',
+				'required'  => true,
+			),
+			array(
+				'name'      => 'Meta Box',
+				'slug'      => 'meta-box',
 				'required'  => true,
 			)
 		);
@@ -408,27 +396,16 @@ add_action('widgets_init', 'openlab_register_widgets');
 
 function openlab_register_widgets() {
 
-	//register_widget('openlab_ourfocus');
-	//register_widget('openlab_map_details_widget');
   register_widget('openlab_team_widget');
-	//register_widget('openlab_next_event_widget');
-	//register_widget('openlab_latest_post_widget');
 	register_widget('openlab_events_archive_widget');
 
 	//Sidebars
 	$openlab_lite_sidebars = array (
-	/* 'sidebar-ourfocus' => 'sidebar-ourfocus', */
-	/* 'sidebar-testimonials' => 'sidebar-testimonials',*/
 	'sidebar-ourteam' => 'sidebar-ourteam' );
 
 	/* Register sidebars */
 	foreach ( $openlab_lite_sidebars as $openlab_lite_sidebar ):
 
-		/*if( $openlab_lite_sidebar == 'sidebar-ourfocus' ):
-
-			$openlab_lite_name = __('Our focus section widgets', 'openlab-txtd');
-
-		else */
 		if( $openlab_lite_sidebar == 'sidebar-ourteam' ):
 
 			$openlab_lite_name = __('Our team section widgets', 'openlab-txtd');
@@ -460,64 +437,10 @@ add_action('after_switch_theme', 'openlab_register_default_widgets');
 function openlab_register_default_widgets() {
 
 	$openlab_lite_sidebars = array (
-	/* 'sidebar-ourfocus' => 'sidebar-ourfocus', */
 	'sidebar-ourteam' => 'sidebar-ourteam'
 );
 
 	$active_widgets = get_option( 'sidebars_widgets' );
-
-	/**
-     * Default Our Focus widgets
-     */
-	/* if ( empty ( $active_widgets[ $openlab_lite_sidebars['sidebar-ourfocus'] ] ) ):
-
-		$openlab_lite_counter = 1;
-
-        /* our focus widget #1
-		$active_widgets[ 'sidebar-ourfocus' ][0] = 'ctup-ads-widget-' . $openlab_lite_counter;
-        if ( file_exists( get_stylesheet_directory_uri().'/images/parallax.png' ) ):
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'PARALLAX EFFECT', 'text' => 'Create memorable pages with smooth parallax effects that everyone loves. Also, use our lightweight content slider offering you smooth and great-looking animations.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/parallax.png" );
-        else:
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'PARALLAX EFFECT', 'text' => 'Create memorable pages with smooth parallax effects that everyone loves. Also, use our lightweight content slider offering you smooth and great-looking animations.', 'link' => '#', 'image_uri' => get_template_directory_uri()."/images/parallax.png" );
-        endif;
-        update_option( 'widget_ctup-ads-widget', $ourfocus_content );
-        $openlab_lite_counter++;
-
-        /* our focus widget #2
-        $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
-        if ( file_exists( get_stylesheet_directory_uri().'/images/woo.png' ) ):
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'WOOCOMMERCE', 'text' => 'Build a front page for your WooCommerce store in a matter of minutes. The neat and clean presentation will help your sales and make your store accessible to everyone.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/woo.png" );
-        else:
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'WOOCOMMERCE', 'text' => 'Build a front page for your WooCommerce store in a matter of minutes. The neat and clean presentation will help your sales and make your store accessible to everyone.', 'link' => '#', 'image_uri' => get_template_directory_uri()."/images/woo.png" );
-        endif;
-        update_option( 'widget_ctup-ads-widget', $ourfocus_content );
-        $openlab_lite_counter++;
-
-        /* our focus widget #3
-        $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
-        if ( file_exists( get_stylesheet_directory_uri().'/images/ccc.png' ) ):
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'CUSTOM CONTENT BLOCKS', 'text' => 'Showcase your team, products, clients, about info, testimonials, latest posts from the blog, contact form, additional calls to action. Everything translation ready.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/ccc.png" );
-        else:
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'CUSTOM CONTENT BLOCKS', 'text' => 'Showcase your team, products, clients, about info, testimonials, latest posts from the blog, contact form, additional calls to action. Everything translation ready.', 'link' => '#', 'image_uri' => get_template_directory_uri()."/images/ccc.png" );
-        endif;
-        update_option( 'widget_ctup-ads-widget', $ourfocus_content );
-        $openlab_lite_counter++;
-
-        /* our focus widget #4
-        $active_widgets[ 'sidebar-ourfocus' ][] = 'ctup-ads-widget-' . $openlab_lite_counter;
-        if ( file_exists( get_stylesheet_directory_uri().'/images/ti-logo.png' ) ):
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'GO PRO FOR MORE FEATURES', 'text' => 'Get new content blocks: pricing table, Google Maps, and more. Change the sections order, display each block exactly where you need it, customize the blocks with whatever colors you wish.', 'link' => '#', 'image_uri' => get_stylesheet_directory_uri()."/images/ti-logo.png" );
-        else:
-            $ourfocus_content[ $openlab_lite_counter ] = array ( 'title' => 'GO PRO FOR MORE FEATURES', 'text' => 'Get new content blocks: pricing table, Google Maps, and more. Change the sections order, display each block exactly where you need it, customize the blocks with whatever colors you wish.', 'link' => '#', 'image_uri' => get_template_directory_uri()."/images/ti-logo.png" );
-        endif;
-        update_option( 'widget_ctup-ads-widget', $ourfocus_content );
-        $openlab_lite_counter++;
-
-		update_option( 'sidebars_widgets', $active_widgets );
-
-    endif;
-		*/
-
 
     /**
      * Default Our Team widgets
@@ -528,25 +451,25 @@ function openlab_register_default_widgets() {
 
         /* our team widget #1 */
         $active_widgets[ 'sidebar-ourteam' ][0] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'ASHLEY SIMMONS', 'position' => 'Project Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team1.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'NAME SURNAME', 'position' => 'Title', 'description' => 'Description', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/people-empty.svg" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #2 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TIMOTHY SPRAY', 'position' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team2.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'NAME SURNAME', 'position' => 'Title', 'description' => 'Description', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/people-empty.svg" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #3 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'TONYA GARCIA', 'position' => 'Account Manager', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team3.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'NAME SURNAME', 'position' => 'Title', 'description' => 'Description', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/people-empty.svg" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
         /* our team widget #4 */
         $active_widgets[ 'sidebar-ourteam' ][] = 'openlab_team-widget-' . $openlab_lite_counter;
-        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'JASON LANE', 'position' => 'Business Development', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus, eros at accumsan auctor, felis eros condimentum quam, non porttitor est urna vel neque', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/team4.png" );
+        $ourteam_content[ $openlab_lite_counter ] = array ( 'name' => 'NAME SURNAME', 'position' => 'Title', 'description' => 'Description', 'fb_link' => '#', 'tw_link' => '#', 'bh_link' => '#', 'gp_link' => '#', 'ln_link' => '#', 'image_uri' => get_template_directory_uri()."/images/people-empty.svg" );
         update_option( 'widget_openlab_team-widget', $ourteam_content );
         $openlab_lite_counter++;
 
@@ -1491,7 +1414,7 @@ class openlab_team_widget extends WP_Widget{
         $instance['gp_link'] = strip_tags($new_instance['gp_link']);
 				$instance['ln_link'] = strip_tags($new_instance['ln_link']);
         $instance['image_uri'] = strip_tags($new_instance['image_uri']);
-        $instance['open_new_window'] = strip_tags($new_instance['open_new_window']);
+        //$instance['open_new_window'] = strip_tags($new_instance['open_new_window']);
 
         return $instance;
 
@@ -1531,9 +1454,7 @@ class openlab_team_widget extends WP_Widget{
             <label for="<?php echo $this->get_field_id('ln_link'); ?>"><?php _e('Linkedin link', 'openlab-txtd'); ?></label><br/>
             <input type="text" name="<?php echo $this->get_field_name('ln_link'); ?>" id="<?php echo $this->get_field_id('ln_link'); ?>" value="<?php if( !empty($instance['ln_link']) ): echo $instance['ln_link']; endif; ?>" class="widefat">
         </p>
-        <p>
-            <input type="checkbox" name="<?php echo $this->get_field_name('open_new_window'); ?>" id="<?php echo $this->get_field_id('open_new_window'); ?>" <?php if( !empty($instance['open_new_window']) ): checked( (bool) $instance['open_new_window'], true ); endif; ?> ><?php _e( 'Open links in new window?','openlab-txtd' ); ?><br>
-        </p>
+
         <p>
             <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image', 'openlab-txtd'); ?></label><br/>
 
@@ -1702,7 +1623,7 @@ function register_cpt_event() {
         'hierarchical' => false,
         'description' => 'Custom Event post type',
         'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
-        'taxonomies' => array( 'event_taxonomy', 'post_tag' ),
+        //'taxonomies' => array( 'event_taxonomy', 'post_tag' ),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -1719,37 +1640,6 @@ function register_cpt_event() {
 
     register_post_type( 'event', $args );
 }
-
-function create_eventcategory_taxonomy() {
-
-$labels = array(
-    'name' => _x( 'Categories', 'taxonomy general name' ),
-    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Categories' ),
-    'popular_items' => __( 'Popular Categories' ),
-    'all_items' => __( 'All Categories' ),
-    'parent_item' => null,
-    'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Category' ),
-    'update_item' => __( 'Update Category' ),
-    'add_new_item' => __( 'Add New Category' ),
-    'new_item_name' => __( 'New Category Name' ),
-    'separate_items_with_commas' => __( 'Separate categories with commas' ),
-    'add_or_remove_items' => __( 'Add or remove categories' ),
-    'choose_from_most_used' => __( 'Choose from the most used categories' ),
-);
-
-register_taxonomy('event_taxonomy','event', array(
-    'label' => __('Event Category'),
-    'labels' => $labels,
-    'hierarchical' => true,
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'event-category' ),
-));
-}
-
-add_action( 'init', 'create_eventcategory_taxonomy', 0 );
 
 
 add_filter( 'rwmb_meta_boxes', 'openlab_register_meta_boxes' );
@@ -1924,17 +1814,6 @@ function openlab_register_meta_boxes( $meta_boxes ){
 
 }
 
-//get registered slides
-
-// Add CPT Event to archive loop
-function namespace_add_custom_post_to_archive( $query ) {
-
-	$query->set( 'post_type', array( 'post', 'event' ) );
-	return $query;
-
-}
-//add_filter( 'pre_get_posts', 'namespace_add_custom_post_to_archive' );
-
 //disable default calendar
 function remove_calendar_widget() {
     unregister_widget('WP_Widget_Calendar');
@@ -2042,12 +1921,12 @@ function get_registered_gallery_slides(){
 function get_registered_slide_captions(){
 	$openlab_captions = array();
 
-	$openlab_cap_1 = get_theme_mod('openlab_slide1_caption');
-	$openlab_cap_2 = get_theme_mod('openlab_slide2_caption');
-	$openlab_cap_3 = get_theme_mod('openlab_slide3_caption');
-	$openlab_cap_4 = get_theme_mod('openlab_slide4_caption');
-	$openlab_cap_5 = get_theme_mod('openlab_slide5_caption');
-	$openlab_cap_6 = get_theme_mod('openlab_slide6_caption');
+	$openlab_cap_1 = get_theme_mod('openlab_slide1_caption','Slide Caption Text');
+	$openlab_cap_2 = get_theme_mod('openlab_slide2_caption','Slide Caption Text');
+	$openlab_cap_3 = get_theme_mod('openlab_slide3_caption','Slide Caption Text');
+	$openlab_cap_4 = get_theme_mod('openlab_slide4_caption','Slide Caption Text');
+	$openlab_cap_5 = get_theme_mod('openlab_slide5_caption','Slide Caption Text');
+	$openlab_cap_6 = get_theme_mod('openlab_slide6_caption','Slide Caption Text');
 
 	if($openlab_cap_1):
 		$openlab_captions['s1'] = $openlab_cap_1;

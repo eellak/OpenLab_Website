@@ -30,5 +30,5 @@ get_header(); ?>
 		<div class="sidebar-wrap col-md-3 content-left-wrap">
 			<?php get_sidebar(); ?>
 		</div><!-- .sidebar-wrap -->
-	</div><!-- .container -->
+</div><!-- .container -->
 <?php get_footer(); ?>

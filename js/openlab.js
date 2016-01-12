@@ -122,6 +122,17 @@ jQuery(document).ready(function(){
     //return false;
   });
 
+  jQuery('#participate').on('show.bs.modal', function(){
+    setTimeout(function() {
+      jQuery(".modal-backdrop").addClass('hidden');
+    }, 300);
+   });
+
+   jQuery('#home_contact_nf').on('show.bs.modal', function(){
+     setTimeout(function() {
+       jQuery(".modal-backdrop").addClass('hidden');
+     }, 300);
+    });
 });
 
 /* Un-Nest Label-input of radio/checkboxes in ninja-forms */
@@ -513,26 +524,6 @@ jQuery(document).ready(function(){
 
 });
 
-
-/* ================================
-
- ===     FLICKITY SLIDER       ===
-
- ================================= */
-
-
-/*
-jQuery(document).ready(function(){
-
-  if ( jQuery('body').hasClass('home') ){
-    jQuery('.home-slider').flickity({
-    cellAlign: 'left',
-    contain: true
-    });
-  }
-
-});
-*/
 
 /* ======================================
 

@@ -8,7 +8,7 @@
 			<!-- SECTION TITLE -->
 
 			<?php
-			$openlab_aboutus_title = get_theme_mod('openlab_aboutus_title',__('About','openlab-txtd'));
+			$openlab_aboutus_title = get_theme_mod('openlab_aboutus_title',__('Openlab','openlab-txtd'));
 
 			if( !empty($openlab_aboutus_title) ):
 				echo '<h2 class="white-text">'.$openlab_aboutus_title.'</h2>';
@@ -42,9 +42,9 @@
 
 			<?php
 
-			$openlab_aboutus_biglefttitle = get_theme_mod('openlab_aboutus_biglefttitle',__('Everything you see here is responsive and mobile-friendly.','openlab-txtd'));
-			$openlab_aboutus_text = get_theme_mod('openlab_aboutus_text','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.');
-			$openlab_aboutus_feature1_title = get_theme_mod('openlab_aboutus_feature1_title',__('YOUR SKILL #1','openlab-txtd'));
+			$openlab_aboutus_biglefttitle = get_theme_mod('openlab_aboutus_biglefttitle',__('Openlab is an open workplace system design','openlab-txtd'));
+			$openlab_aboutus_text = get_theme_mod('openlab_aboutus_text','Openlab long text description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros.<br><br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec massa enim. Aliquam viverra at est ullamcorper sollicitudin. Proin a leo sit amet nunc malesuada imperdiet pharetra ut eros. <br><br>Mauris vel nunc at ipsum fermentum pellentesque quis ut massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas non adipiscing massa. Sed ut fringilla sapien. Cras sollicitudin, lectus sed tincidunt cursus, magna lectus vehicula augue, a lobortis dui orci et est.');
+			$openlab_aboutus_feature1_title = get_theme_mod('openlab_aboutus_feature1_title',__('Openlab section title','openlab-txtd'));
 			$openlab_aboutus_feature1_text = get_theme_mod('openlab_aboutus_feature1_text');
 
 
@@ -99,11 +99,10 @@
 			<div id="about_us_img" data-scrollreveal="enter right move 60px after 0.00s over 2.5s" >
 				<?php
 
-				$openlab_aboutus_img = get_theme_mod('openlab_aboutus_img');
+				$openlab_aboutus_img = get_theme_mod('openlab_aboutus_img', get_template_directory_uri() . '/images/our-focus-right.svg');
 				if($openlab_aboutus_img){
 					echo '<img class="about-img-right" src="'. esc_url($openlab_aboutus_img) .'" >';
 				}
-				//write_log($openlab_aboutus_img);
 
 				?>
 			</div>
@@ -111,21 +110,6 @@
 		</div> <!-- / END SKILLS COLUMN-->
 
 	</div> <!-- / END 3 COLUMNS OF ABOUT US-->
-
-	<!-- CLIENTS -->
-	<?php
-		if(is_active_sidebar( 'sidebar-aboutus' )):
-			echo '<div class="our-clients">';
-				echo '<h2><span class="section-footer-title">'.__('OUR HAPPY CLIENTS','openlab-txtd').'</span></h2>';
-			echo '</div>';
-
-			echo '<div class="client-list">';
-				echo '<div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">';
-				dynamic_sidebar( 'sidebar-aboutus' );
-				echo '</div>';
-			echo '</div> ';
-		endif;
-	?>
 
 </div> <!-- / END CONTAINER -->
 

@@ -1,6 +1,6 @@
 .container{
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 .content-left-wrap{
   padding-left: 0;
@@ -87,7 +87,22 @@ a.theme-error{
     margin-top:0;
     margin-bottom:100px;
 }
+#latestnews > .container{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#focus > .container{
+  padding-left: 120px;
+  padding-right: 120px;
+}
 
+/* CONTAINER FIXES */
+body.single-post, body.single-event{
+  #content .container{
+    /*padding-left:122px;
+    padding-right:122px; */
+  }
+}
 
 
 /* CALENDAR STYLE */
@@ -139,8 +154,6 @@ aside.events-calendar{
 }
 
 
-
-
 .page-template-template-events, .page-template-template-news, .post-type-archive-event, .single-event{
 
   .content-left-wrap.col-md-12{
@@ -183,8 +196,16 @@ aside.events-calendar{
       }
       article.hentry{
         border-bottom:0;
-        margin-bottom:0;
+        margin-bottom:7px;
         @extend .font-16;
+      }
+      div.date-mobile{
+        display:none;
+        text-transform: uppercase;
+        font-size:13px;
+        line-height: 18px;
+        font-weight: bold;
+        padding-bottom: 15px;
       }
       .content-area .entry-header {
         padding-top: 2px;
@@ -199,6 +220,7 @@ aside.events-calendar{
   div.entry-content{
     margin:0;
     padding-bottom: 35px;
+    padding-top: 20px;
     p, span, a{
       @extend .font-14;
     }
@@ -272,7 +294,6 @@ aside.events-calendar{
     span.location-icon{
       width: 100%;
       height: 100%;
-      display: block;
       background-size: 50% 50%;
       background-position: center center;
       background-repeat: no-repeat;
@@ -644,12 +665,52 @@ span.icon-mask{
 				letter-spacing: 0.1em;
 			}
 			input.search-field {
-    		width: auto;
-        padding: 0 30px 0 6px;
+    		width: 100%;
+        padding: 0 0 0 6px;
 				height:50px;
 				border:0px;
 			}
 		}
 	}
 
+}
+
+/* LOADER */
+
+@include keyframes(loaderspin) {
+  0% {
+  @include transform(rotate(0deg));
+  }
+  12.5% {
+    @include transform(rotate(90deg));
+  }
+  25%{
+    @include transform(rotate(90deg));
+  }
+  37.5%{
+    @include transform(rotate(180deg));
+  }
+  50%{
+    @include transform(rotate(180deg));
+  }
+  62.5%{
+    @include transform(rotate(270deg));
+  }
+  75%{
+    @include transform(rotate(270deg));
+  }
+  87.5%{
+    @include transform(rotate(360deg));
+  }
+  100%{
+    @include transform(rotate(360deg));
+  }
+}
+
+.status{
+  @include animation-name(loaderspin);
+  @include animation-duration(2s);
+  @include animation-delay(0s);
+  @include animation-timing-function(ease-in);
+  @include animation-iteration-count(infinite);
 }

@@ -283,7 +283,14 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 		if( isset($openlab_contactus_show) && $openlab_contactus_show != 1 ):
 			?>
-			<section class="contact-us" id="contact">
+      <?php
+  		$openlab_sections_bg = get_theme_mod('openlab_bg_home_sections', get_template_directory_uri().'/images/home-bg.jpg');
+  		if($openlab_sections_bg != ""):
+  			echo '<section class="contact-us" id="contact" style="background-image:url('.esc_url($openlab_sections_bg).');">';
+  		else:
+  			echo '<section class="contact-us" id="contact">';
+  		endif;
+  		?>
         <div class="colored-mask"></div>
 				<div class="container">
 					<!-- SECTION HEADER -->
@@ -291,7 +298,7 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 						<?php
 
-							$openlab_contactus_title = get_theme_mod('openlab_contactus_title',__('Get in touch','openlab-txtd'));
+							$openlab_contactus_title = get_theme_mod('openlab_contactus_title',__('Contact','openlab-txtd'));
 							if ( !empty($openlab_contactus_title) ):
 								echo '<h2 class="white-text">'.$openlab_contactus_title.'</h2>';
 							endif;

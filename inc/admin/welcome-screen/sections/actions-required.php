@@ -8,7 +8,6 @@
 
     <h1><?php esc_html_e( 'OpenLab Actions' ,'openlab-txtd' ); ?></h1>
 
-    <!-- NEWS -->
     <hr />
 
 	<?php
@@ -57,7 +56,7 @@
 	endif;
 
 	if( $nr_actions_required == 0 ):
-		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','openlab-txtd' ).'</p>';
+		echo '<p>'.__( 'There are no required actions for you right now.','openlab-txtd' ).'</p>';
 	endif;
 	?>
 

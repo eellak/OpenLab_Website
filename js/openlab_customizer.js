@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 	if( jQuery( ".openlab-upsells" ).length ) {
 
 	}
-	
+
 	if ( !jQuery( ".openlab-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
@@ -19,8 +19,8 @@ jQuery(document).ready(function() {
 	});
 
 	/* Move our focus widgets in the our focus panel */
-	wp.customize.section( 'sidebar-widgets-sidebar-ourfocus' ).panel( 'panel_ourfocus' );
-	wp.customize.section( 'sidebar-widgets-sidebar-ourfocus' ).priority( '2' );
+	//wp.customize.section( 'sidebar-widgets-sidebar-ourfocus' ).panel( 'panel_ourfocus' );
+	//wp.customize.section( 'sidebar-widgets-sidebar-ourfocus' ).priority( '2' );
 
 	/* Move our team widgets in the our team panel */
 	wp.customize.section( 'sidebar-widgets-sidebar-ourteam' ).panel( 'panel_ourteam' );
@@ -31,6 +31,6 @@ jQuery(document).ready(function() {
 	//wp.customize.section( 'sidebar-widgets-sidebar-testimonials' ).priority( '2' );
 
 	/* Move about us widgets in the about us panel */
-	wp.customize.section( 'sidebar-widgets-sidebar-aboutus' ).panel( 'panel_about' );
-	wp.customize.section( 'sidebar-widgets-sidebar-aboutus' ).priority( '7' );
+	//wp.customize.section( 'sidebar-widgets-sidebar-aboutus' ).panel( 'panel_about' );
+	//wp.customize.section( 'sidebar-widgets-sidebar-aboutus' ).priority( '7' );
 });

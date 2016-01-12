@@ -77,19 +77,34 @@ wp_head(); ?>
 
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
 
-				<span class="sr-only"><?php _e('Toggle navigation','openlab-txtd'); ?></span>
+				<span class="sr-only"></span>
 
-				<span class="icon-bar"></span>
+				<span class="icon-bar open"></span>
 
-				<span class="icon-bar"></span>
+				<span class="icon-bar open"></span>
 
-				<span class="icon-bar"></span>
+				<span class="icon-bar open"></span>
+
+        <span class="icon-bar first closed"></span>
+
+        <span class="icon-bar second closed"></span>
+
 
 				</button>
+        <?php
+        $openlab_logo_responsive = get_theme_mod('openlab_logo_light', get_stylesheet_directory_uri().'/images/openlab-light.svg');
 
+        if(isset($openlab_logo_responsive) && $openlab_logo_responsive != ""):
+          echo ' <span class="icon-wrap-responsive">';
+          echo '  <a class="home-responsive" href="'. esc_url( home_url( '/' ) ) .'" alt="'. get_bloginfo('title') .'">';
+          echo '    <img class="logo-light" src="'. $openlab_logo_responsive .'">';
+          echo '  </a>';
+          echo '</span>';
+        endif;
+        ?>
 				<?php
 
-					$openlab_logo = get_theme_mod('openlab_logo');
+					$openlab_logo = get_theme_mod('openlab_logo', get_stylesheet_directory_uri().'/images/openlab-logo.svg');
 
           /*Logo and Fixed Marks*/
 

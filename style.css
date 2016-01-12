@@ -907,7 +907,7 @@ a:active {
 	padding: 0;
 	margin: 0;
 	background: url(images/search_icon.png) no-repeat center center;
-	text-indent: -99999999999px;
+	text-indent: -99999px;
 }
 .widget_search label{
 	margin-bottom: 5px;
@@ -1348,15 +1348,15 @@ object {
 	overflow: hidden !important;
 }
 .status {
-	width: 200px;
-	height: 200px;
+	width: 35px;
+	height: 35px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-image: url(images/loading.gif);
+	background-image: url(images/openlab-mark.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	margin: -100px 0 0 -100px;
+	margin: -17.5px 0 0 -17.5px;
 }
 #parallax_move .layer {
     background-size: cover;
@@ -1409,14 +1409,14 @@ object {
 }
 */
 /*----  SECTION:  HOME > TOP BAR   ----*/
+
 /* #site-navigation {
  	height: 1px;
-	/*float: right;
+	float: right;
 	margin-right: 0;
 	margin-left: 0;
+}*/
 
-}
-*/
 .navbar {
 	background: #FFF;
 	border: 0;
@@ -1426,8 +1426,9 @@ object {
 #main-nav {
 	position: fixed;
 	width: 100%;
-	z-index: 5000;
-	height: 50px;
+	z-index: 1000;
+	/*height: 50px;*/
+	height:auto;
 	margin-bottom: 0;
 }
 #main-nav.fixed {
@@ -1528,24 +1529,15 @@ object {
 }*/
 .navbar-toggle {
 	border: 0;
-	background-color: #808080;
 	/*margin-top: 23px; */
 }
-.navbar-toggle:focus {
-	border:1px dotted black;
-}
+
 .navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus {
-	background-color: #5695C6;
 	filter: alpha(opacity=100);
 	opacity: 1;
 	box-shadow: none;
 }
-.navbar-toggle.active{
-    background-color: #5695C6 !important;
-}
-.navbar-toggle.collapsed{
-    background-color: #808080 !important;
-}
+
 .menu-align-center #site-navigation {
 	width: 100%;
 }
@@ -1556,10 +1548,10 @@ object {
 .menu-align-center #site-navigation > ul ul {
 	text-align: left;
 }
-.menu-align-center #site-navigation > ul > li {
+/*.menu-align-center #site-navigation > ul > li {
 	float: none;
 	display: inline-block;
-}
+}*/
 .menu-align-center .responsive-logo {
 	width: 100%;
 	text-align: center;
@@ -2065,8 +2057,7 @@ ul.nav > li.current_page_item.current > a:before {
 
 .about-us .big-intro {
 	text-align: left;
-	margin-top: -15px;
-	padding-top: 12px
+	margin-top: -13px;
 }
 .about-us .section-header .section-legend {
 	color: #ffffff;
@@ -5180,7 +5171,6 @@ body.custom-background {
 		padding-bottom: 33px;
 	}
 	.copyright {
-		width: 100%;
 		padding-top: 33px;
 		padding-bottom: 33px;
 	}

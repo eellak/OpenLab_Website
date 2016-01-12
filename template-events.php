@@ -38,10 +38,10 @@ get_header(); ?>
 						while ( $query->have_posts() ) : $query->the_post();
 
 						echo '<div class="row upcoming-featured">';
-							echo '<div class="content-left-wrap col-md-3">';
+							echo '<div class="content-left-wrap col-md-3 col-sm-3 col-xs-3">';
 								get_template_part( 'content', 'event_meta_list_featured' );
 							echo '</div>';
-							echo '<div class="content-left-wrap col-md-9">';
+							echo '<div class="content-left-wrap col-md-9 col-sm-9 col-xs-9">';
 								get_template_part( 'content', 'event_list_featured' );
 							echo '</div>';
 						echo '</div>';
@@ -66,11 +66,11 @@ get_header(); ?>
 						while ( $query->have_posts() ) : $query->the_post();
 
 						echo '<div class="row upcoming">';
-							echo '<div class="content-left-wrap col-md-3">';
+							echo '<div class="content-left-wrap col-md-3 col-sm-3 col-xs-3">';
 								get_template_part( 'content', 'event_meta_list' );
 							echo '</div>';
 
-							echo '<div class="content-left-wrap col-md-9">';
+							echo '<div class="content-left-wrap col-md-9 col-sm-9 col-xs-9">';
 								get_template_part( 'content', 'event_list' );
 							echo '</div>';
 						echo '</div>';
@@ -98,11 +98,11 @@ get_header(); ?>
 
 						while ( $query->have_posts() ) : $query->the_post();
 						echo '<div class="row passed-events">';
-							echo '<div class="content-left-wrap col-md-3">';
+							echo '<div class="content-left-wrap col-md-3 col-sm-3 col-xs-3">';
 								get_template_part( 'content', 'event_meta_list' );
 							echo '</div>';
 
-							echo '<div class="content-left-wrap col-md-9">';
+							echo '<div class="content-left-wrap col-md-9 col-sm-9 col-xs-9">';
 								get_template_part( 'content', 'event_list' );
 							echo '</div>';
 						echo '</div>';

@@ -1,4 +1,4 @@
-.single.single-post{
+.single-post{
 
   .post-meta-wrap{
     .featured-img-container{
@@ -138,13 +138,14 @@
       }
       .hover-state{
         visibility: visible !important;
+        display: block !important;
       }
     }
   }
   .square-content.hover-state{
     position:relative;
-    display:block;
     visibility: hidden;
+    display:none;
   }
   .share-fb{
     position:absolute;

@@ -10,14 +10,9 @@
   #main{
     margin:0;
   }
-  .col-md-2{
-    width:11.6666667%;
-  }
-  .col-md-6{
-    width:65%;
-  }
-  .col-md-2, .col-md-6{
-    padding:4px;
+  .post-date, .post-image, .post-content-wrap, .postlink{
+    padding-left:3.5px;
+    padding-right: 3.5px;
   }
   .post-link .square-content-wrap{
     width: 100%;
@@ -104,4 +99,22 @@
       height:100%;
     }
   }
+  .mobile-buttons {
+    height: 50px;
+    margin-bottom: 30px;
+    display:none;
+   span{
+      display: block;
+      margin: 0 20px 0 20px;
+      background-color: #424447;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: 'Verdana';
+      font-size: 16px;
+      line-height: 50px;
+      letter-spacing: 0.1em;
+      text-align: center;
+   }
+ }
 }

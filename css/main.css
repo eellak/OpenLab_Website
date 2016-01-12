@@ -294,7 +294,7 @@ http://flickity.metafizzy.co
 /* Font colors */
 /* Bg colors */
 /*Event types bg*/
-.font-1, .sidebar-wrap #secondary form.search-form span.screen-reader-text, #focus p, #focus span, #team .position, .contact-us .container .pirate_forms_wrap span.parate-forms-custom-label, #latestnews .latestnews-box p.latestnews-excerpt, #footer .company-details-footer .details-wrap .details-text p, .search.search-results h1.page-title-search, .recent-events-archive.widget .recent-events-wrap .widget-event p.event-date, .recent-events-archive.widget .more-events span a {
+.font-1, .sidebar-wrap #secondary form.search-form span.screen-reader-text, #focus p, #focus span, #team .position, .contact-us .container .pirate_forms_wrap span.parate-forms-custom-label, #latestnews .latestnews-box p.latestnews-excerpt, #footer .company-details-footer .details-wrap .details-text p, .search-results h1.page-title-search, .recent-events-archive.widget .recent-events-wrap .widget-event p.event-date, .recent-events-archive.widget .more-events span a {
   font-family: 'Verdana';
   font-size: 11px;
   line-height: 13.2px;
@@ -314,7 +314,7 @@ http://flickity.metafizzy.co
   letter-spacing: 0.1em;
 }
 
-.font-4, .page-template-template-events .row.passed-events article .buttons a, .page-template-template-news .row.passed-events article .buttons a, .post-type-archive-event .row.passed-events article .buttons a, .single-event .row.passed-events article .buttons a, .page-template-template-events .row.upcoming article .buttons a, .page-template-template-events .row.upcoming-featured article .buttons a, .page-template-template-events .row.events article .buttons a, .page-template-template-news .row.upcoming article .buttons a, .page-template-template-news .row.upcoming-featured article .buttons a, .page-template-template-news .row.events article .buttons a, .post-type-archive-event .row.upcoming article .buttons a, .post-type-archive-event .row.upcoming-featured article .buttons a, .post-type-archive-event .row.events article .buttons a, .single-event .row.upcoming article .buttons a, .single-event .row.upcoming-featured article .buttons a, .single-event .row.events article .buttons a, .modal.nf input[type=submit], #focus-join-us .row .focus-join-us-button .buttons a.join-us-btn, #team .section-header .section-legend, #team .subsection-legend h2, .contact-us .container .pirate_forms_wrap button#pirate-forms-contact-submit, .search.search-results .search-form-container input, .search.search-results h3.page-results-for, .search.search-results h3.page-results-for span {
+.font-4, .page-template-template-events .row.passed-events article .buttons a, .page-template-template-news .row.passed-events article .buttons a, .post-type-archive-event .row.passed-events article .buttons a, .single-event .row.passed-events article .buttons a, .page-template-template-events .row.upcoming article .buttons a, .page-template-template-events .row.upcoming-featured article .buttons a, .page-template-template-events .row.events article .buttons a, .page-template-template-news .row.upcoming article .buttons a, .page-template-template-news .row.upcoming-featured article .buttons a, .page-template-template-news .row.events article .buttons a, .post-type-archive-event .row.upcoming article .buttons a, .post-type-archive-event .row.upcoming-featured article .buttons a, .post-type-archive-event .row.events article .buttons a, .single-event .row.upcoming article .buttons a, .single-event .row.upcoming-featured article .buttons a, .single-event .row.events article .buttons a, .modal.nf input[type=submit], #focus-join-us .row .focus-join-us-button .buttons a.join-us-btn, #team .section-header .section-legend, #team .subsection-legend h2, .contact-us .container .pirate_forms_wrap button#pirate-forms-contact-submit, .search-results .search-form-container input, .search-results h3.page-results-for, .search-results h3.page-results-for span {
   font-family: 'Verdana';
   font-size: 16px;
   line-height: 19.2px;
@@ -334,14 +334,14 @@ http://flickity.metafizzy.co
   letter-spacing: 0.1em;
 }
 
-.font-7, .section-header h2, #focus-join-us .row .container .col-md-6.focus-join-us-content h2.light-text, .contact-us .section-header h2, .single-event h1.entry-title.single-event, .single.single-post h1.entry-title {
+.font-7, .section-header h2, #focus-join-us .row .container .col-md-6.focus-join-us-content h2.light-text, .contact-us .section-header h2, .single-event h1.entry-title.single-event, .single-post h1.entry-title {
   font-family: 'Verdana';
   font-size: 24px;
   line-height: 28.8px;
   letter-spacing: 0.1em;
 }
 
-.font-8, .page-template-template-events .upcoming h2.entry-title, .page-template-template-events .passed-events h2.entry-title, .page-template-template-news .upcoming h2.entry-title, .page-template-template-news .passed-events h2.entry-title, .post-type-archive-event .upcoming h2.entry-title, .post-type-archive-event .passed-events h2.entry-title, .single-event .upcoming h2.entry-title, .single-event .passed-events h2.entry-title, .page-template-template-events h2.entry-title, .post-type-archive-event h2.entry-title, .page-template-template-news .post-date span, .search.search-results article.hentry h2.entry-title {
+.font-8, .page-template-template-events .upcoming h2.entry-title, .page-template-template-events .passed-events h2.entry-title, .page-template-template-news .upcoming h2.entry-title, .page-template-template-news .passed-events h2.entry-title, .post-type-archive-event .upcoming h2.entry-title, .post-type-archive-event .passed-events h2.entry-title, .single-event .upcoming h2.entry-title, .single-event .passed-events h2.entry-title, .page-template-template-events h2.entry-title, .post-type-archive-event h2.entry-title, .page-template-template-news .post-date span, .search-results article.hentry h2.entry-title {
   font-family: 'Verdana';
   font-size: 20px;
   line-height: 24px;
@@ -384,7 +384,7 @@ http://flickity.metafizzy.co
   letter-spacing: 0.1em;
 }
 
-.font-14, .page-template-template-events #main h1.featured-title, .page-template-template-events #main h3.featured-title, .page-template-template-news #main h1.featured-title, .page-template-template-news #main h3.featured-title, .post-type-archive-event #main h1.featured-title, .post-type-archive-event #main h3.featured-title, .single-event #main h1.featured-title, .single-event #main h3.featured-title, .page-template-template-events div.entry-content p, .page-template-template-events div.entry-content span, .page-template-template-events div.entry-content a, .page-template-template-news div.entry-content p, .page-template-template-news div.entry-content span, .page-template-template-news div.entry-content a, .post-type-archive-event div.entry-content p, .post-type-archive-event div.entry-content span, .post-type-archive-event div.entry-content a, .single-event div.entry-content p, .single-event div.entry-content span, .single-event div.entry-content a, .single.single-post div.entry-content p, .single.single-post div.entry-content span, .single.single-post div.entry-content a, .recent-events-archive.widget .recent-events-wrap .widget-event h4.event-title a {
+.font-14, .page-template-template-events #main h1.featured-title, .page-template-template-events #main h3.featured-title, .page-template-template-news #main h1.featured-title, .page-template-template-news #main h3.featured-title, .post-type-archive-event #main h1.featured-title, .post-type-archive-event #main h3.featured-title, .single-event #main h1.featured-title, .single-event #main h3.featured-title, .page-template-template-events div.entry-content p, .page-template-template-events div.entry-content span, .page-template-template-events div.entry-content a, .page-template-template-news div.entry-content p, .page-template-template-news div.entry-content span, .page-template-template-news div.entry-content a, .post-type-archive-event div.entry-content p, .post-type-archive-event div.entry-content span, .post-type-archive-event div.entry-content a, .single-event div.entry-content p, .single-event div.entry-content span, .single-event div.entry-content a, .single-post div.entry-content p, .single-post div.entry-content span, .single-post div.entry-content a, .recent-events-archive.widget .recent-events-wrap .widget-event h4.event-title a {
   font-family: 'Verdana';
   font-size: 14px;
   line-height: 16.8px;
@@ -426,14 +426,14 @@ http://flickity.metafizzy.co
   letter-spacing: 0.05em;
 }
 
-.font-20, .single.single-post .grid-2.clearfix .post-date span {
+.font-20, .single-post .grid-2.clearfix .post-date span {
   font-family: 'Verdana';
   font-size: 20.65px;
   line-height: 24.77px;
   letter-spacing: 0;
 }
 
-.font-21, #footer .copyright .license-disclaimer p, #footer .copyright .license-disclaimer p a, .search.search-results .result-date {
+.font-21, #footer .copyright .license-disclaimer p, #footer .copyright .license-disclaimer p a, .search-results .result-date {
   font-family: 'Verdana';
   font-size: 12px;
   line-height: 14.4px;
@@ -463,21 +463,21 @@ http://flickity.metafizzy.co
   letter-spacing: 0.1em;
 }
 
-.bg-position, .search.search-results .post.type-post .square-content, .search.search-results .event.type-event .active.seminar .square-content, .search.search-results .event.type-event .active.speech .square-content, .search.search-results .event.type-event .active.workshop .square-content {
+.bg-position, .search-results .post.type-post .square-content, .search-results .event.type-event .active.seminar .square-content, .search-results .event.type-event .active.speech .square-content, .search-results .event.type-event .active.workshop .square-content {
   background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-.bg-position2, .search.search-results .event.type-event .passed.seminar .square-content, .search.search-results .event.type-event .passed.speech .square-content, .search.search-results .event.type-event .passed.workshop .square-content {
+.bg-position2, .search-results .event.type-event .passed.seminar .square-content, .search-results .event.type-event .passed.speech .square-content, .search-results .event.type-event .passed.workshop .square-content {
   background-size: 70%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .container {
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .content-left-wrap {
@@ -569,6 +569,22 @@ a.theme-error {
   padding-top: 110px;
   margin-top: 0;
   margin-bottom: 100px;
+}
+
+#latestnews > .container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#focus > .container {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+/* CONTAINER FIXES */
+body.single-post #content .container, body.single-event #content .container {
+  /*padding-left:122px;
+  padding-right:122px; */
 }
 
 /* CALENDAR STYLE */
@@ -663,7 +679,15 @@ aside.events-calendar .square-content-wrap h3 {
 }
 .page-template-template-events #main article.hentry, .page-template-template-news #main article.hentry, .post-type-archive-event #main article.hentry, .single-event #main article.hentry {
   border-bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: 7px;
+}
+.page-template-template-events #main div.date-mobile, .page-template-template-news #main div.date-mobile, .post-type-archive-event #main div.date-mobile, .single-event #main div.date-mobile {
+  display: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+  padding-bottom: 15px;
 }
 .page-template-template-events #main .content-area .entry-header, .page-template-template-news #main .content-area .entry-header, .post-type-archive-event #main .content-area .entry-header, .single-event #main .content-area .entry-header {
   padding-top: 2px;
@@ -676,6 +700,7 @@ aside.events-calendar .square-content-wrap h3 {
 .page-template-template-events div.entry-content, .page-template-template-news div.entry-content, .post-type-archive-event div.entry-content, .single-event div.entry-content {
   margin: 0;
   padding-bottom: 35px;
+  padding-top: 20px;
 }
 .page-template-template-events .square-content-wrap, .page-template-template-news .square-content-wrap, .post-type-archive-event .square-content-wrap, .single-event .square-content-wrap {
   padding: 0 !important;
@@ -742,7 +767,6 @@ aside.events-calendar .square-content-wrap h3 {
 .page-template-template-events .event-meta-wrap span.location-icon, .page-template-template-news .event-meta-wrap span.location-icon, .post-type-archive-event .event-meta-wrap span.location-icon, .single-event .event-meta-wrap span.location-icon {
   width: 100%;
   height: 100%;
-  display: block;
   background-size: 50% 50%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1048,10 +1072,152 @@ span.icon-mask:hover {
   letter-spacing: 0.1em;
 }
 .sidebar-wrap #secondary form.search-form input.search-field {
-  width: auto;
-  padding: 0 30px 0 6px;
+  width: 100%;
+  padding: 0 0 0 6px;
   height: 50px;
   border: 0px;
+}
+
+/* LOADER */
+@-webkit-keyframes loaderspin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  12.5% {
+    -webkit-transform: rotate(90deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  37.5% {
+    -webkit-transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  62.5% {
+    -webkit-transform: rotate(270deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  87.5% {
+    -webkit-transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loaderspin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  12.5% {
+    -moz-transform: rotate(90deg);
+  }
+  25% {
+    -moz-transform: rotate(90deg);
+  }
+  37.5% {
+    -moz-transform: rotate(180deg);
+  }
+  50% {
+    -moz-transform: rotate(180deg);
+  }
+  62.5% {
+    -moz-transform: rotate(270deg);
+  }
+  75% {
+    -moz-transform: rotate(270deg);
+  }
+  87.5% {
+    -moz-transform: rotate(360deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes loaderspin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  12.5% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  37.5% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  62.5% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  87.5% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.status {
+  -webkit-animation-name: loaderspin;
+  -moz-animation-name: loaderspin;
+  animation-name: loaderspin;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .modal.nf {
@@ -1180,6 +1346,9 @@ span.icon-mask:hover {
 .modal.nf .modal-form-container div.list-radio-wrap input[type=checkbox]:checked + label:before, .modal.nf .modal-form-container div.list-checkbox-wrap input[type=checkbox]:checked + label:before {
   box-shadow: inset 0 0 0 40px #6c93c2;
 }
+.modal.nf .modal-form-container .field-wrap.list-radio-wrap.ninja-forms-error li > label:before {
+  box-shadow: inset 0 0 0 40px #ad272c;
+}
 .modal.nf .modal-form-container .ninja-forms-field-error {
   display: none;
   visibility: hidden;
@@ -1251,13 +1420,14 @@ p, span {
   padding: 0;
 }
 
-.home.blog section {
+.blog section {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
 #homepage {
   padding: 0 !important;
+  margin-top: -8px;
 }
 
 .section-header h2 {
@@ -1270,7 +1440,7 @@ p, span {
 }
 .no-background .home-header-wrap .header-content-wrap .container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
   padding-top: 140px;
   padding-left: 90px;
@@ -1297,6 +1467,7 @@ p, span {
   width: 100%;
 }
 .no-background .home-header-wrap .slide-caption-wrap .inner-caption {
+  line-height: 44px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 15px;
   color: #272425;
@@ -1309,7 +1480,6 @@ p, span {
 }
 
 #focus {
-  margin-top: -8px;
   padding-top: 0px;
 }
 #focus p, #focus span {
@@ -1389,7 +1559,7 @@ p, span {
   line-height: 15.6px;
   font-weight: bold;
   color: #d9be41;
-  padding-top: 20px;
+  padding-top: 22px;
   text-transform: uppercase;
 }
 #focus .col-md-3.calendar #wp-events-calendar {
@@ -1433,7 +1603,6 @@ p, span {
 
 /* Focus SubSection */
 #focus-join-us .row {
-  background-image: url("../images/home-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1455,11 +1624,11 @@ p, span {
 #focus-join-us .row .container .col-md-6.focus-join-us-content {
   padding-bottom: 25px;
   padding-top: 25px;
-  padding-left: 0;
 }
 #focus-join-us .row .container .col-md-6.focus-join-us-content h2.light-text {
   color: #ffffff;
   text-align: left;
+  text-transform: uppercase;
 }
 #focus-join-us .row .container .col-md-6.focus-join-us-content div.section-legend {
   text-align: left;
@@ -1470,12 +1639,8 @@ p, span {
   color: #ffffff;
   display: block;
 }
-#focus-join-us .row .focus-join-us-button {
-  padding: 0px;
-}
 #focus-join-us .row .focus-join-us-button .buttons {
   margin: 43px 0 30px 0;
-  /*padding-top: 30px;*/
 }
 #focus-join-us .row .focus-join-us-button .buttons a.join-us-btn {
   display: inline-block !important;
@@ -1505,15 +1670,11 @@ p, span {
   color: #d6d8d7;
   line-height: 1.4em;
 }
-#aboutus .openlab_about_us_center {
-  /*padding-top: 7px;*/
-}
 #aboutus .openlab_about_us_center span, #aboutus .openlab_about_us_center p {
   color: #ffffff;
   line-height: 1.4em;
-}
-#aboutus .openlab-rtl-skills {
-  /*padding-top: 15px;*/
+  text-align: left;
+  display: block;
 }
 #aboutus .openlab-rtl-skills .about-img-right {
   max-height: 250px;
@@ -1572,7 +1733,7 @@ p, span {
 
 /* Contact Us Section */
 .contact-us {
-  background-image: url("../images/home-bg.jpg");
+  background-color: #000000;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1589,10 +1750,6 @@ p, span {
 }
 .contact-us .section-header h2 {
   color: #272425;
-}
-.contact-us .container {
-  padding-left: 70px;
-  padding-right: 70px;
 }
 .contact-us .container .pirate_forms_wrap button#pirate-forms-contact-submit {
   width: 100%;
@@ -1641,6 +1798,12 @@ span.widget-social .fa:hover {
   padding-right: 5px;
   margin-top: 20px;
 }
+#latestnews .latestnews-box:first-child {
+  padding-left: 0px !important;
+}
+#latestnews .latestnews-box:last-child {
+  padding-right: 0px !important;
+}
 #latestnews .latestnews-box h3.latestnews-title {
   padding: 15px 15px;
 }
@@ -1652,6 +1815,7 @@ span.widget-social .fa:hover {
 #latestnews .latestnews-box p.latestnews-excerpt {
   text-align: left;
   padding: 0 15px;
+  letter-spacing: 0.05em;
 }
 #latestnews .latestnews-box .square-box:hover .square-content-wrap.has-img {
   opacity: 0.7;
@@ -1848,7 +2012,6 @@ span.widget-social .fa:hover {
 nav#site-navigation {
   margin-left: auto;
   margin-right: auto;
-  display: table !important;
 }
 
 #main-nav.fixed {
@@ -1858,6 +2021,51 @@ nav#site-navigation {
 .navbar-inverse .navbar-nav > li > a {
   padding-top: 4px;
   text-transform: uppercase;
+}
+
+nav.bs-navbar-collapse.navbar-collapse {
+  border-top: 0px !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggle .icon-bar.first.closed {
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  margin-top: 6px;
+}
+.navbar-toggle .icon-bar.second.closed {
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-45deg);
+  margin-top: -2px;
+}
+
+.navbar-toggle.collapsed .icon-bar.closed {
+  display: none;
+}
+
+.navbar-toggle.active .icon-bar.open {
+  display: none;
+}
+
+span.icon-wrap-responsive {
+  margin-top: 12px;
+  margin-left: 15px;
+  width: 147px;
+  height: 25px;
+  overflow: hidden;
+  text-align: left;
+  display: none;
+}
+span.icon-wrap-responsive img.logo-light {
+  height: 100%;
+}
+
+button.navbar-toggle:hover, button.navbar-toggle:focus {
+  background: none !important;
 }
 
 .fixed-mark-openlab {
@@ -2110,10 +2318,10 @@ svg.bottom-right {
   background-color: #3f4245;
 }
 
-.single.single-post {
+.single-post {
   /* Share Buttons */
 }
-.single.single-post .post-meta-wrap .featured-img-container span.featured-img {
+.single-post .post-meta-wrap .featured-img-container span.featured-img {
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -2122,18 +2330,18 @@ svg.bottom-right {
   display: block;
   font-size: 0;
 }
-.single.single-post .post-meta-wrap .featured-img-container span.empty-featured-img {
+.single-post .post-meta-wrap .featured-img-container span.empty-featured-img {
   font-size: 0;
   position: relative;
 }
-.single.single-post .post-meta-wrap .featured-img-container span.empty-featured-img svg {
+.single-post .post-meta-wrap .featured-img-container span.empty-featured-img svg {
   margin: 35px;
 }
-.single.single-post .featured-img-container.has-feat-img {
+.single-post .featured-img-container.has-feat-img {
   width: 100%;
   height: 100%;
 }
-.single.single-post .featured-img-container.no-feat-img {
+.single-post .featured-img-container.no-feat-img {
   background-color: #b5b2ae;
   width: 100%;
   height: 100%;
@@ -2142,81 +2350,81 @@ svg.bottom-right {
   background-repeat: no-repeat;
   background-image: url("../images/post.svg");
 }
-.single.single-post .square-box {
+.single-post .square-box {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.single.single-post .square-box .meta-icon {
+.single-post .square-box .meta-icon {
   width: 40%;
   display: inline-block;
   margin-bottom: 0;
 }
-.single.single-post .square-box .address-desc {
+.single-post .square-box .address-desc {
   margin-bottom: 0;
   margin-top: 5px;
 }
-.single.single-post .square-box:before {
+.single-post .square-box:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
-.single.single-post .square-content-wrap {
+.single-post .square-content-wrap {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
 }
-.single.single-post .post-date .square-content-wrap {
+.single-post .post-date .square-content-wrap {
   margin-right: 3.5px;
 }
-.single.single-post .post-share .square-content-wrap {
+.single-post .post-share .square-content-wrap {
   margin-left: 3.5px;
 }
-.single.single-post .square-content {
+.single-post .square-content {
   display: table;
   width: 100%;
   height: 100%;
   background-color: #b5b2ae;
 }
-.single.single-post .square-content span {
+.single-post .square-content span {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
-.single.single-post .grid-1.clearfix {
+.single-post .grid-1.clearfix {
   width: 100%;
 }
-.single.single-post .grid-2.clearfix {
+.single-post .grid-2.clearfix {
   margin-top: 10px;
   width: 100%;
 }
-.single.single-post .grid-2.clearfix .post-date, .single.single-post .grid-2.clearfix .post-share {
+.single-post .grid-2.clearfix .post-date, .single-post .grid-2.clearfix .post-share {
   width: 50%;
   display: inline-block;
   float: left;
 }
-.single.single-post .grid-2.clearfix .post-date span {
+.single-post .grid-2.clearfix .post-date span {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: bold;
 }
-.single.single-post h1.entry-title {
+.single-post h1.entry-title {
   color: #2b292a;
   font-weight: bold;
   padding: 0 0 20px 0;
 }
-.single.single-post div.entry-content {
+.single-post div.entry-content {
   margin: 0;
 }
-.single.single-post div.entry-content p, .single.single-post div.entry-content span, .single.single-post div.entry-content a {
+.single-post div.entry-content p, .single-post div.entry-content span, .single-post div.entry-content a {
   text-align: left;
 }
-.single.single-post div.entry-content img {
+.single-post div.entry-content img {
   margin-bottom: 1.5em;
 }
-.single.single-post span.main-state {
+.single-post span.main-state {
   width: 100%;
   height: 100%;
   display: block;
@@ -2227,19 +2435,20 @@ svg.bottom-right {
   background-repeat: no-repeat;
   background-image: url("../images/share-icon.svg");
 }
-.single.single-post .square-content-wrap:hover .main-state {
+.single-post .square-content-wrap:hover .main-state {
   visibility: hidden;
   display: none !important;
 }
-.single.single-post .square-content-wrap:hover .hover-state {
+.single-post .square-content-wrap:hover .hover-state {
   visibility: visible !important;
+  display: block !important;
 }
-.single.single-post .square-content.hover-state {
+.single-post .square-content.hover-state {
   position: relative;
-  display: block;
   visibility: hidden;
+  display: none;
 }
-.single.single-post .share-fb {
+.single-post .share-fb {
   position: absolute;
   top: 0;
   left: 0;
@@ -2249,7 +2458,7 @@ svg.bottom-right {
   border-right: 3.5px solid #fff;
   border-bottom: 3.5px solid #fff;
 }
-.single.single-post .share-tw {
+.single-post .share-tw {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -2259,7 +2468,7 @@ svg.bottom-right {
   border-left: 3.5px solid #fff;
   border-bottom: 3.5px solid #fff;
 }
-.single.single-post .share-ln {
+.single-post .share-ln {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -2269,7 +2478,7 @@ svg.bottom-right {
   border-right: 3.5px solid #fff;
   border-top: 3.5px solid #fff;
 }
-.single.single-post .share-em {
+.single-post .share-em {
   position: absolute;
   width: 50%;
   height: 50%;
@@ -2279,17 +2488,17 @@ svg.bottom-right {
   border-left: 3.5px solid #fff;
   border-top: 3.5px solid #fff;
 }
-.single.single-post .grid-item a {
+.single-post .grid-item a {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   display: block;
 }
-.single.single-post .grid-item a i.fa {
+.single-post .grid-item a i.fa {
   color: #ffffff;
   font-size: 20px;
 }
-.single.single-post .grid-item:hover {
+.single-post .grid-item:hover {
   background-color: #424447;
 }
 
@@ -2304,14 +2513,9 @@ svg.bottom-right {
 .page-template-template-news #main {
   margin: 0;
 }
-.page-template-template-news .col-md-2 {
-  width: 11.6666667%;
-}
-.page-template-template-news .col-md-6 {
-  width: 65%;
-}
-.page-template-template-news .col-md-2, .page-template-template-news .col-md-6 {
-  padding: 4px;
+.page-template-template-news .post-date, .page-template-template-news .post-image, .page-template-template-news .post-content-wrap, .page-template-template-news .postlink {
+  padding-left: 3.5px;
+  padding-right: 3.5px;
 }
 .page-template-template-news .post-link .square-content-wrap {
   width: 100%;
@@ -2382,22 +2586,40 @@ svg.bottom-right {
   width: 100%;
   height: 100%;
 }
+.page-template-template-news .mobile-buttons {
+  height: 50px;
+  margin-bottom: 30px;
+  display: none;
+}
+.page-template-template-news .mobile-buttons span {
+  display: block;
+  margin: 0 20px 0 20px;
+  background-color: #424447;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Verdana';
+  font-size: 16px;
+  line-height: 50px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
 
-.search.search-results h1.page-title-search {
+.search-results h1.page-title-search {
   color: #424447;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.search.search-results .search-form-container {
+.search-results .search-form-container {
   margin: 15px 0;
   position: relative;
 }
-.search.search-results .search-form-container .input-wrap {
+.search-results .search-form-container .input-wrap {
   width: 100%;
   float: right;
   padding-left: 50px;
 }
-.search.search-results .search-form-container button.btn-search {
+.search-results .search-form-container button.btn-search {
   position: absolute;
   top: 5px;
   left: 0;
@@ -2406,11 +2628,11 @@ svg.bottom-right {
   background-color: #fff;
   float: left;
 }
-.search.search-results .search-form-container button.btn-search svg {
+.search-results .search-form-container button.btn-search svg {
   width: 30px;
   height: 30px;
 }
-.search.search-results .search-form-container input {
+.search-results .search-form-container input {
   height: 50px;
   border: 1px solid #b9b4b0;
   float: right;
@@ -2418,110 +2640,110 @@ svg.bottom-right {
   letter-spacing: 0.05em;
   color: #2b292a;
 }
-.search.search-results .search-form-container input:focus {
+.search-results .search-form-container input:focus {
   border: 1px solid #424447;
 }
-.search.search-results .page-header {
+.search-results .page-header {
   margin: 0;
 }
-.search.search-results .col-md-10, .search.search-results .col-md-2 {
+.search-results .col-md-10, .search-results .col-md-2 {
   padding: 0;
 }
-.search.search-results .post-content-wrap {
+.search-results .post-content-wrap {
   padding: 0 0;
 }
-.search.search-results .result-date {
+.search-results .result-date {
   color: #b5b2ae;
 }
-.search.search-results .entry-content {
+.search-results .entry-content {
   margin: 0;
 }
-.search.search-results .post-image.col-md-2 {
+.search-results .post-image.col-md-2 {
   width: 13.66666%;
 }
-.search.search-results .post-content-wrap.col-md-8 {
+.search-results .post-content-wrap.col-md-8 {
   width: 69.66666%;
 }
-.search.search-results h3.page-results-for {
+.search-results h3.page-results-for {
   padding: 15px 0;
   letter-spacing: 0.05em;
   font-weight: bold;
 }
-.search.search-results h3.page-results-for span {
+.search-results h3.page-results-for span {
   font-style: italic;
   letter-spacing: 0.05em;
 }
-.search.search-results .post-link {
+.search-results .post-link {
   width: 70px;
   height: 70px;
   background-size: auto;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.search.search-results .post.type-post .square-content {
+.search-results .post.type-post .square-content {
   background-color: #b5b2ae;
   background-image: url("../images/announcement-white.svg");
 }
-.search.search-results .post.type-post .post-link {
+.search-results .post.type-post .post-link {
   background-image: url("../images/arrow-right.svg");
 }
-.search.search-results .event.type-event .passed .square-content {
+.search-results .event.type-event .passed .square-content {
   background-color: #b5b2ae;
 }
-.search.search-results .event.type-event .passed.seminar .square-content {
+.search-results .event.type-event .passed.seminar .square-content {
   background-image: url("../images/seminar-past.svg");
 }
-.search.search-results .event.type-event .passed.speech .square-content {
+.search-results .event.type-event .passed.speech .square-content {
   background-image: url("../images/speech-past.svg");
 }
-.search.search-results .event.type-event .passed.workshop .square-content {
+.search-results .event.type-event .passed.workshop .square-content {
   background-image: url("../images/workshop-past.svg");
 }
-.search.search-results .event.type-event .active.seminar .square-content {
+.search-results .event.type-event .active.seminar .square-content {
   background-image: url("../images/seminar-white.svg");
   background-color: #E5C02F;
 }
-.search.search-results .event.type-event .active.speech .square-content {
+.search-results .event.type-event .active.speech .square-content {
   background-color: #5695C6;
   background-image: url("../images/speech-white.svg");
 }
-.search.search-results .event.type-event .active.workshop .square-content {
+.search-results .event.type-event .active.workshop .square-content {
   background-color: #84AAB4;
   background-image: url("../images/workshop-white.svg");
 }
-.search.search-results .active.seminar .post-link {
+.search-results .active.seminar .post-link {
   background-image: url("../images/arrow-right-seminar.svg");
 }
-.search.search-results .active.workshop .post-link {
+.search-results .active.workshop .post-link {
   background-image: url("../images/arrow-right-workshop.svg");
 }
-.search.search-results .active.speech .post-link {
+.search-results .active.speech .post-link {
   background-image: url("../images/arrow-right-lecture.svg");
 }
-.search.search-results .passed .post-link {
+.search-results .passed .post-link {
   background-image: url("../images/arrow-right.svg");
 }
-.search.search-results article.hentry {
+.search-results article.hentry {
   margin: 0 0 30px 0;
   padding: 0;
   border-bottom: 0;
   position: relative;
 }
-.search.search-results article.hentry .square-content-wrap {
+.search-results article.hentry .square-content-wrap {
   padding: 0;
 }
-.search.search-results article.hentry h2.entry-title {
+.search-results article.hentry h2.entry-title {
   padding: 10px 30px 0 30px;
   letter-spacing: 0.05em;
   color: #2b292a;
 }
-.search.search-results article.hentry .result-date {
+.search-results article.hentry .result-date {
   padding: 7px 30px 7px 30px;
 }
-.search.search-results article.hentry .entry-content {
+.search-results article.hentry .entry-content {
   padding: 0 30px 7px 30px;
 }
-.search.search-results article.hentry .post-link.col-md-2 {
+.search-results article.hentry .post-link.col-md-2 {
   position: absolute;
   top: 50%;
   left: 83.3333%;
@@ -2583,6 +2805,75 @@ svg.bottom-right {
 @media screen and (max-width: 767px) {
   #homepage > .container {
     padding: 0px;
+    margin-bottom: 5px;
+  }
+
+  #homepage {
+    margin-top: -13px;
+  }
+
+  #homepage .flickity-viewport {
+    height: 100vh;
+  }
+  #homepage .flickity-page-dots {
+    display: none;
+  }
+
+  #homepage .slider-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    opacity: 0.2;
+  }
+
+  span.icon-wrap-responsive {
+    display: block !important;
+  }
+
+  nav.navbar-collapse li.menu-item {
+    margin-right: 0;
+    display: block !important;
+  }
+  nav.navbar-collapse li.menu-item a {
+    padding-top: 15px;
+  }
+  nav.navbar-collapse:last-child a {
+    padding-bottom: 15px;
+  }
+  nav.navbar-collapse li.current_page_item > a:before {
+    display: none !important;
+  }
+
+  nav.collapsing > ul {
+    display: none;
+  }
+
+  #homepage .slide-caption-wrap {
+    bottom: 40px;
+  }
+  #homepage .slide-caption-wrap .inner-caption {
+    color: #ffffff;
+    font-family: 'Verdana';
+    font-size: 20px;
+    line-height: 1.2em;
+    letter-spacing: 0.1em;
+    background: none;
+    display: block;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  #focus {
+    padding-bottom: 0;
+  }
+
+  #focus-join-us {
+    padding-top: 0px;
+    margin-top: -5px;
   }
 
   #focus-join-us .row {
@@ -2593,14 +2884,23 @@ svg.bottom-right {
     background-attachment: scroll;
   }
 
+  #focus .col-md-3 {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 5px;
+  }
+
   #aboutus .openlab_about_us_center {
     padding-top: 25px;
     padding-bottom: 25px;
   }
 
+  #focus > .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
   #focus-join-us .light-text {
-    padding-left: 15px;
-    padding-right: 15px;
     width: 100%;
   }
 
@@ -2609,19 +2909,26 @@ svg.bottom-right {
     padding-right: 0px;
   }
 
-  .fixed-mark-openlab {
-    display: none;
+  #focus .event-date {
+    font-size: 5vw !important;
   }
 
-  #focus .col-md-3 {
-    padding-left: 0px;
-    padding-right: 0px;
+  #team .section-header .section-legend {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
   }
-}
-/* Calendar */
-@media (min-width: 320px) and (max-width: 767px) {
-  .event-date {
-    font-size: 5vw !important;
+
+  #aboutus .column.openlab_about_us_center {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #aboutus .white-text.section-legend {
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .event-img {
@@ -2650,17 +2957,413 @@ svg.bottom-right {
   #wp-events-calendar td, #wp-events-calendar a {
     font-size: 4vw;
   }
-}
-.fixed-mark-openlab.to-top {
-  display: block;
-  right: calc(50% - 15px);
-  bottom: 5px;
-}
 
-/* HOMEPAGE*/
-@media (min-width: 767px) and (max-width: 990px) {
-  #focus .active, #focus .calendar {
-    margin-top: 7px;
+  .licence-wrap {
+    display: block !important;
+  }
+
+  .fixed-mark-openlab.to-top {
+    display: block;
+    right: calc(50% - 15px);
+    bottom: 20px;
+  }
+
+  .contact-us .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .our-team .team-box {
+    width: 100% !important;
+  }
+
+  .pirate_forms_wrap .form_field_wrap, .pirate_forms_wrap .pirate-forms-button-wrap {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .fixed-mark-openlab {
+    display: none;
+  }
+
+  .col-md-4.custom-fb-feed {
+    display: none;
+  }
+
+  .license-disclaimer {
+    margin-bottom: 50px;
+  }
+
+  #footer .company-details-footer, #footer .copyright {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  #footer .company-details-footer .details-text p {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    letter-spacing: 0px !important;
+  }
+  #footer .copyright div.license-disclaimer a, #footer .copyright div.license-disclaimer p {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  #footer #footer-map-icon {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  /* TEMPLATE NEWS */
+  .page-template-template-events #main h1.featured-title {
+    text-align: center;
+  }
+  .page-template-template-events #main h3.featured-title {
+    text-align: center;
+    padding: 0px;
+    padding-top: 28px;
+  }
+  .page-template-template-events #content div.content-left-wrap.col-md-12 {
+    padding-top: 34px;
+  }
+  .page-template-template-events .row.upcoming-featured .event-time, .page-template-template-events .row.upcoming-featured .event-price, .page-template-template-events .row.upcoming-featured .grid-1, .page-template-template-events .row.upcoming-featured .grid-2 {
+    display: none;
+  }
+  .page-template-template-events .col-md-3.col-sm-3.col-xs-3 {
+    display: none;
+  }
+  .page-template-template-events .col-xs-9 {
+    width: 100%;
+  }
+  .page-template-template-events #main article.type-event .buttons {
+    width: 100%;
+    position: inherit;
+    margin-top: 25px;
+  }
+  .page-template-template-events #main article.hentry.event {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0px;
+  }
+  .page-template-template-events #main .row {
+    margin-bottom: 5px;
+  }
+  .page-template-template-events #main .entry-content {
+    padding: 0 !important;
+  }
+  .page-template-template-events #main div.date-mobile {
+    display: block;
+  }
+  .page-template-template-events #main .row.upcoming-featured div.date-mobile {
+    color: #ffffff;
+  }
+  .page-template-template-events #main h2.entry-title:before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .page-template-template-events #main .row.passed-events .speech h2.entry-title:before {
+    background-image: url("../images/speech-past-dark.svg");
+  }
+  .page-template-template-events #main .row.passed-events .workshop h2.entry-title:before {
+    background-image: url("../images/workshop-past-dark.svg");
+  }
+  .page-template-template-events #main .row.passed-events .seminar h2.entry-title:before {
+    background-image: url("../images/seminar-past-dark.svg");
+  }
+  .page-template-template-events #main .row.upcoming .speech h2.entry-title:before {
+    background-image: url("../images/speech-gray.svg");
+  }
+  .page-template-template-events #main .row.upcoming .workshop h2.entry-title:before {
+    background-image: url("../images/workshop-gray.svg");
+  }
+  .page-template-template-events #main .row.upcoming .seminar h2.entry-title:before {
+    background-image: url("../images/seminar-gray.svg");
+  }
+  .page-template-template-events #main .row.upcoming-featured .speech h2.entry-title:before {
+    background-image: url("../images/speech-white.svg");
+  }
+  .page-template-template-events #main .row.upcoming-featured .workshop h2.entry-title:before {
+    background-image: url("../images/workshop-white.svg");
+  }
+  .page-template-template-events #main .row.upcoming-featured .seminar h2.entry-title:before {
+    background-image: url("../images/seminar-white.svg");
+  }
+  .page-template-template-events #main .buttons {
+    background-color: #424447;
+    min-width: 280px;
+  }
+  .page-template-template-events #main .row.upcoming-featured h2.entry-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .page-template-template-events #main .row.upcoming-featured div.entry-content {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .page-template-template-events #main .row.upcoming div.entry-content {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .page-template-template-events #main .row.passed-events div.entry-content {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .page-template-template-events #main .row.upcoming-featured article.workshop.event {
+    background-color: #84AAB4;
+  }
+  .page-template-template-events #main .row.upcoming-featured article.seminar.event {
+    background-color: #E5C02F;
+  }
+  .page-template-template-events #main .row.upcoming-featured article.speech.event {
+    background-color: #5695C6;
+  }
+  .page-template-template-events #main .row.upcoming article.workshop.event {
+    background-color: #84AAB4;
+  }
+  .page-template-template-events #main .row.upcoming article.seminar.event {
+    background-color: #E5C02F;
+  }
+  .page-template-template-events #main .row.upcoming article.speech.event {
+    background-color: #5695C6;
+  }
+  .page-template-template-events #main h2.entry-title {
+    padding-left: 90px;
+    min-height: 103px;
+  }
+
+  /* NINJA FORMS */
+  .modal-form-container {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .modal.nf input {
+    width: 100% !important;
+  }
+
+  .modal.nf button.openlab-close-modal {
+    padding: 20px 20px 20px 20px;
+    margin: 0;
+  }
+
+  .ninja-forms-all-fields-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h2.ninja-forms-form-title {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* SINGLE EVENT */
+  body.single-event {
+    /* buttons */
+  }
+  body.single-event .single-event .content-left-wrap {
+    padding-top: 0;
+    margin-bottom: 35px;
+  }
+  body.single-event #secondary form.search-form input.search-field {
+    width: 100%;
+    padding: 0;
+    padding-left: 5px;
+  }
+  body.single-event #calendar_events h3 {
+    font-size: 20px;
+    line-height: 28.8px;
+    padding-bottom: 10px;
+  }
+  body.single-event .square-content-wrap span.share-icon {
+    display: none !important;
+    visibility: hidden;
+  }
+  body.single-event .square-content-wrap .square-content.hover-state {
+    display: block !important;
+    visibility: visible;
+  }
+
+  /* TEMPLATE NEWS */
+  .page-template-template-news .content-left-wrap.col-md-12 {
+    padding-top: 0px;
+  }
+  .page-template-template-news .post-date, .page-template-template-news .post-link {
+    display: none;
+  }
+  .page-template-template-news .mobile-buttons {
+    display: block;
+  }
+  .page-template-template-news .post-image, .page-template-template-news .post-content-wrap {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .page-template-template-news .post-image.no-feat-img span.empty-featured-img {
+    background-position: 50% -50%;
+    background-size: 50% 90%;
+    background-image: url("../images/announcement-gray.svg") !important;
+  }
+  .page-template-template-news article.type-post.no-feat-img h2.entry-title {
+    color: #424447;
+  }
+  .page-template-template-news article.type-post:hover .post-image.no-feat-img .square-content-wrap {
+    background-color: #b5b2ae;
+  }
+  .page-template-template-news .post-content-wrap div.date-mobile {
+    display: block !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-template-template-news article.type-post {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 5px !important;
+    background-color: #d6d8d7;
+  }
+  .page-template-template-news article.type-post .post-image .square-box {
+    height: 350px;
+  }
+  .page-template-template-news article.type-post .post-image .square-box:before {
+    padding-top: 50%;
+  }
+  .page-template-template-news article.type-post .entry-title, .page-template-template-news article.type-post .entry-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-template-template-news article.type-post h2.entry-title {
+    position: absolute;
+    top: -80px;
+    max-height: 80px;
+    overflow: hidden;
+    left: 0;
+    display: block;
+    padding-top: 5px;
+    color: #ffffff;
+  }
+  .page-template-template-news article.type-post span.featured-img:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    opacity: 0.2;
+  }
+
+  /* EVENTS ARCHIVE */
+  body.date.post-type-archive-event .content-left-wrap.col-md-12 {
+    padding-top: 0px;
+  }
+  body.date.post-type-archive-event article.type-event .buttons {
+    width: 86% !important;
+    bottom: 20px !important;
+    right: 6% !important;
+  }
+  body.date.post-type-archive-event article.type-event div.entry-content {
+    padding: 0 20px 50px 20px;
+  }
+
+  /* SINGLE POST */
+  body.single-post {
+    /* buttons */
+  }
+  body.single-post .single-post .content-left-wrap {
+    padding-top: 0px;
+    margin-bottom: 25px;
+  }
+  body.single-post aside.events-calendar .square-content-wrap h3 {
+    font-size: 6vw !important;
+    line-height: 6vw !important;
+    padding-top: 7vw !important;
+  }
+  body.single-post #wp-events-calendar {
+    margin: 15px 0 !important;
+  }
+  body.single-post .square-content-wrap span.main-state {
+    display: none !important;
+    visibility: hidden;
+  }
+  body.single-post .square-content-wrap .square-content.hover-state {
+    display: block !important;
+    visibility: visible;
+  }
+
+  /* SEARCH RESULTS */
+  body.search-results .content-left-wrap.col-md-12 {
+    padding-top: 20px !important;
+  }
+  body.search-results header.page-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  body.search-results div.post-image.col-md-2 {
+    display: none;
+  }
+  body.search-results h2.entry-title {
+    padding: 10px 20px 0 20px !important;
+  }
+  body.search-results div.result-date {
+    padding: 7px 20px 7px 20px !important;
+  }
+  body.search-results div.entry-content {
+    padding: 0 20px 7px 20px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  nav#site-navigation.navbar-collapse {
+    display: table !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #focus .col-md-3.col-sm-6 {
+    margin-bottom: 7px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #focus .active .event-date {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  #focus .passed .event-date {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  #focus .passed .event-title {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  #focus .active .event-title {
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  #focus .col-md-3.calendar .square-content-wrap h3 {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  #wp-events-calendar {
+    margin: 0 !important;
+    line-height: 22px;
+  }
+  #wp-events-calendar th {
+    font-size: 12px;
+  }
+  #wp-events-calendar td, #wp-events-calendar a {
+    font-size: 11px;
   }
 }
 

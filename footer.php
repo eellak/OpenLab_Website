@@ -167,7 +167,7 @@
 						endif;
 
 						//Lisence Desclaimer
-						echo '<li>';
+						echo '<li class="licence-wrap">';
 							echo '<div class="license-disclaimer">';
 								echo '<p>'. __('Implementation using Opensource Software','openlab-txtd') .'</p>';
 								echo '<p>'. __('<a href="https://wordpress.org/" target="_blank">Wordpress</a>','openlab-txtd') .'</p>';

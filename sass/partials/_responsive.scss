@@ -1,6 +1,74 @@
 @media screen and (max-width: 767px) {
   #homepage > .container{
     padding:0px;
+    margin-bottom: 5px;
+  }
+  #homepage{
+    margin-top: -13px;
+  }
+  #homepage{
+    .flickity-viewport {
+    height: 100vh;
+    }
+    .flickity-page-dots{
+      display:none;
+    }
+  }
+  #homepage{
+    .slider-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    opacity: 0.2;
+    }
+  }
+  span.icon-wrap-responsive{
+    display:block !important;
+  }
+  nav.navbar-collapse{
+    li.menu-item{
+      margin-right:0;
+      display:block !important;
+      a{
+        padding-top:15px;
+      }
+    }
+    &:last-child{
+      a{
+        padding-bottom:15px;
+      }
+    }
+    li.current_page_item > a:before{
+      display:none !important;
+    }
+  }
+  nav.collapsing > ul{
+    display:none;
+  }
+  #homepage .slide-caption-wrap{
+    bottom:40px;
+    .inner-caption{
+      color:$font-white;
+      font-family: 'Verdana';
+      font-size: 20px;
+      line-height: 1.2em;
+      letter-spacing: 0.1em;
+      background: none;
+      display: block;
+      text-align: left;
+      word-wrap: break-word;
+    }
+  }
+  #focus{
+    padding-bottom: 0
+  }
+  #focus-join-us{
+    padding-top:0px;
+    margin-top: -5px;
   }
   #focus-join-us .row{
     background-attachment: scroll;
@@ -8,14 +76,21 @@
   section#contact{
     background-attachment: scroll;
   }
+  #focus .col-md-3{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 5px;
+  }
   #aboutus .openlab_about_us_center {
     padding-top: 25px;
     padding-bottom: 25px;
   }
+  #focus > .container{
+    padding-left: 0px!important;
+    padding-right: 0px !important;
+  }
   #focus-join-us{
     .light-text{
-      padding-left: 15px;
-      padding-right: 15px;
       width:100%;
     }
   }
@@ -23,21 +98,23 @@
     padding-left:0px;
     padding-right:0px;
   }
-  .fixed-mark-openlab{
-    display:none;
-  }
-
-  #focus .col-md-3{
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
-/* Calendar */
-@media (min-width: 320px) and (max-width: 767px) {
-
-  .event-date{
+  #focus .event-date{
     font-size: 5vw !important;
+  }
+  #team .section-header .section-legend {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #aboutus .column.openlab_about_us_center{
+    text-align:left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #aboutus .white-text.section-legend{
+    text-align:left;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .event-img{
     height: 60vw !important;
@@ -64,19 +141,444 @@
       font-size:4vw;
     }
   }
+  .licence-wrap{
+    display:block!important;
+  }
+  .fixed-mark-openlab.to-top{
+    display:block;
+    right: calc(50% - 15px);
+    bottom: 20px;
+  }
+  .contact-us .container {
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+  }
+  .our-team .team-box {
+    width: 100% !important;
+  }
+  .pirate_forms_wrap{
+    .form_field_wrap, .pirate-forms-button-wrap{
+      padding-left: 0px!important;
+      padding-right: 0px!important;
+    }
+  }
+  .fixed-mark-openlab{
+    display:none;
+  }
+  .col-md-4.custom-fb-feed{
+    display:none;
+  }
+  .license-disclaimer{
+    margin-bottom: 50px;
+  }
+  #footer{
+    .company-details-footer, .copyright {
+      padding-top: 30px!important;
+      padding-bottom: 30px!important;
+    }
+    .company-details-footer .details-text{
+      p{
+        font-size:14px!important;
+        line-height: 18px!important;
+        letter-spacing: 0px!important;
+      }
+    }
+    .copyright div.license-disclaimer{
+      a,p{
+        font-size:14px!important;
+        line-height: 18px!important;
+      }
+    }
+    #footer-map-icon{
+      width:65px!important;
+      height:65px!important;
+    }
+  }
+
+
+  /* TEMPLATE NEWS */
+  .page-template-template-events{
+    #main h1.featured-title{
+      text-align: center;
+    }
+    #main h3.featured-title{
+      text-align: center;
+      padding:0px;
+      padding-top:28px;
+    }
+    #content div.content-left-wrap.col-md-12{
+      padding-top:34px;
+    }
+    .row.upcoming-featured{
+      .event-time,.event-price,.grid-1,.grid-2{
+        display:none;
+      }
+    }
+    .col-md-3.col-sm-3.col-xs-3{
+      display:none;
+    }
+    .col-xs-9 {
+    width: 100%;
+    }
+    #main article.type-event .buttons{
+      width:100%;
+      position: inherit;
+      margin-top: 25px;
+    }
+    #main article.hentry.event {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 0px;
+    }
+    #main .row{
+      margin-bottom:5px;
+    }
+    #main .entry-content{
+      padding: 0 !important;
+    }
+    #main div.date-mobile{
+      display: block;
+    }
+    #main .row.upcoming-featured{
+      div.date-mobile{
+        color:$font-white;
+      }
+    }
+    #main h2.entry-title:before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    }
+    #main .row.passed-events{
+      .speech h2.entry-title:before{
+        background-image: url("../images/speech-past-dark.svg");
+      }
+      .workshop h2.entry-title:before{
+        background-image: url("../images/workshop-past-dark.svg");
+      }
+      .seminar h2.entry-title:before{
+        background-image: url("../images/seminar-past-dark.svg");
+      }
+    }
+    #main .row.upcoming{
+      .speech h2.entry-title:before{
+        background-image: url("../images/speech-gray.svg");
+      }
+      .workshop h2.entry-title:before{
+        background-image: url("../images/workshop-gray.svg");
+      }
+      .seminar h2.entry-title:before{
+        background-image: url("../images/seminar-gray.svg");
+      }
+    }
+    #main .row.upcoming-featured{
+      .speech h2.entry-title:before{
+        background-image: url("../images/speech-white.svg");
+      }
+      .workshop h2.entry-title:before{
+        background-image: url("../images/workshop-white.svg");
+      }
+      .seminar h2.entry-title:before{
+        background-image: url("../images/seminar-white.svg");
+      }
+    }
+    #main .buttons{
+      background-color:$bg-dark-hover;
+      min-width:280px;
+    }
+    #main .row.upcoming-featured h2.entry-title{
+      color:$font-white;
+      font-weight: bold;
+      font-size: 20px;
+      line-height:22px;
+    }
+    #main .row.upcoming-featured div.entry-content{
+      color:$font-white;
+      font-size: 15px;
+      line-height:18px;
+    }
+    #main .row.upcoming div.entry-content{
+      font-size: 15px;
+      line-height:18px;
+    }
+    #main .row.passed-events div.entry-content{
+      font-size: 15px;
+      line-height:18px;
+    }
+    #main .row.upcoming-featured article.workshop.event{
+        background-color: $bg-workshop;
+    }
+    #main .row.upcoming-featured article.seminar.event{
+        background-color: $bg-seminar;
+    }
+    #main .row.upcoming-featured article.speech.event{
+        background-color: $bg-speech;
+    }
+    #main .row.upcoming article.workshop.event{
+        background-color: $bg-workshop;
+    }
+    #main .row.upcoming article.seminar.event{
+        background-color: $bg-seminar;
+    }
+    #main .row.upcoming article.speech.event{
+        background-color: $bg-speech;
+    }
+    #main h2.entry-title{
+      padding-left:90px;
+      min-height: 103px;
+    }
+  }
+
+  /* NINJA FORMS */
+  .modal-form-container {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .modal.nf input{
+    width:100% !important;
+  }
+  .modal.nf button.openlab-close-modal{
+    padding: 20px 20px 20px 20px;
+    margin:0;
+  }
+  .ninja-forms-all-fields-wrap{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h2.ninja-forms-form-title{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  /* SINGLE EVENT */
+  body.single-event{
+    .single-event .content-left-wrap {
+    padding-top: 0;
+    margin-bottom: 35px;
+    }
+    #secondary form.search-form input.search-field {
+      width: 100%;
+      padding: 0;
+      padding-left: 5px;
+    }
+    #calendar_events h3{
+      font-size: 20px;
+      line-height: 28.8px;
+      padding-bottom: 10px;
+    }
+    /* buttons */
+    .square-content-wrap span.share-icon{
+      display:none !important;
+      visibility: hidden;
+    }
+   .square-content-wrap .square-content.hover-state {
+      display:block !important;
+      visibility: visible;
+    }
  }
- .fixed-mark-openlab.to-top{
-   display:block;
-   right: calc(50% - 15px);
-   bottom: 5px;
+
+ /* TEMPLATE NEWS */
+ .page-template-template-news{
+   .content-left-wrap.col-md-12{
+     padding-top: 0px;
+   }
+   .post-date, .post-link{
+     display:none;
+   }
+   .mobile-buttons{
+     display:block;
+   }
+   .post-image, .post-content-wrap{
+     padding-left: 0px;
+     padding-right: 0px;
+   }
+   .post-image.no-feat-img span.empty-featured-img {
+     background-position: 50% -50%;
+     background-size: 50% 90%;
+     background-image: url("../images/announcement-gray.svg") !important;
+    }
+    article.type-post.no-feat-img h2.entry-title {
+      color:$bg-dark-hover;
+    }
+    article.type-post{
+      &:hover{
+        .post-image.no-feat-img .square-content-wrap {
+           background-color: $bg-single-post;
+         }
+       }
+     }
+    .post-content-wrap div.date-mobile{
+      display:block !important;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+   article.type-post{
+     position:relative;
+     padding-left: 0px;
+     padding-right: 0px;
+     margin-bottom: 5px !important;
+     background-color: $bg-article;
+     .post-image{
+        .square-box {
+            height: 350px;
+        }
+       .square-box:before {
+          padding-top: 50%;
+        }
+     }
+     .entry-title, .entry-content{
+       padding-left: 20px;
+       padding-right: 20px;
+     }
+     h2.entry-title {
+        position: absolute;
+        top: -80px;
+        max-height: 80px;
+        overflow: hidden;
+        left: 0;
+        display: block;
+        padding-top: 5px;
+        color:$font-white;
+      }
+      span.featured-img:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000000;
+        opacity: 0.2;
+      }
+   }
  }
 
 
-/* HOMEPAGE*/
-@media (min-width: 767px) and (max-width: 990px) {
+ /* EVENTS ARCHIVE */
+ body.date.post-type-archive-event{
+   .content-left-wrap.col-md-12 {
+    padding-top: 0px;
+    }
+   article.type-event{
+     .buttons{
+       width: 86% !important;
+       bottom: 20px !important;
+       right: 6% !important;
+     }
+     div.entry-content {
+      padding: 0 20px 50px 20px;
+      }
+   }
+
+ }
+
+
+ /* SINGLE POST */
+ body.single-post{
+   .single-post .content-left-wrap {
+    padding-top: 0px;
+    margin-bottom: 25px;
+  }
+  aside.events-calendar .square-content-wrap h3 {
+    font-size: 6vw !important;
+    line-height: 6vw !important;
+    padding-top: 7vw !important;
+  }
+  #wp-events-calendar{
+    margin:15px 0 !important;
+  }
+
+  /* buttons */
+  .square-content-wrap span.main-state{
+    display:none !important;
+    visibility: hidden;
+  }
+ .square-content-wrap .square-content.hover-state {
+    display:block !important;
+    visibility: visible;
+  }
+
+ }
+
+
+ /* SEARCH RESULTS */
+ body.search-results{
+   .content-left-wrap.col-md-12{
+     padding-top:20px !important;
+   }
+   header.page-header{
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+   div.post-image.col-md-2{
+     display:none;
+   }
+   h2.entry-title {
+    padding: 10px 20px 0 20px !important;
+    }
+  div.result-date {
+    padding: 7px 20px 7px 20px !important;
+  }
+  div.entry-content{
+    padding: 0 20px 7px 20px !important;
+  }
+ }
+
+}
+
+@media screen and (min-width: 768px){
+  nav#site-navigation.navbar-collapse{
+    display: table !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
   #focus{
-    .active,.calendar{
-      margin-top:7px;
+    .col-md-3.col-sm-6{
+      margin-bottom:7px;
     }
   }
  }
+
+ @media (min-width: 992px) and (max-width: 1199px) {
+   #focus .active .event-date{
+       font-size: 11px;
+       line-height: 18px;
+   }
+   #focus .passed .event-date{
+       font-size: 11px;
+       line-height: 18px;
+   }
+   #focus .passed .event-title{
+       font-size: 17px;
+       line-height: 20px;
+   }
+   #focus .active .event-title{
+       font-size: 17px;
+       line-height: 20px;
+   }
+   #focus .col-md-3.calendar .square-content-wrap h3 {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  #wp-events-calendar{
+    margin:0 !important;
+    line-height:22px;
+    th{
+      font-size:12px;
+    }
+    td, a{
+      font-size:11px;
+    }
+  }
+
+  }
