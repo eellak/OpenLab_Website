@@ -61,5 +61,10 @@
 ### Σχετικά Αρχεία για Download ###
 
 Αρχείο εγκατάστασης θέματος Openlab:
+https://openlab.ellak.gr/wp-content/uploads/theme_files/openlab_theme.zip
+
 Οδηγός εγκατάστασης και τεκμηρίωση διαχείρισης:
+https://openlab.ellak.gr/wp-content/uploads/theme_files/openlab_documentation.pdf
+
 Ενδεικτικό (Demo) περιεχόμενο για εισαγωγή:
+https://openlab.ellak.gr/wp-content/uploads/theme_files/demo_data.zip
