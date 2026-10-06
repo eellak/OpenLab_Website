@@ -1,3 +1,15 @@
+> [!WARNING]
+> **This repository is no longer maintained.**
+> It is not receiving updates and contains known security vulnerabilities.
+> Do not use this code in production or in any security-sensitive environment.
+> Use at your own risk.
+
+> [!WARNING]
+> **Αυτό το αποθετήριο δεν συντηρείται πλέον.**
+> Δεν λαμβάνει ενημερώσεις και περιέχει γνωστά κενά ασφαλείας.
+> Μην χρησιμοποιείτε αυτόν τον κώδικα σε παραγωγικό περιβάλλον ή σε εφαρμογές όπου η ασφάλεια είναι κρίσιμη.
+> Η χρήση γίνεται με δική σας ευθύνη.
+
 
 Το Open Lab είναι ένα ανοικτό σύστημα διαμόρφωσης και λειτουργίας ενός pop-up γραφειακού χώρου. Περιλαμβάνει σχέδια, υπόβαθρα και οδηγίες για τη διαμόρφωση του χώρου, την κατασκευή των επίπλων, την προσαρμογή της οπτικής ταυτότητας και την προβολής των δράσεων του χώρου στο διαδίκτυο μέσω ιστοσελίδας. Απευθύνεται σε φορείς, κοινότητες, ομάδες, εκπαιδευτικά ιδρύματα κτλ. που θέλουν να στήσουν σε οποιοδήποτε χώρο μια δομή συνεργασίας και να τη διαχειριστούν. Το Open Lab περιλαμβάνει τις υποενότητες OpenLab_Architecture, [OpenLab_Graphics](https://github.com/eellak/OpenLab_Graphics) και [OpenLab_Website](https://github.com/eellak/OpenLab_Website). 
 
